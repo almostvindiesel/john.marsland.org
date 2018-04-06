@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,900' rel='stylesheet' type='text/css'>
+    <link href="static/css/fitbit-style.css" rel="stylesheet">
+</head>
+<body>
+ <!--    <div>
+
+      <blockquote>
+        <h3>How does sleep change across life milestones?</h3>
+        <p>One father's journey</p>
+      <blockquote>
+    </div> -->
+
+    <text class="title">How do major life changes affect sleep?</text><br/>
+    <br/>
+    <text >One father's experience traveling, starting a new job, having twins, and buying a house</text>
+
+    <div>
+
+      <br/>
+      <svg id="sleepovertime">
+        <text class="title" x=40 y=50>Sleep over time</text>
+        <text x=40 y=80>I started gettin about an hour of less sleep after starting a new job</text>
+      </svg>
+
+      <br/>
+      <svg id="sleepdow">>
+        <text class="title" x=40 y=50>How does sleep vary by day of week?</text>
+        <text x=40 y=80>
+              On average, I consistenly sleep about 6.2 hours per night. <br/>
+              On saturday nights I get about 
+       </text>
+      </svg>
+
+
+    <br>
+
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <script src="/static/js/fitbit/tschart.js"></script>
+    <script src="/static/js/fitbit/dow.js"></script>
+
+    <script>
+      draw_tschart();
+      draw_barchart();
+    </script>
+</body>
+</html>
