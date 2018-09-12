@@ -50,15 +50,18 @@
 				</section>
 				<section id="recipes-section">
 					<p id="text06">
-						<span> My favorite all time recipes, which I've gradually tweaked over the years</span>
+						<span> 
+						My favorite recipes, which I've gradually tweaked over the years. 
+						Some of them have been passed on by family; others are my attempts to replicate my favorite dishes from
+						our travels. But all are delicious--especially the starred recipes</span>
 					</p>
-					<p id="text05">Meals</p>
+					<p id="text05">Eats</p>
 						<div id=recipes-gdrive-meals>
 							<img src=/static/img/spinner.gif width=30px> 
 						</div>
 <!-- 						<iframe src="https://drive.google.com/embeddedfolderview?id=1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4#list" 
 								style="width:100%; height:300px; border:0;"></iframe> -->
-					<p id="text05">Treats+Eats</p>
+					<p id="text05">Treats</p>
 						<div id=recipes-gdrive-misc>
 							<img src=/static/img/spinner.gif width=30px> 
 						</div>
@@ -113,7 +116,7 @@
 							<li><p id="text07" class="projects-item">
 								<img src="/static/img/itlyst-iphone-icon-app.png" width=19px>
 								<a href=http://www.itlyst.com target="_blank">itlyst - remember places you want to visit</a><br/>
-								   itlyst is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save image from yelp, or a text from a friend--and itlyst will organize all of your notes in one place. Authored with python/flask/angular/ionic.
+								   <a href=http://api.itlyst.com target="_blank">itlyst</a> is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save an image from yelp, or a text from a friend--and itlyst will organize all of your notes in one place. Authored with python/flask/angular/ionic.
 								<span class="updated-date">Jan 2017</span>
 							</p></li>
 							<br/>
@@ -206,30 +209,42 @@
 		    if (xhr.readyState == 4 && xhr.status == 200) {
 		    	// console.log(xhr.responseText);
 		        var res = JSON.parse(xhr.responseText);
+		        var recipes = res['data'];
 		        console.log(res['data'][0]);
 		       
 		        // Generate Recipe Elements
 		        var recipes_meals_ul=document.createElement('ul');
 		        var recipes_misc_ul=document.createElement('ul');
-		        for (var i=0; i<res['data'].length; i++){
+
+		        // Sort Recipes by Starred, Descending
+				function by_starred(a,b) {
+				  if (a.starred < b.starred)
+				    return 1;
+				  if (a.starred > b.starred)
+				    return -1;
+				  return 0;
+				}
+				var recipes_sorted = recipes.sort(by_starred);
+
+		        for (var i=0; i<recipes_sorted.length; i++){
 				    var p=document.createElement('p');
 				    p.id = "text07";
 				    p.className += " recipes-item";
 				    var li = document.createElement('li');
-				    if (res['data'][i]['starred'] == true) {
+				    if (recipes_sorted[i]['starred'] == true) {
 				    	starred_html = "<i class='fa fa-star icon-color' aria-hidden='true'></i> "
 				    } else {
 				    	starred_html = '';
 				    }
 				    var a = document.createElement('a');
-					a.innerHTML = starred_html + res['data'][i]['name'];
-					a.href = 'https://docs.google.com/document/d/'+res['data'][i]['id'];
+					a.innerHTML = starred_html + recipes_sorted[i]['name'];
+					a.href = 'https://docs.google.com/document/d/'+recipes_sorted[i]['id'];
 					a.target = '_blank';
 					li.appendChild(p);
 					p.appendChild(a);
 
 					// Append to Meals
-					if(res['data'][i]['parent']== '1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4') {
+					if(recipes_sorted[i]['parent']== '1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4') {
 						recipes_meals_ul.appendChild(li);
 					// OR Append to Misc
 					} else {
