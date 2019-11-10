@@ -433,6 +433,13 @@ h1 .li, h2 .li, h3 .li, p .li {
 	font-weight: 200;
 	text-transform: none;
 }
+#text08 {
+	letter-spacing: 0.025rem;
+	width: calc(100% + 0.025rem);
+	font-weight: 200;
+	text-transform: none;
+	color: gray;
+}
 #text02 {
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -733,4 +740,8 @@ body {
 	-webkit-filter: none !important;
 	-ms-filter: none !important;
 	filter: none !important;
+}
+
+.article-text {
+	text-align:left !important;
 }
