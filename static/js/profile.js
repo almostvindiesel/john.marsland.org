@@ -106,6 +106,12 @@ on('load', function() {
 		initialScrollPoint = null;
 		initialSection = e;
 		initialId = initialSection.id;
+		console.log(initialSection);
+	/* Unknown anchors will redirect to the recipes section */
+	} else {
+		initialScrollPoint = null;
+		initialSection = $('#recipes-section');
+		initialId = 'recipes-section';
 	}
 	ee = $$('section:not([id="' + initialId + '"])');
 	for (k = 0; k < ee.length; k++) {
