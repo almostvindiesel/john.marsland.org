@@ -58,13 +58,13 @@
 					</p>
 					<p id="text05">Eats</p>
 						<div id=recipes-gdrive-meals>
-							<img src=/static/img/spinner.gif width=30px> 
+							<img src=static/img/spinner.gif width=30px> 
 						</div>
 <!-- 						<iframe src="https://drive.google.com/embeddedfolderview?id=1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4#list" 
 								style="width:100%; height:300px; border:0;"></iframe> -->
 					<p id="text05">Treats</p>
 						<div id=recipes-gdrive-misc>
-							<img src=/static/img/spinner.gif width=30px> 
+							<img src=static/img/spinner.gif width=30px> 
 						</div>
 
 <!-- 						<span>
@@ -83,7 +83,7 @@
 							<li><p id="text07" class="writing-articles">
 								<a href=https://www.quora.com/What-should-I-study-or-learn-if-I-want-to-be-a-data-analyst-for-a-software-company-like-Quora-Zynga-Airbnb-etc 
 								   target="_blank">What should I study to be a Data Analyst?</a>. Five skills/technologies to learn to kickstart a data analyst career
-								<span class="updated-date">Aug 2018</span>
+								<span class="updated-date">2012, updated Aug 2018</span>
 							</p></li>
 							
 							<li><p id="text07" class="writing-articles">
@@ -172,23 +172,39 @@
 						<ul >
 
 							<li><p id="text07" class="projects-item">
-								<img src="/static/img/itlyst-iphone-icon-app.png" width=19px>
-								<a href=http://www.itlyst.com target="_blank">itlyst - remember places you want to visit</a><br/>
-								   <a href=http://api.itlyst.com target="_blank">itlyst</a> is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save an image from yelp, or a text from a friend--and itlyst will organize all of your notes in one place. Authored with python/flask/angular/ionic.
+								<img src="static/img/itlyst-iphone-icon-app.png" width=19px>
+								<a href="javascript:void(0)" onclick="toggleDivDisplay('itlyst-preview')">itlyst - remember places you want to visit</a><br/>
+								   itlyst is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save an image from yelp, or a text from a friend--and itlyst will recognize the destination automatically and organize all of your notes in one place. Authored with python/flask/angular/ionic.
 								<span class="updated-date">Jan 2017</span>
 							</p></li>
+
 							<br/>
 
+							<div id="itlyst-preview" style="display:none"> 
+								<div style="float: left;">
+									<p id="text07"><font size=-1>Barcelona Lyst</font></p><br/>
+									<img alt="" src="static/img/codedemos/itlyst-venue.png" width=250px >
+								</div>
+								<div style="float: right;">
+									<p id="text07" ><font size=-1>Chrome extension</font></p><br/>
+									<img alt="" src="static/img/codedemos/itlyst-chrome-extension.png" width=250px >
+								</div>
+							</div>	
+
+
+
+							<div style="clear: both; display:block"></div>
 							<li><p id="text07" class="projects-item">
 								<i class="fas fa-globe icon-color"></i>
 								<a href=http://joanneandjohn.com/500days target="_blank">500 Days of Summer</a><br/>
 								   On our one year wedding annivesary, Joanne and I quit our jobs and traveled the world for 500 Days. 
-								   She took a picture each day to remember our trip. 
+								   We took a picture each day to remember our trip. 
 								   
-								   Authored with python, flask, and several api integrations (instagram, foursquare, google maps).
+								   Authored with python and flask.
 								<span class="updated-date">Jan 2017</span>
 							</p></li>
 							<br/>
+
 
 							<li><p id="text07" class="projects-item">
 								<i class="fab fa-instagram icon-color"></i> vs <i class="fab fa-snapchat icon-color"></i>
@@ -205,14 +221,17 @@
 								   Authored with python/flask/chart.js
 								<span class="updated-date">Jan 2017</span>
 							</p></li>
-
 							<br/>
 							<li><p id="text07" class="projects-item">
 								<i class="fas fa-video icon-color" ></i>
-								<a href=http://joanneandjohn.com/wp target="_blank">Our Spanish Wedding</a><br/>
-								   Web destination for our wedding in spain. Authored primarily with wordpress. 
+								<a href="javascript:void(0)" onclick="toggleDivDisplay('joanneandjohn-screenshot')" >Our Spanish Wedding</a><br/>
+								   Web destination for our wedding in spain. Authored with wordpress. 
 								<span class="updated-date">June 2014</span>
 							</p></li>
+							
+							<div id="joanneandjohn-screenshot" style="display:none"> 
+								<img alt="" src="static/img/codedemos/wedding-website.png" width=300px>
+							</div>
 
 
 
@@ -373,6 +392,16 @@
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-18105324-1"></script>
+	<script>
+		function toggleDivDisplay(divId) {
+		  var x = document.getElementById(divId);
+		  if (x.style.display === "none") {
+		    x.style.display = "block";
+		  } else {
+		    x.style.display = "none";
+		  }
+		}
+	</script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
