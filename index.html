@@ -57,13 +57,18 @@
 						our travels. But all are delicious--especially the starred recipes</span>
 					</p>
 					<p id="text05">Eats</p>
-						<div id=recipes-gdrive-meals>
+						<div id=recipes-gdrive-eats>
 							<img src=static/img/spinner.gif width=30px> 
 						</div>
 <!-- 						<iframe src="https://drive.google.com/embeddedfolderview?id=1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4#list" 
 								style="width:100%; height:300px; border:0;"></iframe> -->
+					<p id="text05">Sweets</p>
+						<div id=recipes-gdrive-sweets>
+							<img src=static/img/spinner.gif width=30px> 
+						</div>
+
 					<p id="text05">Treats</p>
-						<div id=recipes-gdrive-misc>
+						<div id=recipes-gdrive-treats>
 							<img src=static/img/spinner.gif width=30px> 
 						</div>
 
@@ -180,14 +185,14 @@
 
 							<br/>
 
-							<div id="itlyst-preview" style="display:none"> 
-								<div style="float: left;">
+							<div id="itlyst-preview" style="display:none;"> 
+								<div style="flex: 1;">
 									<p id="text07"><font size=-1>Barcelona Lyst</font></p><br/>
-									<img alt="" src="static/img/codedemos/itlyst-venue.png" width=250px >
+									<img alt="" src="static/img/codedemos/itlyst-venue.png" style="max-width:90%;" >
 								</div>
-								<div style="float: right;">
+								<div style="flex: 1; margin-right: 2px;">
 									<p id="text07" ><font size=-1>Chrome extension</font></p><br/>
-									<img alt="" src="static/img/codedemos/itlyst-chrome-extension.png" width=250px >
+									<img alt="" src="static/img/codedemos/itlyst-chrome-extension.png" style="max-width:90%;" >
 								</div>
 							</div>	
 
@@ -198,7 +203,7 @@
 								<i class="fas fa-globe icon-color"></i>
 								<a href=http://joanneandjohn.com/500days target="_blank">500 Days of Summer</a><br/>
 								   On our one year wedding annivesary, Joanne and I quit our jobs and traveled the world for 500 Days. 
-								   We took a picture each day to remember our trip. 
+								   She took a picture each day to remember our trip. 
 								   
 								   Authored with python and flask.
 								<span class="updated-date">Jan 2017</span>
@@ -230,7 +235,7 @@
 							</p></li>
 							
 							<div id="joanneandjohn-screenshot" style="display:none"> 
-								<img alt="" src="static/img/codedemos/wedding-website.png" width=300px>
+								<p align=center><img alt="" src="static/img/codedemos/wedding-website.png" style="max-width:70%""></center>
 							</div>
 
 
@@ -289,8 +294,9 @@
 		        //console.log(res['data'][0]);
 		       
 		        // Generate Recipe Elements
-		        var recipes_meals_ul=document.createElement('ul');
-		        var recipes_misc_ul=document.createElement('ul');
+		        var recipes_eats_ul=document.createElement('ul');
+		        var recipes_sweets_ul=document.createElement('ul');
+		        var recipes_treats_ul=document.createElement('ul');
 
 		        // Sort Recipes by Starred, Descending
 				function by_starred(a,b) {
@@ -358,34 +364,40 @@
 
 					// Append to Meals
 					if(recipes_sorted[i]['parent']== '1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4') {
-						recipes_meals_ul.appendChild(li);
+						recipes_eats_ul.appendChild(li);
 					// OR Append to Misc
-					} else {
-						recipes_misc_ul.appendChild(li);
+					} else if (recipes_sorted[i]['parent']== '1Gv0h9svXbcAw86fOJlqkHHfgN5_U8r-C') {
+						recipes_sweets_ul.appendChild(li);
+					} else if (recipes_sorted[i]['parent']== '1Q0L7yT6XnbW8cLJGkV-cTpS7B-sdMKT5') {
+						recipes_treats_ul.appendChild(li);
 					}
 				}
 
 				// Append To Page
-				document.getElementById("recipes-gdrive-meals").innerHTML = '';
-				document.getElementById("recipes-gdrive-meals").appendChild(recipes_meals_ul);
-				document.getElementById("recipes-gdrive-misc").innerHTML = '';
-				document.getElementById("recipes-gdrive-misc").appendChild(recipes_misc_ul);
+				document.getElementById("recipes-gdrive-eats").innerHTML = '';
+				document.getElementById("recipes-gdrive-eats").appendChild(recipes_eats_ul);
+				document.getElementById("recipes-gdrive-sweets").innerHTML = '';
+				document.getElementById("recipes-gdrive-sweets").appendChild(recipes_sweets_ul);
+				document.getElementById("recipes-gdrive-treats").innerHTML = '';
+				document.getElementById("recipes-gdrive-treats").appendChild(recipes_treats_ul);
 		    
 		    }
 		}
 
+		// ------------
 		var url = "http://www.excelninja.com/api/v2/recipes";
+	  	var url_clear_cache = "http://www.excelninja.com/api/v2/recipes/clear";
 		// var url = "http://0.0.0.0:5000/api/v2/recipes";
+	 //  	var url_clear_cache = "http://0.0.0.0:5000/api/v2/recipes/clear";
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 		xhr.send();
+
 		xhr.addEventListener("readystatechange", processRequest, true);
-		
-	  	var url_clear_cache = "http://www.excelninja.com/api/v2/recipes/clear";
-	  	// var url_clear_cache = "http://0.0.0.0:5000/api/v2/recipes/clear";
 		var xhr2 = new XMLHttpRequest();
 	    xhr2.open('GET', url_clear_cache, true);
 		xhr2.send();
+		// ------------
 
 
 	</script>
@@ -396,7 +408,7 @@
 		function toggleDivDisplay(divId) {
 		  var x = document.getElementById(divId);
 		  if (x.style.display === "none") {
-		    x.style.display = "block";
+		    x.style.display = "flex";
 		  } else {
 		    x.style.display = "none";
 		  }
