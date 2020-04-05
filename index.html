@@ -12,6 +12,14 @@
 	<meta content="summary_large_image" property="twitter:card">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,200,200italic" rel="stylesheet" type="text/css">
 	<link href="static/css/style.css" rel="stylesheet">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 400px;
+        width: 600px;
+      }
+    </style>
 </head>
 <body class="is-loading">
 	<svg height="0" version="1.1" viewbox="0 0 40 40" width="0" xmlns="http://www.w3.org/2000/svg">
@@ -37,7 +45,8 @@
 						<li><a class="button n02" href="#recipes">Recipes</a></li>
 						<li><a class="button n03" href="#writing">Writing</a></li>
 						<li><a class="button n03" href="#projects">Projects</a></li>
-						<!--<li><a class="button n03" href="#two-under-two">Twins</a></li>-->
+<!-- 						<li><a class="button n03" href="#eats">Eats</a></li>
+ -->						<!--<li><a class="button n03" href="#two-under-two">Twins</a></li>-->
 					</ul>
 					<hr id="divider01">
 				</header>
@@ -49,6 +58,24 @@
 					<hr id="divider02">
 					<p id="text04">Coffee by day, Sriracha by night</p>
 				</section>
+
+				<section id="eats-section">
+
+					<p id="text05">Top Los Angeles Eats</p>
+
+					<div id="map" style="align: center;"></div>
+
+					<table>
+						<th><p id="text05">Destination</p></th>
+						<th><p id="text05">Details</th>
+						<tr>
+							<td><p id="text06"><b>Cento Pasta Bar</b></p></td>
+							<td><p id="text06" align=left><font size=-1>Only 2-3 pastas on the menu that rotate often. And the most amazing bread (flown in from NY) and burrata. Get them all. Simple selection of wine glasses on the menu. This is our favorite go to spot in DTLA for a casual lunch which is a French Wine bar at night. Avner-- a former Bestia chef and the owner is a total trip and makes some amazing pasta</font></p></td>
+						</tr>
+					</table>
+
+				</section>
+
 				<section id="recipes-section">
 					<p id="text06">
 						<span> 
@@ -76,6 +103,7 @@
 							<iframe src="https://drive.google.com/embeddedfolderview?id=1Gv0h9svXbcAw86fOJlqkHHfgN5_U8r-C#list" 
 							 	style="width:100%; height:200px; border:0;"></iframe>
 						</span> -->
+
 
 				</section>
 				<section id="writing-section">
@@ -179,7 +207,7 @@
 							<li><p id="text07" class="projects-item">
 								<img src="static/img/itlyst-iphone-icon-app.png" width=19px>
 								<a href="javascript:void(0)" onclick="toggleDivDisplay('itlyst-preview')">itlyst - remember places you want to visit</a><br/>
-								   itlyst is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save an image from yelp, or a text from a friend--and itlyst will recognize the destination automatically and organize all of your notes in one place. Authored with python/flask/angular/ionic.
+								   itlyst is an iOS / web app / chrome extension* that helps you take notes on places. Simply right click on a web page, save an image from yelp, or a text from a friend--and itlyst will recognize the destination automatically and organize all of your notes in one place. Authored with python/flask/angular/ionic (now inactive)
 								<span class="updated-date">Jan 2017</span>
 							</p></li>
 
@@ -242,12 +270,6 @@
 
 						</ul>
 
-					<p id="text07" class="projects-item">
-						<font size=-1>
-							* itlyst chrome extension and app currently not on the app store as of early 2018, but you can see the 
-							<a target="_blank" href="http://www.itlyst.com/#/u/almostvindiesel/Los%20Angeles/34.0522342/-118.2436849/10/rating">web app--with my favorite LA restaurants lysted--here</a>.
-						</font>
-					</p>
 					
 
 
@@ -385,15 +407,18 @@
 		}
 
 		// ------------
-		var url = "http://www.excelninja.com/api/v2/recipes";
-	  	var url_clear_cache = "http://www.excelninja.com/api/v2/recipes/clear";
-		// var url = "http://0.0.0.0:5000/api/v2/recipes";
-	 //  	var url_clear_cache = "http://0.0.0.0:5000/api/v2/recipes/clear";
+		var server = "http://www.excelninja.com/";
+		// var server = "http://0.0.0.0:5000/";
+
+		var url = server + "api/v2/recipes";
+		var url_clear_cache = server + "api/v2/recipes/clear";
+
+
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 		xhr.send();
-
 		xhr.addEventListener("readystatechange", processRequest, true);
+
 		var xhr2 = new XMLHttpRequest();
 	    xhr2.open('GET', url_clear_cache, true);
 		xhr2.send();
@@ -421,6 +446,27 @@
 
 	  gtag('config', 'UA-18105324-1');
 	</script>
+
+	<script>
+		function initMap() {
+			var myLatlng = new google.maps.LatLng(34.0446292,-118.2515153);
+			var mapOptions = {
+			  zoom: 12,
+			  center: myLatlng
+			}
+			var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+			var marker = new google.maps.Marker({
+			    position: myLatlng,
+			    title:"Hello World!"
+			});
+
+			// To add the marker to the map, call setMap();
+			marker.setMap(map);
+		}
+	 </script>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"
+	    async defer></script>
 
 </body>
 </html>

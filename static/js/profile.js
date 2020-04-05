@@ -106,7 +106,7 @@ on('load', function() {
 		initialScrollPoint = null;
 		initialSection = e;
 		initialId = initialSection.id;
-		console.log(initialSection);
+		// console.log(initialSection);
 	/* Unknown anchors will redirect to the recipes section */
 	} else {
 		initialScrollPoint = null;
