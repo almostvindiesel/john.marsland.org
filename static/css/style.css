@@ -59,6 +59,25 @@ strong {
 	font-weight: bolder;
 }
 
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 0px;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 0px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.strong {
+	font-size: 1.0em !important;
+}
+
 .writing-articles, .projects-item, .recipes-item {
 	text-align: left;
 }
@@ -249,6 +268,11 @@ body.is-loading #main {
 	transition: opacity 0.25s ease-in-out;
 	opacity: 0;
 }
+/*.buttons2 {
+	cursor: default;
+	padding: 0;
+	letter-spacing: 0;
+}*/
 .buttons {
 	cursor: default;
 	padding: 0;
@@ -377,7 +401,7 @@ hr:before {
 	width: 9rem;
 	border-radius: 100%;
 }
-h1 br+br, h2 br+br, h3 br+br, p br+br {
+h1 br+br, h2 br+br, h3 br+br /*,p br+br*/ {
 	display: block;
 	content: ' ';
 	margin-top: 1.125rem;
@@ -409,6 +433,14 @@ h1 .li, h2 .li, h3 .li, p .li {
 #text05 {
 	line-height: 1.5;
 }
+
+.directions {
+   display: block;
+   margin: 10px 0;
+   content: " ";
+   line-height:22px;
+}
+
 #text06 {
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -421,6 +453,47 @@ h1 .li, h2 .li, h3 .li, p .li {
 #text06 a {
 	text-decoration: underline;
 }
+#text09 {
+	letter-spacing: 0.025rem;
+	width: calc(100% + 0.025rem);
+	font-weight: 200;
+	text-transform: none;
+	text-align: left;
+	font-size: small;
+
+}
+
+
+.thumb {
+    display: inline-block;
+    width: 100px;
+    height: 80px;
+    margin: 2px;
+    border: 0px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 5px;
+}
+
+
+
+.recipe-full-image {
+	height:auto;
+    width:auto;
+    max-height:200px;
+    max-width:200px;
+    border-radius: 8px;
+    padding: 2px;
+/*    text-align: right;
+*/}
+
+#text09 a:hover {
+	color: #309EDB;
+}
+#text09 a {
+	text-decoration: underline;
+}
+
 #text01 br+br {
 	margin-top: 0.9rem;
 }
@@ -433,6 +506,8 @@ h1 .li, h2 .li, h3 .li, p .li {
 	font-weight: 200;
 	text-transform: none;
 }
+
+
 #text08 {
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);
@@ -440,6 +515,41 @@ h1 .li, h2 .li, h3 .li, p .li {
 	text-transform: none;
 	color: gray;
 }
+.text10, #text10 {
+	letter-spacing: 0.025rem;
+	width: calc(100% + 0.025rem);
+	font-weight: 200;
+	text-transform: none;
+	font-size: medium;
+}
+
+#text02 a {
+	text-decoration: underline;
+}
+
+
+
+
+.text11 {
+	letter-spacing: 0.01rem;
+	width: calc(100% + 0.01rem);
+	font-weight: 300;
+	text-transform: none;
+	font-size: small;
+	text-decoration: none;
+}
+
+.text12 {
+	letter-spacing: 0.01rem;
+	width: calc(100% + 0.01rem);
+	font-weight: 500;
+	text-transform: none;
+	font-size: medium;
+	text-decoration: none;
+}
+
+
+
 #text02 {
 	letter-spacing: 0.025rem;
 	width: calc(100% + 0.025rem);

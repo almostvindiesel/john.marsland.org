@@ -106,6 +106,7 @@ on('load', function() {
 		initialScrollPoint = null;
 		initialSection = e;
 		initialId = initialSection.id;
+
 		// console.log(initialSection);
 	/* Unknown anchors will redirect to the recipes section */
 	} else {
@@ -187,7 +188,13 @@ on('load', function() {
 		return false;
 	});
 	on('click', function(event) {
+		// toggleDivDisplay('recipes-bestof');
+		
 		var t = event.target;
+		if (t.id == 'recipes-button') {
+			document.getElementById('recipes-bestof').style.display = "";
+			document.getElementById('individual-recipe').style.display = "none";
+		}
 		if (t.tagName == 'IMG' && t.parentElement && t.parentElement.tagName == 'A') t = t.parentElement;
 		if (t.tagName == 'A' && t.getAttribute('href').substr(0, 1) == '#' && t.hash == window.location.hash) {
 			event.preventDefault();
@@ -260,6 +267,28 @@ if (client.os == 'android') {
 	})();
 }
 
+// var resta = "[
+// 		{
+// 			"name":"Cento",
+// 			"description":"Amaze"
+// 		},
+// 		{
+// 			"name":"Bludso",
+// 			"description":"bbq"
+// 		}
+// ]"
+
+var restaurant_data = '\
+	[\
+		{\
+			"name" : "Cento Pasta Bar", \
+			"desc" : "Only 2-3 pastas on the menu that rotate often. And the most amazing bread (flown in from NY) and burrata. Get them all. Simple selection of wine glasses on the menu. This is our favorite go to spot in DTLA for a casual lunch which is a French Wine bar at night. Avner-- a former Bestia chef and the owner is a total trip and makes some amazing pasta" \
+		}, \
+		{\
+			"name" : "Bludso", \
+			"desc" : "..." \
+		} \
+	]';
 
 
 function toggleShowEmail() {
@@ -271,6 +300,36 @@ function toggleShowEmail() {
     }
 }
 
-/* Get Drive Data */
+function fetch_restaurant_recommendations() {
+	var restaurants = JSON.parse(restaurant_data);
+	
+	//Write to table
+	for (i = 0; i < restaurants.length; i++) {
+		name = restaurants[i].name;
+		desc = restaurants[i].desc;
+
+
+		var reco_tr = document.createElement('tr');
+
+		var name_td = document.createElement('td');
+		var name_p = document.createElement('p');
+		name_p.id = "text09";
+		name_p.innerHTML = name;
+		name_td.appendChild(name_p);
+		reco_tr.appendChild(name_td);
+
+		var desc_td = document.createElement('td');
+		var desc_p = document.createElement('p');
+		desc_p.id = "text09";
+		desc_p.innerHTML = desc;
+		desc_td.appendChild(desc_p);
+		reco_tr.appendChild(desc_td);
+
+	 	document.getElementById("restaurant-recommendations").appendChild(reco_tr);
+	}
+
+}
+// ------------
+//fetch_restaurant_recommendations();
 
 

@@ -42,11 +42,12 @@
 				<header id="header">
 					<ul class="buttons" id="buttons01">
 						<li><a class="button n01" href="#home">Home</a></li>
-						<li><a class="button n02" href="#recipes">Recipes</a></li>
+<!-- 						<li><a class="button n02" href="#recipes">Recipes</a></li>
+ -->						<li><a class="button n02" href="#recipes" id='recipes-button'>Recipes</a></li>
 						<li><a class="button n03" href="#writing">Writing</a></li>
 						<li><a class="button n03" href="#projects">Projects</a></li>
-<!-- 						<li><a class="button n03" href="#eats">Eats</a></li>
- -->						<!--<li><a class="button n03" href="#two-under-two">Twins</a></li>-->
+<!--  						<li><a class="button n03" href="#eats">LA Eats</a></li>
+ --> 						<!--<li><a class="button n03" href="#two-under-two">Twins</a></li>-->
 					</ul>
 					<hr id="divider01">
 				</header>
@@ -59,24 +60,41 @@
 					<p id="text04">Coffee by day, Sriracha by night</p>
 				</section>
 
-				<section id="eats-section">
 
-					<p id="text05">Top Los Angeles Eats</p>
+				<section id="recipes-section">
 
-					<div id="map" style="align: center;"></div>
+						<p class="text11">
+							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> - <a href=#drinks_caffeine_header class="text12">Caffeine</a>
+						</p>
+					
+					<div class="total-recipe-container">
 
-					<table>
-						<th><p id="text05">Destination</p></th>
-						<th><p id="text05">Details</th>
-						<tr>
-							<td><p id="text06"><b>Cento Pasta Bar</b></p></td>
-							<td><p id="text06" align=left><font size=-1>Only 2-3 pastas on the menu that rotate often. And the most amazing bread (flown in from NY) and burrata. Get them all. Simple selection of wine glasses on the menu. This is our favorite go to spot in DTLA for a casual lunch which is a French Wine bar at night. Avner-- a former Bestia chef and the owner is a total trip and makes some amazing pasta</font></p></td>
-						</tr>
-					</table>
+						<div  id=recipes-bestof style="">
+								
+								<h3 id="bakes_header">Bakes &#129366;</h3>
+								<div id="bakes" class="grid-container"></div>
+
+								<h3 id="meals_bestof_header">Meals &#x1f37d;</h3>
+								<div id="meals_bestof" class="grid-container"></div>
+
+								<h3 id="drinks_cocktails_header">Cocktails 🍸</h3>
+								<div id="drinks_cocktails" class="grid-container"></div>
+
+								<h3 id="drinks_caffeine_header">Caffeine ☕</h3>
+								<div id="drinks_caffeine" class="grid-container"></div>
+
+						</div>
+
+						<div class="grid-container" id="individual-recipe" style="display:none;">
+						</div>
+					</div>
 
 				</section>
 
-				<section id="recipes-section">
+
+
+<!-- 				<section id="recipes-section">
+
 					<p id="text06">
 						<span> 
 						My favorite recipes, which I've gradually tweaked over the years. 
@@ -87,8 +105,8 @@
 						<div id=recipes-gdrive-eats>
 							<img src=static/img/spinner.gif width=30px> 
 						</div>
-<!-- 						<iframe src="https://drive.google.com/embeddedfolderview?id=1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4#list" 
-								style="width:100%; height:300px; border:0;"></iframe> -->
+						<iframe src="https://drive.google.com/embeddedfolderview?id=1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4#list" 
+								style="width:100%; height:300px; border:0;"></iframe>
 					<p id="text05">Sweets</p>
 						<div id=recipes-gdrive-sweets>
 							<img src=static/img/spinner.gif width=30px> 
@@ -99,48 +117,39 @@
 							<img src=static/img/spinner.gif width=30px> 
 						</div>
 
-<!-- 						<span>
+ 						<span>
 							<iframe src="https://drive.google.com/embeddedfolderview?id=1Gv0h9svXbcAw86fOJlqkHHfgN5_U8r-C#list" 
 							 	style="width:100%; height:200px; border:0;"></iframe>
-						</span> -->
+						</span> 
+				</section> -->
 
-
-				</section>
 				<section id="writing-section">
-						<ul >
-							<li><p id="text07" class="writing-articles">
-							   <a href="#two-under-two">Two under two</a> - My experience as a parent of premature twins
-							   <span class="updated-date">Jun 2019</span> 
-							</p></li>
+					<ul >
+						<li><p id="text07" class="writing-articles">
+						   <a href="#two-under-two">Two under two</a> - My experience as a parent of premature twins
+						   <span class="updated-date">Jun 2019</span> 
+						</p></li>
 
-							<li><p id="text07" class="writing-articles">
-								<a href=https://www.quora.com/What-should-I-study-or-learn-if-I-want-to-be-a-data-analyst-for-a-software-company-like-Quora-Zynga-Airbnb-etc 
-								   target="_blank">What should I study to be a Data Analyst?</a>. Five skills/technologies to learn to kickstart a data analyst career
-								<span class="updated-date">2012, updated Aug 2018</span>
-							</p></li>
-							
-							<li><p id="text07" class="writing-articles">
-								<a href=https://medium.com/@almostvindiesel/the-ramen-killer-6ae5d77b8915 
-								   target="_blank">The Ramen Killer</a>. I love Ramen. But this Northern Thai soup is my new favorite
-								<span class="updated-date">Jun 2016</span>
-							</p></li>
+						<li><p id="text07" class="writing-articles">
+							<a href=https://www.quora.com/What-should-I-study-or-learn-if-I-want-to-be-a-data-analyst-for-a-software-company-like-Quora-Zynga-Airbnb-etc 
+							   target="_blank">What should I study to be a Data Analyst?</a>. Five skills/technologies to learn to kickstart a data analyst career
+							<span class="updated-date">2012, updated Aug 2018</span>
+						</p></li>
+						
+						<li><p id="text07" class="writing-articles">
+							<a href=https://medium.com/@almostvindiesel/the-ramen-killer-6ae5d77b8915 
+							   target="_blank">The Ramen Killer</a>. I love Ramen. But this Northern Thai soup is my new favorite
+							<span class="updated-date">Jun 2016</span>
+						</p></li>
 
 
-							<li><p id="text07">
-								...
-							</p></li>
-							</p>
+						<li><p id="text07">
+							...
+						</p></li>
+						</p>
 
-						</ul>
-					
+					</ul>
 
-					<!-- <p id="text01">Contact</p>
-					<p id="text07">Donec quis fringilla arcu lorem ipsum dolor sit amet nullam. Consequat adipiscing phasellus rhoncus volutpat. Suspendisse dictum volutpat orci sit amet consequat. Duis fermentum urna et ligula lacinia faucibus efficitur.</p>
-					<p id="text02"><span>1234 Somewhere Road</span><br>
-					<span>Nashville, TN 00000</span><br>
-					<br>
-					<span><a href="tel:0000000000">000-000-0000</a></span><br>
-					<span><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%75%73%65%72%40%64%6f%6d%61%69%6e%2e%74%6c%64">user@domain.tld</a></span></p> -->
 				</section>
 
 				<section id="two-under-two-section">
@@ -198,7 +207,6 @@
 
 						<p id="text07">We’re convinced that the extra parental care that Luna and Zara received helped them thrive. Studies show that <a href=https://www.thelancet.com/journals/lanchi/article/PIIS2352-4642(18)30039-7/fulltext>infants in the NICU who spend time with their parents gain weight faster</a> than infants who don’t. Babies <a href=https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2883123/>recognize and respond to their parents voices</a> in the womb prior to birth, and being soothed by ours helped them cope with the constant barrage of medical testing. Despite being two of the sickest babies in the hospital, our caretakers told us they were also some of the most calm, and we’d like to think that because they knew their parents were near.</p>
 					</div>
-	
 				</section>
 
 				<section id="projects-section">
@@ -267,21 +275,9 @@
 							</div>
 
 
-
 						</ul>
 
-					
 
-
-
-
-					<!-- <p id="text01">Contact</p>
-					<p id="text07">Donec quis fringilla arcu lorem ipsum dolor sit amet nullam. Consequat adipiscing phasellus rhoncus volutpat. Suspendisse dictum volutpat orci sit amet consequat. Duis fermentum urna et ligula lacinia faucibus efficitur.</p>
-					<p id="text02"><span>1234 Somewhere Road</span><br>
-					<span>Nashville, TN 00000</span><br>
-					<br>
-					<span><a href="tel:0000000000">000-000-0000</a></span><br>
-					<span><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;%75%73%65%72%40%64%6f%6d%61%69%6e%2e%74%6c%64">user@domain.tld</a></span></p> -->
 				</section>
 
 				<footer id="footer">
@@ -306,123 +302,328 @@
 	</div>
 	<script src="static/js/profile.js"></script>
 	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+
+
+
 	<script>
-		// Fetch Google Drive Data for Recipes
-		function processRequest(e) {
+
+
+		function loadRecipes(e) {
+
+			function slugify(string) {
+			  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+			  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+			  const p = new RegExp(a.split('').join('|'), 'g')
+
+			  return string.toString().toLowerCase()
+			    .replace(/\s+/g, '-') // Replace spaces with -
+			    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+			    .replace(/&/g, '-and-') // Replace & with 'and'
+			    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+			    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+			    .replace(/^-+/, '') // Trim - from start of text
+			    .replace(/-+$/, '') // Trim - from end of text
+			}
+
+			
+			// var img_spinner = document.createElement('img');
+			// img_spinner.src = "static/img/spinner.gif";
+			// img_spinner.width = "30px"
+			// img_spinner.id = "recipe-img-spinner"
+			// document.getElementById("recipes-bestof").appendChild(img_spinner);
+
 		    if (xhr.readyState == 4 && xhr.status == 200) {
 		    	// console.log(xhr.responseText);
 		        var res = JSON.parse(xhr.responseText);
 		        var recipes = res['data'];
-		        //console.log(res['data'][0]);
-		       
-		        // Generate Recipe Elements
-		        var recipes_eats_ul=document.createElement('ul');
-		        var recipes_sweets_ul=document.createElement('ul');
-		        var recipes_treats_ul=document.createElement('ul');
 
-		        // Sort Recipes by Starred, Descending
-				function by_starred(a,b) {
-				  if (a.starred < b.starred)
-				    return 1;
-				  if (a.starred > b.starred)
-				    return -1;
-				  return 0;
-				}
-				var recipes_sorted = recipes.sort(by_starred);
+		        for (var i=0; i<recipes.length; i++) {
 
 
-				function slugify(string) {
-				  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
-				  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
-				  const p = new RegExp(a.split('').join('|'), 'g')
+		        	// Only include recipes with rating >= 4
+		        	if (!(recipes[i]['rating'] >= 4)) {
+		        		recipes[i]['category_site'] = 'none';
+		        	} else {
 
-				  return string.toString().toLowerCase()
-				    .replace(/\s+/g, '-') // Replace spaces with -
-				    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
-				    .replace(/&/g, '-and-') // Replace & with 'and'
-				    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
-				    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-				    .replace(/^-+/, '') // Trim - from start of text
-				    .replace(/-+$/, '') // Trim - from end of text
-				}
+		        		// Classify Recipe category
+			        	if (recipes[i]['category_names'].includes("booze")) {
+			        		recipes[i]['category_site'] = 'drinks_cocktails';
+			        	} else if (recipes[i]['category_names'].includes("coffee")) {
+							recipes[i]['category_site'] = 'drinks_caffeine';
+			        	} else if (recipes[i]['category_names'].includes("caffeine")) {
+							recipes[i]['category_site'] = 'drinks_caffeine';
+			        	} else if (recipes[i]['category_names'].includes("sweets")) {
+							recipes[i]['category_site'] = 'bakes';
+			        	} else if (recipes[i]['category_names'].includes("bakes")) {
+							recipes[i]['category_site'] = 'bakes';
+			        	} else if (recipes[i]['rating'] >= 4) {
+			        		recipes[i]['category_site'] = 'meals_bestof';
+			        	} else {
+			        		recipes[i]['category_site'] = 'none';
+			        	}
 
-				function find_referenced_recipe() {
-					current_url = window.location.href;
-					i = current_url.indexOf("#")
-					if (i >= 0) {
-						return current_url.substring(i+1);
-					} else {
-						return undefined;
+
+
+			        	// Resolve image and photo url to img_url for application
+			        	if (recipes[i]['image_url'] != null) {
+			        		recipes[i]['img_url'] = recipes[i]['image_url'];
+			        	} else if (recipes[i]['photo_url'] != null) {
+			        		recipes[i]['img_url'] = recipes[i]['photo_url'].substring(0,recipes[i]['photo_url'].indexOf("?Signature"));
+			        	} else {
+			        		recipes[i]['img_url'] = null
+			        	}
+			        	console.log(recipes[i]['img_url']);
+
+				    	var div=document.createElement('div');
+					    div.className = "grid-item"
+
+
+					    var a = document.createElement('a');	
+					    a.className = 'text11'	    
+					    a.id = recipes[i]['uid'];
+					    a.href= "#"+slugify(recipes[i]['name']);
+					    a.onclick=function loadRecipe(e) {
+					    	//console.log(e)
+					    	// console.log(e.target.id)
+					    	var recipe_index_id = e.target.id
+
+					    	var recipes = JSON.parse(localStorage.getItem('recipes'));
+					    	var recipe = recipes[recipe_index_id];
+
+					    	// Hide existing recipe list
+					    	toggleDivDisplay('recipes-bestof');
+
+					    	var recipe_div=document.createElement('div'); 
+					    	recipe_div.className="article-text"
+
+					    	var recipe_name_h2 = document.createElement("H2")
+					    	var t = document.createTextNode(recipe['name']);   
+							recipe_name_h2.appendChild(t); 
+
+
+
+					    	var ingredients_h2 = document.createElement("H2")
+					    	ingredients_h2.innerHTML = "Ingredients";
+					    	var ingredients_p = document.createElement("p")
+					    	ingredients_p.id = "text10"
+					    	ingredients_p.innerHTML = recipe['ingredients'].replace(/\n/g, "<br/>") + "<br/><br/>";
+
+					    	var directions_h2 = document.createElement("H2")
+					    	directions_h2.innerHTML = "Directions";
+							var directions_p = document.createElement("p")
+							directions_p.id = "text10"
+							directions_p.innerHTML = recipe['directions'].replace(/\n\n/g, "<br class='directions'/>") ;
+
+
+					    	// Finally show current recipe
+						    if (recipe['img_url'] != null) {
+						    	// var img_div = document.createElement("div")
+						    	// img_div.style.maxWidth = "400px";
+						    	// img_div.style.maxHeight = "300px";
+							    var img = document.createElement('img');
+							    img.className = "recipe-full-image";
+							    img.src = recipe['img_url']
+							    img.align= "right"
+								// img_div.appendChild(img); 	
+								recipe_div.appendChild(img);
+						    } 
+							recipe_div.appendChild(recipe_name_h2);
+
+							if (recipe['description'] != null) {
+						    	var description_p = document.createElement("p")
+						    	description_p.id = "text10"
+						    	description_p.clear = "left"
+						    	description_p.innerHTML = recipe['description'] + "<br/><br/>";
+								recipe_div.appendChild(description_p);
+							}
+							recipe_div.appendChild(ingredients_h2);
+							recipe_div.appendChild(ingredients_p);
+							recipe_div.appendChild(directions_h2);
+							recipe_div.appendChild(directions_p);
+
+
+							document.getElementById("individual-recipe").innerHTML = "";
+							document.getElementById("individual-recipe").appendChild(recipe_div);
+					    	toggleDivDisplay('individual-recipe');
+						}
+
+					    var img_div = document.createElement('div');
+					    img_div.className = "thumb";
+				    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')"
+				    	img_div.style.backgroundColor = "#F8F8F8"
+					    img_div.id = i;
+					    console.log(img_div)
+
+					    var br=document.createElement('br');
+
+					    var p=document.createElement('p');
+					    p.className = "text11";
+					    p.id = i;
+					    p.innerHTML = recipes[i]['name'];
+					    
+						a.appendChild(img_div);
+						a.appendChild(br);
+						a.appendChild(p);
+
+						// a.href = recipes[i]['source_url']
+						
+						//a.id = slugify(recipes_sorted[i]['name']);
+						
+					
+						// Append to Meals
+						// a.appendChild(img_div)
+						// a.append(Child)
+						// p.appendChild(a);
+						div.appendChild(a)
+						document.getElementById(recipes[i]['category_site']).appendChild(div);
 					}
 				}
 
-				recipe_to_highlight = slugify(find_referenced_recipe());
-
-		        for (var i=0; i<recipes_sorted.length; i++){
-				    var p=document.createElement('p');
-				    p.id = "text07";
-				    p.className += " recipes-item";
-				    var li = document.createElement('li');
-				    if (recipes_sorted[i]['starred'] == true) {
-				    	starred_html = "<i class='fa fa-star icon-color' aria-hidden='true'></i> "
-
-				    	// Scroll to it
-
-				    } else {
-				    	starred_html = '';
-				    }
-				    var a = document.createElement('a');
-					a.innerHTML = starred_html + recipes_sorted[i]['name'];
-					if (recipe_to_highlight == slugify(recipes_sorted[i]['name'])) {
-						a.innerHTML = a.innerHTML;
-						p.style.backgroundColor = "#f0f2fa";
-						p.style.fontWeight = "bold"
-					}
-					a.href = 'https://docs.google.com/document/d/'+recipes_sorted[i]['id'];
-					a.target = '_blank';
-					//a.id = slugify(recipes_sorted[i]['name']);
-					li.appendChild(p);
-					p.appendChild(a);
-
-					// Append to Meals
-					if(recipes_sorted[i]['parent']== '1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4') {
-						recipes_eats_ul.appendChild(li);
-					// OR Append to Misc
-					} else if (recipes_sorted[i]['parent']== '1Gv0h9svXbcAw86fOJlqkHHfgN5_U8r-C') {
-						recipes_sweets_ul.appendChild(li);
-					} else if (recipes_sorted[i]['parent']== '1Q0L7yT6XnbW8cLJGkV-cTpS7B-sdMKT5') {
-						recipes_treats_ul.appendChild(li);
-					}
-				}
-
-				// Append To Page
-				document.getElementById("recipes-gdrive-eats").innerHTML = '';
-				document.getElementById("recipes-gdrive-eats").appendChild(recipes_eats_ul);
-				document.getElementById("recipes-gdrive-sweets").innerHTML = '';
-				document.getElementById("recipes-gdrive-sweets").appendChild(recipes_sweets_ul);
-				document.getElementById("recipes-gdrive-treats").innerHTML = '';
-				document.getElementById("recipes-gdrive-treats").appendChild(recipes_treats_ul);
+				localStorage.setItem('recipes', JSON.stringify(recipes));
+				// console.log(recipes);
+				
 		    
 		    }
 		}
 
-		// ------------
+		// Fetch Google Drive Data for Recipes
+		// function processRequest(e) {
+		//     if (xhr.readyState == 4 && xhr.status == 200) {
+		//     	// console.log(xhr.responseText);
+		//         var res = JSON.parse(xhr.responseText);
+		//         var recipes = res['data'];
+		//         //console.log(res['data'][0]);
+		       
+		//         // Generate Recipe Elements
+		//         var recipes_eats_ul=document.createElement('ul');
+		//         var recipes_sweets_ul=document.createElement('ul');
+		//         var recipes_treats_ul=document.createElement('ul');
+
+		//         // Sort Recipes by Starred, Descending
+		// 		function by_starred(a,b) {
+		// 		  if (a.starred < b.starred)
+		// 		    return 1;
+		// 		  if (a.starred > b.starred)
+		// 		    return -1;
+		// 		  return 0;
+		// 		}
+		// 		var recipes_sorted = recipes.sort(by_starred);
+
+
+		// 		function slugify(string) {
+		// 		  const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+		// 		  const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+		// 		  const p = new RegExp(a.split('').join('|'), 'g')
+
+		// 		  return string.toString().toLowerCase()
+		// 		    .replace(/\s+/g, '-') // Replace spaces with -
+		// 		    .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+		// 		    .replace(/&/g, '-and-') // Replace & with 'and'
+		// 		    .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+		// 		    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+		// 		    .replace(/^-+/, '') // Trim - from start of text
+		// 		    .replace(/-+$/, '') // Trim - from end of text
+		// 		}
+
+		// 		function find_referenced_recipe() {
+		// 			current_url = window.location.href;
+		// 			i = current_url.indexOf("#")
+		// 			if (i >= 0) {
+		// 				return current_url.substring(i+1);
+		// 			} else {
+		// 				return undefined;
+		// 			}
+		// 		}
+
+		// 		recipe_to_highlight = slugify(find_referenced_recipe());
+
+		//         for (var i=0; i<recipes_sorted.length; i++){
+		// 		    var p=document.createElement('p');
+		// 		    p.id = "text07";
+		// 		    p.className += " recipes-item";
+		// 		    var li = document.createElement('li');
+		// 		    if (recipes_sorted[i]['starred'] == true) {
+		// 		    	starred_html = "<i class='fa fa-star icon-color' aria-hidden='true'></i> "
+
+		// 		    	// Scroll to it
+
+		// 		    } else {
+		// 		    	starred_html = '';
+		// 		    }
+		// 		    var a = document.createElement('a');
+		// 			a.innerHTML = starred_html + recipes_sorted[i]['name'];
+		// 			if (recipe_to_highlight == slugify(recipes_sorted[i]['name'])) {
+		// 				a.innerHTML = a.innerHTML;
+		// 				p.style.backgroundColor = "#f0f2fa";
+		// 				p.style.fontWeight = "bold"
+		// 			}
+		// 			a.href = 'https://docs.google.com/document/d/'+recipes_sorted[i]['id'];
+		// 			a.target = '_blank';
+		// 			//a.id = slugify(recipes_sorted[i]['name']);
+		// 			li.appendChild(p);
+		// 			p.appendChild(a);
+
+		// 			// Append to Meals
+		// 			if(recipes_sorted[i]['parent']== '1iprey3gooBGeOP3Sc2UcoHsLwOGSBeK4') {
+		// 				recipes_eats_ul.appendChild(li);
+		// 			// OR Append to Misc
+		// 			} else if (recipes_sorted[i]['parent']== '1Gv0h9svXbcAw86fOJlqkHHfgN5_U8r-C') {
+		// 				recipes_sweets_ul.appendChild(li);
+		// 			} else if (recipes_sorted[i]['parent']== '1Q0L7yT6XnbW8cLJGkV-cTpS7B-sdMKT5') {
+		// 				recipes_treats_ul.appendChild(li);
+		// 			}
+		// 		}
+
+		// 		// Append To Page
+		// 		document.getElementById("recipes-gdrive-eats").innerHTML = '';
+		// 		document.getElementById("recipes-gdrive-eats").appendChild(recipes_eats_ul);
+		// 		document.getElementById("recipes-gdrive-sweets").innerHTML = '';
+		// 		document.getElementById("recipes-gdrive-sweets").appendChild(recipes_sweets_ul);
+		// 		document.getElementById("recipes-gdrive-treats").innerHTML = '';
+		// 		document.getElementById("recipes-gdrive-treats").appendChild(recipes_treats_ul);
+		    
+		//     }
+		// }
+
+		// ------------ Legacy Recipes
+		// var server = "http://www.excelninja.com/";
+		// //var server = "http://0.0.0.0:5000/";
+
+
+		// var xhr = new XMLHttpRequest();
+		// var url = server + "api/v2/recipes";
+
+		// xhr.open('GET', url, true);
+		// xhr.send();
+		// xhr.addEventListener("readystatechange", processRequest, true);
+
+		// // Force the cache to update
+		// var url_clear_cache = server + "api/v2/recipes/clear";
+		// setTimeout(function(){ 
+		// 	var xhr2 = new XMLHttpRequest();
+		//     xhr2.open('GET', url_clear_cache, true);
+		// 	xhr2.send();
+		// }, 3000);
+
+
+
+		// ------------ Paprika Recipes
 		var server = "http://www.excelninja.com/";
 		// var server = "http://0.0.0.0:5000/";
 
-		var url = server + "api/v2/recipes";
-		var url_clear_cache = server + "api/v2/recipes/clear";
-
 
 		var xhr = new XMLHttpRequest();
+		var url = server + "api/v3/recipes/";
+
 		xhr.open('GET', url, true);
 		xhr.send();
-		xhr.addEventListener("readystatechange", processRequest, true);
+		xhr.addEventListener("readystatechange", loadRecipes, true);
 
-		var xhr2 = new XMLHttpRequest();
-	    xhr2.open('GET', url_clear_cache, true);
-		xhr2.send();
-		// ------------
+
+
+
+
 
 
 	</script>
@@ -438,7 +639,11 @@
 		    x.style.display = "none";
 		  }
 		}
+
+
 	</script>
+
+	<!-- Google Analytics -->
 	<script>
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
@@ -447,7 +652,9 @@
 	  gtag('config', 'UA-18105324-1');
 	</script>
 
-	<script>
+
+
+<!-- 	<script>
 		function initMap() {
 			var myLatlng = new google.maps.LatLng(34.0446292,-118.2515153);
 			var mapOptions = {
@@ -465,8 +672,8 @@
 			marker.setMap(map);
 		}
 	 </script>
-	 <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"
-	    async defer></script>
+	 <script src="https://maps.googleapis.com/maps/api/js?key=MAPAPIKEY&callback=initMap"
+	    async defer></script> -->
 
 </body>
 </html>
