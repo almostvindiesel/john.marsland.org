@@ -63,14 +63,15 @@
 
 				<section id="recipes-section">
 
+					<div id=recipes-quickjump-bar>
 						<p class="text11">
 							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> - <a href=#drinks_caffeine_header class="text12">Caffeine</a>
 						</p>
+					</div>
 					
-					<div class="total-recipe-container">
+					<div class="total-recipe-container" >
 
-						<div  id=recipes-bestof style="">
-								
+						<div id=recipes-bestof style="">				
 								<h3 id="bakes_header">Bakes &#129366;</h3>
 								<div id="bakes" class="grid-container"></div>
 
@@ -82,7 +83,6 @@
 
 								<h3 id="drinks_caffeine_header">Caffeine ☕</h3>
 								<div id="drinks_caffeine" class="grid-container"></div>
-
 						</div>
 
 						<div class="grid-container" id="individual-recipe" style="display:none;">
@@ -373,7 +373,7 @@
 			        	} else {
 			        		recipes[i]['img_url'] = null
 			        	}
-			        	console.log(recipes[i]['img_url']);
+			        	// console.log(recipes[i]['img_url']);
 
 				    	var div=document.createElement('div');
 					    div.className = "grid-item"
@@ -384,6 +384,8 @@
 					    a.id = recipes[i]['uid'];
 					    a.href= "#"+slugify(recipes[i]['name']);
 					    a.onclick=function loadRecipe(e) {
+
+
 					    	//console.log(e)
 					    	// console.log(e.target.id)
 					    	var recipe_index_id = e.target.id
@@ -391,8 +393,11 @@
 					    	var recipes = JSON.parse(localStorage.getItem('recipes'));
 					    	var recipe = recipes[recipe_index_id];
 
-					    	// Hide existing recipe list
+					    	// Hide existing recipe list and recipe nav
 					    	toggleDivDisplay('recipes-bestof');
+					    	toggleDivDisplay('recipes-quickjump-bar');
+					    	//document.getElementById("recipes-quickjump-bar").style.display = "none";
+
 
 					    	var recipe_div=document.createElement('div'); 
 					    	recipe_div.className="article-text"
@@ -453,7 +458,7 @@
 				    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')"
 				    	img_div.style.backgroundColor = "#F8F8F8"
 					    img_div.id = i;
-					    console.log(img_div)
+					    // console.log(img_div)
 
 					    var br=document.createElement('br');
 

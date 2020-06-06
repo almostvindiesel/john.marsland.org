@@ -194,6 +194,7 @@ on('load', function() {
 		if (t.id == 'recipes-button') {
 			document.getElementById('recipes-bestof').style.display = "";
 			document.getElementById('individual-recipe').style.display = "none";
+			document.getElementById('recipes-quickjump-bar').style.display = "";
 		}
 		if (t.tagName == 'IMG' && t.parentElement && t.parentElement.tagName == 'A') t = t.parentElement;
 		if (t.tagName == 'A' && t.getAttribute('href').substr(0, 1) == '#' && t.hash == window.location.hash) {
