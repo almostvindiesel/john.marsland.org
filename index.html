@@ -64,21 +64,26 @@
 				<section id="recipes-section">
 
 					<div id=recipes-quickjump-bar>
+						<p class="text10">I'm a foodie to the max, and these are my favorite recipes that I've constantly tweaked over the past decade, roughly ordered by deliciousness.</p>
 						<p class="text11">
 							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> - <a href=#drinks_caffeine_header class="text12">Caffeine</a>
 						</p>
 					</div>
 					
+					
 					<div class="total-recipe-container" >
+
 
 						<div id=recipes-bestof style="">				
 								<h3 id="bakes_header">Bakes &#129366;</h3>
 								<div id="bakes" class="grid-container"></div>
 
 								<h3 id="meals_bestof_header">Meals &#x1f37d;</h3>
+								<p class="text11">Main dishes below catered especially for lovers of garlic, butter, and gluttony</p>
 								<div id="meals_bestof" class="grid-container"></div>
 
 								<h3 id="drinks_cocktails_header">Cocktails 🍸</h3>
+								<p class="text11">I love complex cocktails, and usually error toward those that are citrusy, bitter, and a bit boozy</p>
 								<div id="drinks_cocktails" class="grid-container"></div>
 
 								<h3 id="drinks_caffeine_header">Caffeine ☕</h3>
@@ -385,6 +390,8 @@
 					    a.href= "#"+slugify(recipes[i]['name']);
 					    a.onclick=function loadRecipe(e) {
 
+					    	window.scroll(0,0);
+
 
 					    	//console.log(e)
 					    	// console.log(e.target.id)
@@ -394,9 +401,9 @@
 					    	var recipe = recipes[recipe_index_id];
 
 					    	// Hide existing recipe list and recipe nav
+					    	document.getElementById("recipes-quickjump-bar").style.display = "none";
 					    	toggleDivDisplay('recipes-bestof');
-					    	toggleDivDisplay('recipes-quickjump-bar');
-					    	//document.getElementById("recipes-quickjump-bar").style.display = "none";
+					    	//toggleDivDisplay('recipes-quickjump-bar');
 
 
 					    	var recipe_div=document.createElement('div'); 
@@ -422,6 +429,8 @@
 
 
 					    	// Finally show current recipe
+
+							recipe_div.appendChild(recipe_name_h2);
 						    if (recipe['img_url'] != null) {
 						    	// var img_div = document.createElement("div")
 						    	// img_div.style.maxWidth = "400px";
@@ -433,8 +442,6 @@
 								// img_div.appendChild(img); 	
 								recipe_div.appendChild(img);
 						    } 
-							recipe_div.appendChild(recipe_name_h2);
-
 							if (recipe['description'] != null) {
 						    	var description_p = document.createElement("p")
 						    	description_p.id = "text10"
