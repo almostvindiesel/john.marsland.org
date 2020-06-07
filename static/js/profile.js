@@ -60,6 +60,30 @@ var on = addEventListener,
 		} else dispatchEvent(new Event(t));
 	};
 on('load', function() {
+
+	// If recipe url, load recipe directly
+	if (window.location.hash.includes("-recipe")) {
+		console.log("Got here...")
+		var recipe_slug = window.location.hash.replace("-recipe", "").substring(1)
+		var recipes = JSON.parse(localStorage.getItem('recipes'));
+		console.log(recipes)
+		console.log(recipe_slug)
+        for (var i=0; i<recipes.length; i++) {
+        	console.log(recipes[i]['slug'])
+        	console.log(recipe_slug)
+        	if (recipes[i]['slug']==recipe_slug) {
+        		console.log("recipe_id is " + i)
+        		//loadRecipe(i)
+        		
+				setTimeout(function() {
+					console.log("Clicking on " + i)
+					document.getElementById(i).click();
+				}, 5000);
+				break;
+        	}
+        }
+	} 
+
 	setTimeout(function() {
 		$body.className = $body.className.replace(/\bis-loading\b/, 'is-playing');
 		setTimeout(function() {
@@ -188,14 +212,22 @@ on('load', function() {
 		return false;
 	});
 	on('click', function(event) {
-		// toggleDivDisplay('recipes-bestof');
-		
+		// console.log("click")
+		// console.log(event.target);
+
 		var t = event.target;
-		if (t.id == 'recipes-button') {
-			document.getElementById('recipes-bestof').style.display = "";
-			document.getElementById('individual-recipe').style.display = "none";
-			document.getElementById('recipes-quickjump-bar').style.display = "";
-		}
+
+		// Show individual recipe
+		// if (t.parentElement.classList[0] == 'recipe' && t.parentElement.tagName == 'A'){
+		// 	console.log("recipe click")
+		// 	//document.getElementById('individual-recipe').style.display = "";
+		// 	window.history.pushState("object or string", "Title", "/new-url");
+		// }
+		// if (t.id == 'recipes-button') {
+		// 	//document.getElementById('recipes-bestof').style.display = "";
+		// 	//document.getElementById('individual-recipe').style.display = "none";
+		// 	//document.getElementById('recipes-quickjump-bar').style.display = "";
+		// }
 		if (t.tagName == 'IMG' && t.parentElement && t.parentElement.tagName == 'A') t = t.parentElement;
 		if (t.tagName == 'A' && t.getAttribute('href').substr(0, 1) == '#' && t.hash == window.location.hash) {
 			event.preventDefault();
