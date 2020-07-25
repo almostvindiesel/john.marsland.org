@@ -279,7 +279,7 @@
 	<script>
 
 		function loadRecipe(recipe_index_id) {
-			console.log ("Loading recipe_index_id: " + recipe_index_id)
+			// console.log ("Loading recipe_index_id: " + recipe_index_id)
 
 
 	    	window.scroll(0,0);
@@ -364,11 +364,11 @@
 			}
 
 			
-			var img_spinner = document.createElement('img');
-			img_spinner.src = "static/img/spinner.gif";
-			img_spinner.width = "30px"
-			img_spinner.id = "recipe-img-spinner"
-			document.getElementById("recipes-bestof").appendChild(img_spinner);
+			// var img_spinner = document.createElement('img');
+			// img_spinner.src = "static/img/spinner.gif";
+			// img_spinner.width = "30px"
+			// img_spinner.id = "recipe-img-spinner"
+			// document.getElementById("recipes-bestof").appendChild(img_spinner);
 
 		    if (xhr.readyState == 4 && xhr.status == 200) {
 		    	// console.log(xhr.responseText);

@@ -63,22 +63,26 @@ on('load', function() {
 
 	// If recipe url, load recipe directly
 	if (window.location.hash.includes("-recipe")) {
-		console.log("Got here...")
+		//console.log("Got here...")
 		var recipe_slug = window.location.hash.replace("-recipe", "").substring(1)
 		var recipes = JSON.parse(localStorage.getItem('recipes'));
-		console.log(recipes)
-		console.log(recipe_slug)
+		// console.log(recipes)
+		// console.log(recipe_slug)
         for (var i=0; i<recipes.length; i++) {
-        	console.log(recipes[i]['slug'])
-        	console.log(recipe_slug)
+        	// console.log(recipes[i]['slug'])
+        	//console.log(recipe_slug)
         	if (recipes[i]['slug']==recipe_slug) {
-        		console.log("recipe_id is " + i)
+        		console.log(recipes[i]['slug'])
+        		// console.log("recipe_id is " + i)
         		//loadRecipe(i)
         		
 				setTimeout(function() {
-					console.log("Clicking on " + i)
+					//console.log("Clicking on " + i)
 					document.getElementById(i).click();
-				}, 5000);
+					var url = '/index.html#' + recipe_slug + "-recipe";
+					console.log(url);
+					//window.history.pushState("object or string", "Page Title", url);
+				}, 2000);
 				break;
         	}
         }
