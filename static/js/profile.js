@@ -83,15 +83,15 @@ on('load', function() {
 				//toggleDivDisplay('recipes-bestof')
 
 
-        		//http://john.marsland.org/#negroni-recipe
-        		//file:///Users/mars/code/john.marsland.org/index.html#negroni-recipe
+        		// http://john.marsland.org/#negroni-recipe
+        		// file:///Users/mars/code/john.marsland.org/index.html#negroni-recipe
 				setTimeout(function() {
 					//console.log("Clicking on " + i)
 					// toggleDivDisplay('recipes-bestof')
 					document.getElementById(i).click();
 					var url = '/#' + recipe_slug + "-recipe";
 					console.log(url);
-					window.history.pushState("", "", url);
+					// window.history.pushState("", "", url);
 					document.getElementById("recipe-img-spinner-redirect").remove();
 					//toggleDivDisplay('recipes-bestof')
 				}, 2000);
