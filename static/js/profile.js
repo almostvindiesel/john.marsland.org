@@ -88,11 +88,12 @@ on('load', function() {
 				setTimeout(function() {
 					//console.log("Clicking on " + i)
 					// toggleDivDisplay('recipes-bestof')
-					document.getElementById(i).click();
-					var url = '/#' + recipe_slug + "-recipe";
-					console.log(url);
-					window.history.pushState("", "", url);
 					document.getElementById("recipe-img-spinner-redirect").remove();
+					document.getElementById(i).click();
+					// var url = '/#' + recipe_slug + "-recipe";
+					// console.log(url);
+					// window.history.pushState("", "", url);
+					
 					//toggleDivDisplay('recipes-bestof')
 				}, 3000);
 				break;
