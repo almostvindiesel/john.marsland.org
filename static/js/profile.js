@@ -89,7 +89,7 @@ on('load', function() {
 					//console.log("Clicking on " + i)
 					// toggleDivDisplay('recipes-bestof')
 					document.getElementById(i).click();
-					var url = '/index.html#' + recipe_slug + "-recipe";
+					var url = '/#' + recipe_slug + "-recipe";
 					console.log(url);
 					window.history.pushState("", "", url);
 					document.getElementById("recipe-img-spinner-redirect").remove();
