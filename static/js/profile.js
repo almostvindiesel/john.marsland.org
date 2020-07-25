@@ -91,10 +91,10 @@ on('load', function() {
 					document.getElementById(i).click();
 					var url = '/#' + recipe_slug + "-recipe";
 					console.log(url);
-					// window.history.pushState("", "", url);
+					window.history.pushState("", "", url);
 					document.getElementById("recipe-img-spinner-redirect").remove();
 					//toggleDivDisplay('recipes-bestof')
-				}, 2000);
+				}, 3000);
 				break;
         	}
         }
