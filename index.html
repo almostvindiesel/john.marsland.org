@@ -70,7 +70,7 @@
 							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> - <a href=#drinks_caffeine_header class="text12">Caffeine</a>
 						</p>
 					</div>
-					
+
 					
 					<div class="total-recipe-container" >
 
@@ -407,7 +407,7 @@
 			        	if (recipes[i]['image_url'] != null) {
 			        		recipes[i]['img_url'] = recipes[i]['image_url'];
 			        	} else if (recipes[i]['photo_url'] != null) {
-			        		recipes[i]['img_url'] = recipes[i]['photo_url'].substring(0,recipes[i]['photo_url'].indexOf("?Signature"));
+			        		recipes[i]['img_url'] = recipes[i]['photo_url']; //.substring(0,recipes[i]['photo_url'].indexOf("?Signature"));
 			        	} else {
 			        		recipes[i]['img_url'] = null
 			        	}
@@ -592,7 +592,7 @@
 
 	// ------------ Paprika Recipes
 	var server = "http://www.excelninja.com/";
-	// var server = "http://0.0.0.0:5000/";
+	//var server = "http://0.0.0.0:5000/";
 
 
 	var xhr = new XMLHttpRequest();
