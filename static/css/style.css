@@ -395,11 +395,11 @@ hr:before {
 	margin-bottom: 1.875rem !important;
 }
 #image01 a, #image01 span {
-	border-radius: 100%;
+	border-radius: 10%;
 }
 #image01 img {
-	width: 9rem;
-	border-radius: 100%;
+	width: 14rem;
+	border-radius: 10%;
 }
 h1 br+br, h2 br+br, h3 br+br /*,p br+br*/ {
 	display: block;
