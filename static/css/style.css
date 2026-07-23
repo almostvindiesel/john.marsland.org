@@ -90,6 +90,9 @@ strong {
 
 .icon-color {
 	color: #d0ced1;
+	display: inline-block;
+	width: 1.25em;
+	text-align: center;
 }
 
 em {
