@@ -299,15 +299,15 @@ body.is-loading #main {
 }
 #buttons01 li a {
 	display: block;
-	width: 6.5rem;
+	width: 5rem;
 	height: 2.25rem;
 	line-height: 2.25rem;
-	padding: 0 1.125rem;
+	padding: 0 0.6rem;
 	text-transform: uppercase;
-	font-size: 0.625em;
+	font-size: 0.575em;
 	font-family: 'Source Sans Pro';
-	letter-spacing: 0.225rem;
-	padding-left: calc(0.225rem + 1.125rem);
+	letter-spacing: 0.12rem;
+	padding-left: calc(0.12rem + 0.6rem);
 	font-weight: 400;
 	border-radius: 1.625rem;
 }
@@ -774,7 +774,7 @@ h1, h2, h3, p {
 		margin-bottom: 0.984375rem;
 	}
 	#buttons01 li a {
-		width: 6.5rem;
+		width: 5rem;
 	}
 }
 @media (max-width: 360px) {

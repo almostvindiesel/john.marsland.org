@@ -56,17 +56,17 @@
 					<h1 id="text03">John Marsland</h1>
 					<hr id="divider02">
 					<p id="text04">Coffee by day, chili crunch by night</p>
-					<p id="text07small">Born in LA, relocated to LA. Foodie father of twins. Welcome to my personal site that houses my <a href="#recipes">favorite recipes</a>, a few <a href="#projects">side projects</a>, <a href="#writing">essays</a> on the outdoors / other ruminations</p>
+					<p id="text07small">Born in the Bay, relocated to LA. Foodie father of twins.<br/> Browse my <a href="#recipes">fav recipes</a>, <a href="#projects">side projects</a>, and <a href="#writing">essays</a> on the outdoors+</p>
 				</section>
 
 				<section id="recipes-section">
 <!-- 					<li><a class="button n03" href="#recipe">Test</a></li>
  -->				<p class="text10">
-                        <a href=https://www.paprikaapp.com/ target="_blank">Paprika</a>--one of my favorite mobile apps--make it easy to save and refine my favorite recipes. See my favorites that I've honed over the years below.
+                        <a href=https://www.paprikaapp.com/ target="_blank">Paprika</a>--one of my favorite mobile apps--make it easy to save and refine my favorite recipes. Try the recipes that I've honed over the years, especially those designated with 🌟
  					</p>
 					<div id=recipes-quickjump-bar>	
 						<p class="text11">
-							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> - <a href=#drinks_caffeine_header class="text12">Caffeine</a>
+							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> <!-- - <a href=#drinks_caffeine_header class="text12">Caffeine</a> -->
 						</p>
 					</div>
 
@@ -85,8 +85,8 @@
 								<p class="text11">I love complex cocktails, and err toward those that are citrusy, bitter, and a bit spirit forward</p>
 								<div id="drinks_cocktails" class="grid-container"></div>
 
-								<h3 id="drinks_caffeine_header">Caffeine ☕</h3>
-								<div id="drinks_caffeine" class="grid-container"></div>
+								<!-- <h3 id="drinks_caffeine_header">Caffeine ☕</h3>
+								<div id="drinks_caffeine" class="grid-container"></div> -->
 						</div>
 
 					</div>
@@ -1015,6 +1015,13 @@
 		        var res = JSON.parse(xhr.responseText);
 		        var recipes = res['data'];
 
+		        // Sort favorites to the top within the list
+		        recipes.sort(function(a, b) {
+		        	var aFav = a['category_names'] && a['category_names'].includes('favorites') ? 1 : 0;
+		        	var bFav = b['category_names'] && b['category_names'].includes('favorites') ? 1 : 0;
+		        	return bFav - aFav;
+		        });
+
 		        for (var i=0; i<recipes.length; i++) {
 
 		        	recipes[i]['slug'] = slugify(recipes[i]['name']);
@@ -1083,7 +1090,8 @@
 					    var p=document.createElement('p');
 					    p.className = "text11";
 					    p.id = i;
-					    p.innerHTML = recipes[i]['name'];
+					    var isFavorite = recipes[i]['category_names'] && recipes[i]['category_names'].includes('favorites');
+					    p.innerHTML = recipes[i]['name'] + (isFavorite ? ' 🌟' : '');
 					    
 						a.appendChild(img_div);
 						a.appendChild(br);
