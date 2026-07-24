@@ -1043,11 +1043,13 @@
 
 
 
-			        	// Resolve image and photo url to img_url for application
-			        	if (recipes[i]['image_url'] != null) {
+			        	// Resolve image url — prefer locally-served image by uid to avoid expiring S3 URLs
+			        	if (recipes[i]['uid'] != null) {
+			        		recipes[i]['img_url'] = server + 'api/v3/recipes/image/' + recipes[i]['uid'];
+			        	} else if (recipes[i]['image_url'] != null) {
 			        		recipes[i]['img_url'] = recipes[i]['image_url'];
 			        	} else if (recipes[i]['photo_url'] != null) {
-			        		recipes[i]['img_url'] = recipes[i]['photo_url']; //.substring(0,recipes[i]['photo_url'].indexOf("?Signature"));
+			        		recipes[i]['img_url'] = recipes[i]['photo_url'];
 			        	} else {
 			        		recipes[i]['img_url'] = null
 			        	}
