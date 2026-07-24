@@ -109,7 +109,7 @@ on('load', function() {
 	}, 100);
 });
 (function() {
-	var initialSection, initialScrollPoint, initialId, h, e, ee, k, locked = false,
+	var initialSection, initialScrollPoint, initialId, h, e, ee, k, sectionIdFor, locked = false,
 		initialized = false,
 		doScrollTop = function() {
 			scrollTo(0, 0);
@@ -138,12 +138,16 @@ on('load', function() {
 			else scrollTo(0, pos);
 		};
 	if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+	// Recipe permalinks (e.g. #cheddar-apple-crumble-recipe) all resolve to the single recipe-detail section
+	sectionIdFor = function(hash) {
+		return (hash && /-recipe$/.test(hash)) ? 'recipe-detail' : (hash ? hash : 'home');
+	};
 	h = location.hash ? location.hash.substring(1) : null;
 	if (e = $('[data-scroll-id="' + h + '"]')) {
 		initialScrollPoint = e;
 		initialSection = initialScrollPoint.parentElement;
 		initialId = initialSection.id;
-	} else if (e = $('#' + (h ? h : 'home') + '-section')) {
+	} else if (e = $('#' + sectionIdFor(h) + '-section')) {
 		initialScrollPoint = null;
 		initialSection = e;
 		initialId = initialSection.id;
@@ -174,7 +178,7 @@ on('load', function() {
 			scrollPoint = e;
 			section = scrollPoint.parentElement;
 			id = section.id;
-		} else if (e = $('#' + (h ? h : 'home') + '-section')) {
+		} else if (e = $('#' + sectionIdFor(h) + '-section')) {
 			scrollPoint = null;
 			section = e;
 			id = section.id;
