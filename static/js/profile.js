@@ -69,32 +69,20 @@ on('load', function() {
 		// console.log(recipes)
 		// console.log(recipe_slug)
         for (var i=0; i<recipes.length; i++) {
-        	// console.log(recipes[i]['slug'])
-        	//console.log(recipe_slug)
         	if (recipes[i]['slug']==recipe_slug) {
-        		console.log(recipes[i]['slug'])
+        		var recipeUid = recipes[i]['uid'];
 
 				var img_spinner = document.createElement('img');
 				img_spinner.src = "static/img/spinner.gif";
 				img_spinner.width = "75"
 				img_spinner.id = "recipe-img-spinner-redirect"
-				
-				console.log(document.getElementById("recipes-quickjump-bar").appendChild(img_spinner));
-				//toggleDivDisplay('recipes-bestof')
 
+				document.getElementById("recipes-quickjump-bar").appendChild(img_spinner);
 
-        		// http://john.marsland.org/#negroni-recipe
-        		// file:///Users/mars/code/john.marsland.org/index.html#negroni-recipe
 				setTimeout(function() {
-					//console.log("Clicking on " + i)
-					// toggleDivDisplay('recipes-bestof')
 					document.getElementById("recipe-img-spinner-redirect").remove();
-					document.getElementById(i).click();
-					// var url = '/#' + recipe_slug + "-recipe";
-					// console.log(url);
-					// window.history.pushState("", "", url);
-					
-					//toggleDivDisplay('recipes-bestof')
+					var el = document.getElementById(recipeUid);
+					if (el) el.click();
 				}, 3000);
 				break;
         	}

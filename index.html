@@ -912,14 +912,11 @@
 
 	<script>
 
-		function loadRecipe(recipe_index_id) {
-			// console.log ("Loading recipe_index_id: " + recipe_index_id)
-
-
+		function loadRecipe(uid) {
 	    	window.scroll(0,0);
 
 	    	var recipes = JSON.parse(localStorage.getItem('recipes'));
-	    	var recipe = recipes[recipe_index_id];
+	    	var recipe = recipes.find(function(r) { return r.uid === uid; });
 	    	// console.log(recipes)
 
 	    	var recipe_div=document.createElement('div'); 
@@ -1068,15 +1065,14 @@
 
 					    var a = document.createElement('a');	
 					    a.className = 'recipe text11'
-					    var recipe_index_id = i	    
 					    a.id = recipes[i]['uid'];
 					    a.href = "#" + recipes[i]['slug'] + "-recipe"
 
-				        a.onclick = (function(recipe_index_id){
+				        a.onclick = (function(uid){
 					       return function(){
-					           loadRecipe(recipe_index_id);
+					           loadRecipe(uid);
 					       }
-					    })(recipe_index_id);
+					    })(recipes[i]['uid']);
 
 					    var img_div = document.createElement('div');
 					    img_div.className = "thumb";
