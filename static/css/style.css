@@ -707,6 +707,9 @@ h1, h2, h3, p {
 	html {
 		font-size: 11pt;
 	}
+	#wrapper {
+		justify-content: flex-start;
+	}
 	#main>.inner {
 		padding: 1.25rem 1rem;
 	}
