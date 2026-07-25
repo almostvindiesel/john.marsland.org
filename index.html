@@ -56,7 +56,7 @@
 					<h1 id="text03">John Marsland</h1>
 					<hr id="divider02">
 					<p id="text04">Coffee by day, chili crunch by night</p>
-					<p id="text07small">Born in the Bay, relocated to LA. Foodie father of twins.<br/> Browse my <a href="#recipes">fav recipes</a>, <a href="#projects">side projects</a>, and <a href="#writing">essays</a> on the outdoors+</p>
+					<p id="text07small">Born in the Bay, relocated to LA. Foodie father of twins. Sunrise Trail Runner.<br/> Browse my <a href="#recipes">fav recipes</a>, <a href="#projects">side projects</a>, and <a href="#writing">essays</a> on the outdoors+</p>
 				</section>
 
 				<section id="recipes-section">
@@ -83,7 +83,7 @@
 								<div id="meals_bestof" class="grid-container"></div>
 
 								<h3 id="drinks_cocktails_header">Drinks 🍸</h3>
-								<p class="text11">I love complex cocktails, and err toward those that are citrusy, bitter, and a bit spirit forward</p>
+								<p class="text11">Love complex cocktails, especially those that balance citris, bitters, and bite</p>
 								<div id="drinks_cocktails" class="grid-container"></div>
 
 								<!-- <h3 id="drinks_caffeine_header">Caffeine ☕</h3>
@@ -1030,90 +1030,65 @@
 
 		        	recipes[i]['slug'] = slugify(recipes[i]['name']);
 
-		        	// Only include recipes with rating >= 4
+		        	var cats = recipes[i]['category_names'] || [];
+
+		        	// Classify recipe — skip if rating < 4 or no visible category
 		        	if (!(recipes[i]['rating'] >= 4)) {
 		        		recipes[i]['category_site'] = 'none';
+		        	} else if (cats.includes("booze")) {
+		        		recipes[i]['category_site'] = 'drinks_cocktails';
+		        	} else if (cats.includes("coffee") || cats.includes("caffeine")) {
+		        		recipes[i]['category_site'] = 'none';
+		        	} else if (cats.includes("sweets") || cats.includes("bakes")) {
+		        		recipes[i]['category_site'] = 'bakes';
 		        	} else {
+		        		recipes[i]['category_site'] = 'meals_bestof';
+		        	}
 
-		        		// Classify Recipe category
-			        	if (recipes[i]['category_names'].includes("booze")) {
-			        		recipes[i]['category_site'] = 'drinks_cocktails';
-			        	} else if (recipes[i]['category_names'].includes("coffee")) {
-							recipes[i]['category_site'] = 'none';
-			        	} else if (recipes[i]['category_names'].includes("caffeine")) {
-							recipes[i]['category_site'] = 'none';
-			        	} else if (recipes[i]['category_names'].includes("sweets")) {
-							recipes[i]['category_site'] = 'bakes';
-			        	} else if (recipes[i]['category_names'].includes("bakes")) {
-							recipes[i]['category_site'] = 'bakes';
-			        	} else if (recipes[i]['rating'] >= 4) {
-			        		recipes[i]['category_site'] = 'meals_bestof';
-			        	} else {
-			        		recipes[i]['category_site'] = 'none';
-			        	}
+		        	// Skip DOM building for hidden recipes
+		        	if (recipes[i]['category_site'] === 'none') continue;
 
+		        	// Resolve image url
+		        	if (recipes[i]['uid'] != null) {
+		        		recipes[i]['img_url'] = server + 'api/v3/recipes/image/' + recipes[i]['uid'];
+		        	} else if (recipes[i]['image_url'] != null) {
+		        		recipes[i]['img_url'] = recipes[i]['image_url'];
+		        	} else if (recipes[i]['photo_url'] != null) {
+		        		recipes[i]['img_url'] = recipes[i]['photo_url'];
+		        	} else {
+		        		recipes[i]['img_url'] = null;
+		        	}
 
+			    	var div = document.createElement('div');
+				    div.className = "grid-item";
 
-			        	// Resolve image url — prefer locally-served image by uid to avoid expiring S3 URLs
-			        	if (recipes[i]['uid'] != null) {
-			        		recipes[i]['img_url'] = server + 'api/v3/recipes/image/' + recipes[i]['uid'];
-			        	} else if (recipes[i]['image_url'] != null) {
-			        		recipes[i]['img_url'] = recipes[i]['image_url'];
-			        	} else if (recipes[i]['photo_url'] != null) {
-			        		recipes[i]['img_url'] = recipes[i]['photo_url'];
-			        	} else {
-			        		recipes[i]['img_url'] = null
-			        	}
-			        	// console.log(recipes[i]['img_url']);
+				    var a = document.createElement('a');
+				    a.className = 'recipe text11';
+				    a.id = recipes[i]['uid'];
+				    a.href = "#" + recipes[i]['slug'] + "-recipe";
 
-				    	var div=document.createElement('div');
-					    div.className = "grid-item"
+			        a.onclick = (function(uid){
+				       return function(){ loadRecipe(uid); }
+				    })(recipes[i]['uid']);
 
+				    var img_div = document.createElement('div');
+				    img_div.className = "thumb";
+			    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')";
+			    	img_div.style.backgroundColor = "#F8F8F8";
 
-					    var a = document.createElement('a');	
-					    a.className = 'recipe text11'
-					    a.id = recipes[i]['uid'];
-					    a.href = "#" + recipes[i]['slug'] + "-recipe"
+				    var br = document.createElement('br');
 
-				        a.onclick = (function(uid){
-					       return function(){
-					           loadRecipe(uid);
-					       }
-					    })(recipes[i]['uid']);
+				    var p = document.createElement('p');
+				    p.className = "text11";
+				    var isFavorite = cats.includes('favorites');
+				    p.innerHTML = recipes[i]['name'] + (isFavorite ? ' 🌟' : '');
 
-					    var img_div = document.createElement('div');
-					    img_div.className = "thumb";
-				    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')"
-				    	img_div.style.backgroundColor = "#F8F8F8"
-					    img_div.id = i;
-					    // console.log(img_div)
-
-					    var br=document.createElement('br');
-
-					    var p=document.createElement('p');
-					    p.className = "text11";
-					    p.id = i;
-					    var isFavorite = recipes[i]['category_names'] && recipes[i]['category_names'].includes('favorites');
-					    p.innerHTML = recipes[i]['name'] + (isFavorite ? ' 🌟' : '');
-					    
-						a.appendChild(img_div);
-						a.appendChild(br);
-						a.appendChild(p);
-
-						// a.href = recipes[i]['source_url']
-						
-						//a.id = slugify(recipes_sorted[i]['name']);
-						
-					
-						// Append to Meals
-						// a.appendChild(img_div)
-						// a.append(Child)
-						// p.appendChild(a);
-						div.appendChild(a)
-						document.getElementById(recipes[i]['category_site']).appendChild(div);
-					}
+					a.appendChild(img_div);
+					a.appendChild(br);
+					a.appendChild(p);
+					div.appendChild(a);
+					document.getElementById(recipes[i]['category_site']).appendChild(div);
 				}
-
 				localStorage.setItem('recipes', JSON.stringify(recipes));
 
 				// If a recipe URL was opened before XHR finished, load it now
