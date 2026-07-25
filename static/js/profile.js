@@ -63,30 +63,27 @@ on('load', function() {
 
 	// If recipe url, load recipe directly
 	if (window.location.hash.includes("-recipe")) {
-		//console.log("Got here...")
-		var recipe_slug = window.location.hash.replace("-recipe", "").substring(1)
-		var recipes = JSON.parse(localStorage.getItem('recipes'));
-		// console.log(recipes)
-		// console.log(recipe_slug)
-        for (var i=0; i<recipes.length; i++) {
-        	if (recipes[i]['slug']==recipe_slug) {
-        		var recipeUid = recipes[i]['uid'];
+		var recipe_slug = window.location.hash.replace("-recipe", "").substring(1);
 
-				var img_spinner = document.createElement('img');
-				img_spinner.src = "static/img/spinner.gif";
-				img_spinner.width = "75"
-				img_spinner.id = "recipe-img-spinner-redirect"
+		// Show spinner immediately in the recipe-detail section
+		var spinner = document.getElementById("recipe-loading-spinner");
+		if (spinner) spinner.style.display = "block";
 
-				document.getElementById("recipes-quickjump-bar").appendChild(img_spinner);
-
-				setTimeout(function() {
-					document.getElementById("recipe-img-spinner-redirect").remove();
-					var el = document.getElementById(recipeUid);
-					if (el) el.click();
-				}, 3000);
-				break;
-        	}
-        }
+		// If recipes are already cached in localStorage, load right away
+		var cached = localStorage.getItem('recipes');
+		if (cached) {
+			var recipes = JSON.parse(cached);
+			for (var i = 0; i < recipes.length; i++) {
+				if (recipes[i]['slug'] == recipe_slug) {
+					if (spinner) spinner.style.display = "none";
+					loadRecipe(recipes[i]['uid']);
+					break;
+				}
+			}
+		} else {
+			// Otherwise signal loadRecipes to handle it once XHR completes
+			window._pendingRecipeSlug = recipe_slug;
+		}
 	} 
 
 	setTimeout(function() {

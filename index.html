@@ -66,7 +66,7 @@
  					</p>
 					<div id=recipes-quickjump-bar>	
 						<p class="text11">
-							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Cocktails</a> <!-- - <a href=#drinks_caffeine_header class="text12">Caffeine</a> -->
+							<a class="text12" href=#bakes_header>Bakes</a> - <a href=#meals_bestof_header class="text12">Meals</a> - <a href=#drinks_cocktails_header class="text12">Drinks</a> <!-- - <a href=#drinks_caffeine_header class="text12">Caffeine</a> -->
 						</p>
 					</div>
 
@@ -75,13 +75,14 @@
 
 						<div id=recipes-bestof style="">				
 								<h3 id="bakes_header">Bakes &#129366;</h3>
+								<p class="text11">I don't have a sweet tooth, but love to bake</p>
 								<div id="bakes" class="grid-container"></div>
 
 								<h3 id="meals_bestof_header">Meals &#x1f37d;</h3>
 								<p class="text11">Mains catered especially for lovers of garlic, butter, and gluttony</p>
 								<div id="meals_bestof" class="grid-container"></div>
 
-								<h3 id="drinks_cocktails_header">Cocktails 🍸</h3>
+								<h3 id="drinks_cocktails_header">Drinks 🍸</h3>
 								<p class="text11">I love complex cocktails, and err toward those that are citrusy, bitter, and a bit spirit forward</p>
 								<div id="drinks_cocktails" class="grid-container"></div>
 
@@ -94,6 +95,10 @@
 				</section>
 				<section id="recipe-detail-section">
 					<div class="grid-container" id="individual-recipe">
+					</div>
+					<div id="recipe-loading-spinner" style="display:none; text-align:center; padding:3rem;">
+						<img src="static/img/spinner.gif" width="50"/><br/>
+						<p style="color:#999; font-family:'Source Sans Pro'; font-size:0.8em; margin-top:0.5rem;">Loading recipe...</p>
 					</div>
 				</section>
 
@@ -914,6 +919,8 @@
 
 		function loadRecipe(uid) {
 	    	window.scroll(0,0);
+	    	var spinner = document.getElementById("recipe-loading-spinner");
+	    	if (spinner) spinner.style.display = "none";
 
 	    	var recipes = JSON.parse(localStorage.getItem('recipes'));
 	    	var recipe = recipes.find(function(r) { return r.uid === uid; });
@@ -1108,7 +1115,15 @@
 				}
 
 				localStorage.setItem('recipes', JSON.stringify(recipes));
-				// console.log(recipes);
+
+				// If a recipe URL was opened before XHR finished, load it now
+				if (window._pendingRecipeSlug) {
+					var pending = recipes.find(function(r) { return r.slug === window._pendingRecipeSlug; });
+					var spinner = document.getElementById("recipe-loading-spinner");
+					if (spinner) spinner.style.display = "none";
+					if (pending) loadRecipe(pending.uid);
+					window._pendingRecipeSlug = null;
+				}
 				
 		    
 		    }
