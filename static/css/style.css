@@ -932,6 +932,13 @@ body {
     padding: 0;
 }
 
+.recipe-section-band h3 {
+    letter-spacing: 0.025rem;
+    width: calc(100% + 0.025rem);
+    font-weight: 500;
+    text-transform: none;
+}
+
 .recipe-section-band::before {
     content: '';
     display: block;
