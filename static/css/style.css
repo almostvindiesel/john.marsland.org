@@ -357,6 +357,9 @@ hr:before {
 	background-color: #CCCCCC;
 	height: 1px;
 }
+#divider01 {
+	display: none;
+}
 #divider02 {
 	height: 0.5rem;
 	line-height: 0.5rem;
@@ -922,4 +925,33 @@ body {
 
 .article-text {
 	text-align:left !important;
+}
+
+.recipe-section-band {
+    margin: 52px 0 16px;
+    padding: 0;
+}
+
+.recipe-section-band::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc 30%, #ccc 70%, transparent);
+    margin-bottom: 24px;
+}
+
+@media (max-width: 767px) {
+    #text07small {
+        font-size: 95% !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .thumb {
+        width: 150px;
+        height: 120px;
+    }
+    .grid-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
