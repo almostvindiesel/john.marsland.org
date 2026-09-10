@@ -118,6 +118,10 @@
                         <a id="writing-outdoors"></a>
                         <li><p id="text07b" class="writing-articles" >Outdoors</p></li>
                         <li><p id="text07" class="writing-articles">
+                            &nbsp;&nbsp; <i class="fas fa-cloud-sun icon-color"></i> <a href="#the-perfect-view">The Perfect View</a> - Above the clouds on LA trails
+                            <span class="updated-date">Sept 2026</span>
+                        </p></li>
+                        <li><p id="text07" class="writing-articles">
                             &nbsp;&nbsp; <i class="fas fa-mountain-sun icon-color"></i> <a href="#dolomites">Six days in the Dolomites</a> - hut-to-hut hiking in Northern Italy
                             <span class="updated-date">Sept 2026</span>
                         </p></li>
@@ -137,11 +141,6 @@
                         <li><p id="text07" class="writing-articles">
                             &nbsp;&nbsp; <i class="fas fa-person-hiking icon-color"></i> <a href="#nela-trails">LA trail guide</a> - emphasis on north east los angeles
                             <span class="updated-date">May 2022</span>
-                        </p></li>
-
-                        <li><p id="text07" class="writing-articles">
-                            &nbsp;&nbsp; <i class="fas fa-cloud-sun icon-color"></i> <a href="#reading-the-weather">Reading the weather</a> - a guide to choosing the right trail
-                            <span class="updated-date">June 2022</span>
                         </p></li>
 
                         <li><p id="text07" class="writing-articles">
@@ -226,55 +225,167 @@
 
 
 
-                <section id="reading-the-weather-section">
+                <section id="the-perfect-view-section">
                 <div class="article-text">
 
-                <h3 align=center >Above the Clouds in LA</h3><br/>
+                <h3 align=center >The Perfect View</h3><br/>
                 <!--<span class="sub-heading" id="text08">How kids have changed me</span>-->
 
-                <p id="text07">The views are the appeal of LA trails. This guide shows you how to experience an ideal sunrise given your mood, weather, and time of year.</p><br>
+                <p id="text07">Breathtaking views are the main draw of Los Angeles trails. This guide will show you how to catch the best vistas on your morning hike.</p><br>
+
+                <p id="text07b">1) CHECK THE NATIONAL WEATHER FORECAST</p>
+
+                <p id="text07">First, check the <a href="https://www.weather.gov/lox/" target="_blank">National Weather Service forecast</a> for low clouds or fog the following morning. If clear skies are expected, most trails are great options:</p><br>
+
+                <ul id="text07" style="list-style:disc; padding-left:2.75rem; margin:0; line-height:1.75; font-family:'Source Sans Pro', sans-serif; font-weight:350; letter-spacing:0.025rem;">
+                    <li style="display:list-item; margin-bottom:0.75rem;"><b>Griffith Park:</b> Best for shorter hikes and iconic views of the Hollywood Sign, Griffith Observatory, and downtown LA. Expect larger crowds.</li>
+                    <li style="display:list-item; margin-bottom:0.75rem;"><b>Verdugo Mountains:</b> Easily accessible with higher elevation and fewer crowds than Griffith Park.</li>
+                    <li style="display:list-item;"><b>Angeles National Forest:</b> Offers the highest elevation and fewest crowds, though trailheads require a longer drive.</li>
+                </ul><br>
 
                 <br><p align=center id="text07small">
-                    Just above the inversion in Angeles National Forest
-                    <img src="static/img/above-the-inversion-guide.jpg" width=80% loading="lazy">
+                    National Weather Forecast from <a href="https://forecast.weather.gov/MapClick.php?lat=34.1371&lon=-118.2125" target="_blank">forecast.weather.gov</a><br/>
+                    <img src="static/img/nwf.png" width=55% loading="lazy">
                 </p><br/>
 
-                <p id="text07">First a geography lesson. There are three mountain ranges within 10-15 drive from North East LA: <b>Griffith Park<b>, <b>The Verdugos</b>, and <b>Angeles National Forest</b>. Griffith peaks top off at just under 2k, the Verdugos at 3k, and Angeles National Forest can reach up to 10k+. </p><br>
+                <p id="text07">The best views occur right at sunrise. Most of the year, I wear a headlamp and time my start so I reach the summit about 30 minutes before sunrise to catch the first light. Use this calculator to determine when to set your alarm:</p><br>
+
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/suncalc/1.9.0/suncalc.min.js"></script>
+                <div id="sunrise-calc-widget" style="margin: 1.5rem auto; max-width: 480px; border: 1px solid #ddd; border-radius: 8px; padding: 1rem 1.25rem; background: #fafaf8; font-family: inherit;">
+                  <p style="font-weight:600; font-size:0.88rem; margin:0 0 0.15rem; text-transform:none; letter-spacing:normal;">Sunrise Alarm Calculator</p>
+                  <p style="font-size:0.73rem; color:#999; margin:0 0 1rem; text-transform:none; letter-spacing:normal;">Determine when to wake up for a sunrise summit</p>
+
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.6rem 1rem; margin-bottom:1rem;">
+                    <div>
+                      <label for="sc-distance" style="display:block; font-size:0.7rem; color:#777; margin-bottom:0.2rem; text-transform:none; letter-spacing:normal; white-space:nowrap;">Summit Distance (mi)</label>
+                      <input id="sc-distance" type="number" value="2.5" min="0" step="0.5"
+                        style="width:100%; box-sizing:border-box; padding:0.3rem 0.5rem; border:1px solid #ccc; border-radius:4px; font-size:0.85rem; font-family:inherit; background:#fff;">
+                    </div>
+                    <div>
+                      <label for="sc-pace" style="display:block; font-size:0.7rem; color:#777; margin-bottom:0.2rem; text-transform:none; letter-spacing:normal; white-space:nowrap;">Pace (min / mi)</label>
+                      <input id="sc-pace" type="number" value="13" min="1" step="1"
+                        style="width:100%; box-sizing:border-box; padding:0.3rem 0.5rem; border:1px solid #ccc; border-radius:4px; font-size:0.85rem; font-family:inherit; background:#fff;">
+                    </div>
+                    <div>
+                      <label for="sc-trail" style="display:block; font-size:0.7rem; color:#777; margin-bottom:0.2rem; text-transform:none; letter-spacing:normal; white-space:nowrap;">Drive to Trail (min)</label>
+                      <input id="sc-trail" type="number" value="15" min="0" step="5"
+                        style="width:100%; box-sizing:border-box; padding:0.3rem 0.5rem; border:1px solid #ccc; border-radius:4px; font-size:0.85rem; font-family:inherit; background:#fff;">
+                    </div>
+                    <div>
+                      <label for="sc-ready" style="display:block; font-size:0.7rem; color:#777; margin-bottom:0.2rem; text-transform:none; letter-spacing:normal; white-space:nowrap;">Time to Get Ready (min)</label>
+                      <input id="sc-ready" type="number" value="20" min="0" step="5"
+                        style="width:100%; box-sizing:border-box; padding:0.3rem 0.5rem; border:1px solid #ccc; border-radius:4px; font-size:0.85rem; font-family:inherit; background:#fff;">
+                    </div>
+                  </div>
+
+                  <div style="font-size:0.7rem; color:#777; margin-bottom:0.25rem; text-transform:none; letter-spacing:normal;">Wake up time</div>
+                  <div id="sc-result" style="text-align:center; padding:0.65rem 0.5rem; background:#fff; border:1px solid #e0e0e0; border-radius:6px;"></div>
+                  <div id="sc-firstlight" style="margin-top:0.5rem; font-size:0.62rem; line-height:1.4; color:#aaa; text-transform:none; letter-spacing:normal;"></div>
+                  <div id="sc-sunrise" style="margin-top:0.3rem; font-size:0.62rem; line-height:1.4; color:#aaa; text-transform:none; letter-spacing:normal;"></div>
+                  <div style="text-align:left; margin-top:0.15rem; line-height:1.4;">
+                    <span id="sc-location" style="font-size:0.65rem; color:#bbb; text-transform:none; letter-spacing:normal;">📍 Los Angeles</span>
+                    &nbsp;
+                    <button id="sc-locate-btn" onclick="scRequestLocation()" style="font-size:0.62rem; color:#999; background:none; border:none; cursor:pointer; text-decoration:underline; padding:0; font-family:inherit; text-transform:none; letter-spacing:normal;">use my location</button>
+                  </div>
+                </div>
+
+                <script>
+                (function() {
+                  var lat = 34.0522, lon = -118.2437;
+
+                  function fmt(date) {
+                    var h = date.getHours(), m = date.getMinutes();
+                    var ampm = h >= 12 ? 'PM' : 'AM';
+                    h = h % 12 || 12;
+                    return h + ':' + (m < 10 ? '0' : '') + m + ' ' + ampm;
+                  }
+
+                  function calc() {
+                    var distance = parseFloat(document.getElementById('sc-distance').value) || 0;
+                    var pace     = parseFloat(document.getElementById('sc-pace').value)     || 0;
+                    var trail    = parseFloat(document.getElementById('sc-trail').value)    || 0;
+                    var ready    = parseFloat(document.getElementById('sc-ready').value)    || 0;
+
+                    var tomorrow = new Date();
+                    tomorrow.setDate(tomorrow.getDate() + 1);
+                    tomorrow.setHours(12, 0, 0, 0);
+
+                    var times   = SunCalc.getTimes(tomorrow, lat, lon);
+                    var sunrise = times.sunrise;
+
+                    var firstLight = new Date(sunrise.getTime() - 30 * 60000);
+
+                    var totalMins = trail + ready + (distance * pace);
+                    var alarm     = new Date(firstLight.getTime() - totalMins * 60000);
+
+                    document.getElementById('sc-result').innerHTML =
+                      '<span style="font-size:1.35rem; font-weight:700; color:#333; letter-spacing:-0.01em; text-transform:none;">' + fmt(alarm) + '</span>';
+                    document.getElementById('sc-firstlight').textContent = '🌄  ' + fmt(firstLight) + '  First light';
+                    document.getElementById('sc-sunrise').textContent = '🌅  ' + fmt(sunrise) + '  Sunrise';
+                  }
+
+                  function scReverseGeocode(la, lo) {
+                    var el = document.getElementById('sc-location');
+                    fetch('https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=' + la + '&longitude=' + lo + '&localityLanguage=en')
+                      .then(function(r) { return r.json(); })
+                      .then(function(d) {
+                        var place = d.city || d.locality || d.principalSubdivision || d.countryName;
+                        var region = d.principalSubdivision;
+                        el.textContent = '📍 ' + (place ? (region && region !== place ? place + ', ' + region : place) : 'Your location');
+                      })
+                      .catch(function() { el.textContent = '📍 Your location'; });
+                  }
+
+                  window.scRequestLocation = function() {
+                    if (!navigator.geolocation) return;
+                    document.getElementById('sc-locate-btn').textContent = 'locating…';
+                    navigator.geolocation.getCurrentPosition(
+                      function(pos) {
+                        lat = pos.coords.latitude; lon = pos.coords.longitude;
+                        document.getElementById('sc-location').textContent = '📍 Locating…';
+                        document.getElementById('sc-locate-btn').hidden = true;
+                        scReverseGeocode(lat, lon);
+                        calc();
+                      },
+                      function() {
+                        document.getElementById('sc-locate-btn').textContent = 'use my location';
+                      }
+                    );
+                  };
+
+                  ['sc-distance','sc-pace','sc-trail','sc-ready'].forEach(function(id) {
+                    document.getElementById(id).addEventListener('input', calc);
+                  });
+
+                  calc();
+                })();
+                </script>
+                <br/>
+
+                <p id="text07b">2) CLOUDS OR FOG IN THE FORECAST</p>
+
+                <p id="text07">When fog or low clouds are forecasted, the goal is to get above the cloud layer. Before setting off, check mountain webcams (via apps like <a href="https://www.watchduty.org/" target="_blank">Watch Duty</a>) in this order to determine which mountain peak will help you rise above the inversion:</p><br>
+
+                <ol id="text07" style="list-style:decimal; padding-left:2.75rem; margin:0; line-height:1.75; font-family:'Source Sans Pro', sans-serif; font-weight:350; letter-spacing:0.025rem;">
+                    <li style="display:list-item; margin-bottom:0.5rem;"><b>Griffith Park:</b> <a href="https://app.watchduty.org/camera/2177" target="_blank">Mount Lee Camera</a> (1,700 ft)</li>
+                    <li style="display:list-item; margin-bottom:0.5rem;"><b>Verdugos:</b> <a href="https://app.watchduty.org/camera/2477" target="_blank">Verdugo Peak Camera</a> (3,200 ft)</li>
+                    <li style="display:list-item;"><b>Angeles National Forest:</b> <a href="https://app.watchduty.org/camera/2181" target="_blank">Mount Lukens Camera</a> (5,100 ft)</li>
+                </ol><br>
+
+                <p id="text07">Choose your destination based on cloud height. For example, if Griffith Park and the Verdugos are shrouded in fog but Mount Lukens sits above it, head to Lukens. If the cloud layer is low enough that Mount Lee is clear, Griffith Park offers an incredible view above the clouds right next to the Hollywood Sign.</p><br>
 
                 <br><p align=center id="text07small">
-                    Ascend above the fogline in Griffith Park, occassionally over low clouds in Verdugos, and both in Angeles
-                    <img src="static/img/nela-mountains.png" width=100% loading="lazy">
+                    Above the clouds by the Hollywood Sign
+                    <img src="static/img/hollywood-sign-sunrise.jpg" width=72% loading="lazy">
                 </p><br/>
 
-                <p id="text12"><b>MOOD</p>
+                <p id="text07b">OPTIONAL: SUNRISE FORECAST</p>
 
-                <p id="text07">Griffith Park is my go to destination when I'm in the mood for a shorter hike, but because it's popular, trails are generally more crowded. When guests are in town, I'll bring them to Griffith for shots of the hollywood sign, griffith observatory, and nearby downtown LA. Angeles National Park is better for longer hikes, more altitude, and solitude. Those trails wind through pine and oak forests, meander alongside creeks, and reach higher vistas. The Verdugos are a middle ground with mid-length trails, moderate climbs, and occassional crowds</p><br>
-
-                <p id="text12">WEATHER</p>
-
-                <p id="text07">In the summer, I lookup tomorrow's weather via the <a href=https://www.weather.gov/lox/>National Weather Forecast (NWF)</a>, which details cloud cover and fog predictions. I'm most excited when I see fog, followed by low clouds, and lastly clear skies. The first two might surprise you. Overcast LA summers (aka may gray and june gloom) might cloud out beach goers, but hikers know that the right trail will take them above it. The technical definition of low clouds is a layer below 6.5k, but in LA low clouds typically form between 3k and 4k. You can reliably ascent above them in Angeles National Forest and occassionally in the Verdugos. I've never been able to hike above low clouds in Griffith Park, but if the forecast only includes fog (especially thick fog), there's no better view of the city of angels than from behind Griffith's famed hollywood sign.</p><br>
+                <p id="text07">On mostly sunny mornings, check a tool like <a href="https://alpenglowapp.com/forecasts/sunrise/los-angeles" target="_blank">Alpenglow</a> for the sunrise quality score. A score over 50% indicates a good sunrise, while 80%+ usually promises vibrant colors from high, scattered clouds without low fog blocking the horizon.</p><br>
 
                 <br><p align=center id="text07small">
-                    National Weather Forecast from <a href=https://forecast.weather.gov/MapClick.php?lat=34.1371&lon=-118.2125>forecast.weather.gov</a>
-                    <img src="static/img/nwf.png" width=80% loading="lazy">
-                </p><br/>
-
-                <p id="text12">TIME OF YEAR</p>
-
-                <p id="text07">The sun rises around 5am in the summer. I regularly wake up early, but not thaaattt early--getting to the top of the trail would require a 3am alarm. In the winter and shoulder seasons, the sun rises closer to 7a, which means reaching a peak for perfect morning colors is acheivable along with a good night's sleep. I typically use the sunrise quality forecast app <a href=https://alpenglowapp.com/>Alpenglow</a>, which will predict the likelihood of a great sunrise (or sunset) based on the conditions. Above 50% should mean beautiful skies, above 70% will be spectacular. The app is less reliable when fog and low clouds because it assumes you'll be below both, which is why checking both that app and the NWF is important, especially in the summer.</p><br>
-
-                <br><p align=center id="text07small">
-                    Good sunrise forecast as predicted by the mobile app <a href=https://alpenglowapp.com/>Alpenglow</a>
-                    <img src="static/img/alpenglow.png" width=60% loading="lazy">
-                </p><br/>
-
-                <p id="text07">For a few weeks around the new year, snow will fall in Angeles National Forest and typically remain around 5k feet for a month, but accessible at 3k during cold spells. When that happens, I pack my microspikes and head to Angeles. Where else can you be in the snow in the morning and 70 degree beach weather in the afternoon?</p><br>
-
-                <p id="text12">ALL TOGETHER</p>
-
-                <br><p align=center id="text07small">
-                    
-                    <img src="static/img/trail-flowchart.jpg" width=90% loading="lazy">
+                    Sunrise quality forecast from <a href="https://alpenglowapp.com/forecasts/sunrise/los-angeles" target="_blank">Alpenglow</a><br/>
+                    <img src="static/img/alpenglow-forecast.png" width=38% loading="lazy">
                 </p><br/>
 
 
@@ -293,7 +404,7 @@
 
                     <p id="text07">To train for backpacking the <a href="#jmt">John Muir Trail</a>, I went on a series of shakedown hikes to build fitness and test out trail gear. A nice side effect: these hikes gave me an excuse to scout hike-in campsites within a 90-minute drive of my base in Northeast Los Angeles. My favorite campsites have great views and solitude. Water on site and fire permissions were nice-to-haves, though these days it's rare to find a California campsite that still allows fires. Here are four hike-in campsites to consider for your backpacking adventures: <a href="#pacifico-camp">Pacifico Mountain</a>, <a href="#sheep-camp">Sheep Camp</a>, <a href="#kelly-camp">Kelly Camp</a>, <a href="#sulphur-camp">Sulphur Springs</a>.</p><br/>
 
-                    <a name="pacifico-camp"></a><p id="text12">PACIFICO MOUNTAIN CAMP</p>
+                    <a name="pacifico-camp"></a><p id="text07b">PACIFICO MOUNTAIN CAMP</p>
                     <p id="text07small">Angeles National Forest &nbsp;|&nbsp; campsite at 7,100 ft</p>
                     <p id="text07small">Hike: 11.9mi, 2,500 ft gain &nbsp;|&nbsp; <a href="https://www.alltrails.com/trail/us/california/pacifico-mountain-camp" target="_blank">AllTrails</a></p>
                     <p id="text07small">
@@ -311,7 +422,7 @@
                         <img src="static/img/pacifico-mountain-camp.jpg" width=80% loading="lazy">
                     </p><br/>
 
-                    <a name="sheep-camp"></a><p id="text12">SHEEP CAMP</p>
+                    <a name="sheep-camp"></a><p id="text07b">SHEEP CAMP</p>
                     <p id="text07small">Chumash Wilderness &nbsp;|&nbsp; campsite at 8,300 ft</p>
                     <p id="text07small">Hike: 9.5mi, 1,900 ft elevation gain &nbsp;|&nbsp; <a href="https://www.alltrails.com/trail/us/california/sheep-camp" target="_blank">AllTrails</a></p>
                     <p id="text07small">
@@ -329,7 +440,7 @@
                         <img src="static/img/sheep-camp.jpg" width=80% loading="lazy">
                     </p><br/>
 
-                    <a name="kelly-camp"></a><p id="text12">KELLY CAMP</p>
+                    <a name="kelly-camp"></a><p id="text07b">KELLY CAMP</p>
                     <p id="text07small">Cucamonga Wilderness near Baldy &nbsp;|&nbsp; campsite at 7,800 ft</p>
                     <p id="text07small">Hike: 8.8mi, 2,900 ft gain &nbsp;|&nbsp; <a href="https://www.alltrails.com/trail/us/california/kelly-camp" target="_blank">AllTrails</a></p>
                     <p id="text07small">
@@ -347,7 +458,7 @@
                         <img src="static/img/kelly-camp.gif" width=80% loading="lazy">
                     </p><br/>
 
-                    <a name="sulphur-camp"></a><p id="text12">SULPHUR SPRINGS CAMP</p>
+                    <a name="sulphur-camp"></a><p id="text07b">SULPHUR SPRINGS CAMP</p>
                     <p id="text07small">Angeles National Forest &nbsp;|&nbsp; campsite at 5,200 ft</p>
                     <p id="text07small">Hike: 7.4mi, 1,100 ft gain &nbsp;|&nbsp; <a href="https://www.alltrails.com/trail/us/california/sulphur-springs-campground" target="_blank">AllTrails</a></p>
                     <p id="text07small">
@@ -360,7 +471,7 @@
                     </p><br/>
                     <p id="text07">Sulphur Springs Camp is a campsite in a canyon and a common stop for PCTers in the spring. There's a seasonal creek that you can filter water from. While the campsite has picnic tables and pit toilets, you won't get any views. It's a great campsite if you want an easy hike with a backpack, but I don't think I'd come back given the lack of views.</p><br/>
 
-                    <p id="text12">HENNINGER FLATS CAMP <span style="color:#999; font-size:0.85em;">(CLOSED)</span></p>
+                    <p id="text07b">HENNINGER FLATS CAMP <span style="color:#999; font-size:0.85em;">(CLOSED)</span></p>
                     <p id="text07small">Angeles National Forest &nbsp;|&nbsp; campsite at 2,500 ft</p>
                     <p id="text07small">Hike: 5.3mi, 1,400 ft gain &nbsp;|&nbsp; <a href="https://www.alltrails.com/trail/us/california/henninger-flats-trail" target="_blank">AllTrails</a></p>
                     <p id="text07small">
@@ -1262,11 +1373,6 @@
                     <p id="text07">My attention first wanders then focuses. Pausing to jot down an epiphany happens more frequently than breaks to catch my breath. I can't pinpoint why I think more creatively outside. Maybe it's the change of scenery. Or adrenaline peaking with caffeine. I don't run to think unhindered but love that byproduct.</p><br/>
 
                     <p id="text07">LA's lesser known celebrities are its rolling hills and towering mountains, spotlighted in the morning. Headlamp on, careful with each step. Then dawn takes the baton. Switchbacks later the opposing sky is pasteled purpled, clouds accented by pink tracers. Trail mornings are an insta' filter, slowly shaping brightness, intensity, and hue until picture perfect, roughly 30 minutes before the sun actually rises. I time each summit for exactly then. The views are breathtaking on their own, combined with actual breathlessness produce a runner's high synesthesia. Chasing that feeling keeps me from hitting snooze.</p><br/>
-
-                <br><p align=center id="text07small">
-                    <a href=https://docs.google.com/spreadsheets/d/1mWs9MMEbSYdiV5sUhCMbLtSzB1f0p9T3NQBWlAGgPk4/edit#gid=0 target="_blank">My morning LA sunrise timing calculator</a><br/>
-                    <img src="static/img/sunrise-calculator.jpg" width=95% loading="lazy">
-                </p><br/>
 
                     <p id="text07">On a trail morning, the first thing I do is peak out the window. Fog is notoriously hard to forecast in Los Angeles, seeing it on the occasional morning is a welcome surprise. On a few lucky days, Santa Monica's fog meets mountain peaks in Angeles National forest, blanketing the skyline canvas. The city of angels:</p><br/>
 
