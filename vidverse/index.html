@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vidmired</title>
+    <link rel="stylesheet" href="../static/css/vidverse.css">
+</head>
+<body>
+    <div class="page">
+        <header class="masthead">
+            <img class="logo" src="../static/img/vidmired-logo.png" alt="Vidmired">
+
+            <p id="subtitle"><b>Skip the duds. Start where critics and crowds agree</b></p>
+
+            <div class="controls">
+                <button type="button" id="clear-filters-btn" class="clear-filters-btn" hidden>Clear all filters</button>
+                <label>
+                    Show
+                    <select id="type-select">
+                        <option value="series">Series</option>
+                        <option value="film">Films</option>
+                    </select>
+                </label>
+                <label>
+                    Week
+                    <select id="week-select"></select>
+                </label>
+                <label>
+                    Top
+                    <select id="topn-select">
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
+                    </select>
+                </label>
+
+                <div class="filter" id="genre-filter">
+                    <button type="button" class="filter-toggle" id="genre-filter-toggle" aria-haspopup="true" aria-expanded="false">
+                        Genre <span class="filter-count" id="genre-filter-count">All</span>
+                    </button>
+                    <div class="filter-panel" id="genre-filter-panel" hidden></div>
+                </div>
+
+                <div class="filter" id="service-filter">
+                    <button type="button" class="filter-toggle" id="service-filter-toggle" aria-haspopup="true" aria-expanded="false">
+                        Streaming service <span class="filter-count" id="service-filter-count">All</span>
+                    </button>
+                    <div class="filter-panel" id="service-filter-panel" hidden></div>
+                </div>
+            </div>
+
+            <div id="active-filter-tokens" class="active-filter-tokens"></div>
+        </header>
+
+        <div class="table-wrap">
+            <table class="top10">
+                <thead>
+                    <tr>
+                        <th colspan="8" class="tagline-row">Stop scrolling, start streaming. Vidmired surfaces the trending titles that won over critics and audiences alike.</th>
+                    </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th class="genre-cell">Genre</th>
+                        <th>Top cast</th>
+                        <th class="weeks-cell"># Top 10<br>Weeks</th>
+                        <th class="score-cell">Vidmired score</th>
+                        <th id="date-col-header" class="date-cell">Latest Season Release</th>
+                        <th>Where to stream</th>
+                    </tr>
+                </thead>
+                <tbody id="top10-body"></tbody>
+            </table>
+        </div>
+        <p id="status" hidden></p>
+
+        <p class="back-link"><a href="../">⬅️ back to john.marsland.org</a></p>
+    </div>
+
+    <script src="../static/js/vidverse.js"></script>
+</body>
+</html>
