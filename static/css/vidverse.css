@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&family=Lato:wght@400;700&family=Baloo+2:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&family=Lato:wght@400;700&family=Baloo+2:wght@600;700&display=swap');
 
 :root {
     --bg: #f7f6f3;
@@ -141,6 +141,13 @@ header.masthead .logo {
     flex: none;
 }
 
+/* Bars past the title's actual score, up to the max-possible count, render
+   in a pale gray-purple so every score reads as a fixed 10-bar meter (how
+   full is this one) rather than a bar of variable length. */
+.score-bar-empty {
+    background: rgba(103, 39, 123, 0.15);
+}
+
 .watch-logo-btn:hover {
     background: var(--row-hover);
 }
@@ -267,10 +274,15 @@ header.masthead p#subtitle {
     font-size: 0.95rem;
 }
 
+/* ---- table chrome: the wrap doesn't draw a card anymore -- each row is
+   its own floating card (see table.top10 tbody tr below), same technique
+   at every width, just bigger on desktop. ---------------------------- */
 .table-wrap {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
+    box-shadow: none;
 }
 
 table.top10 {
@@ -278,75 +290,138 @@ table.top10 {
     border-collapse: collapse;
 }
 
+/* No column-header row at any width -- a stack of cards has nothing for a
+   header to line up with. */
+table.top10 thead tr { display: none; }
+
 table.top10 th,
 table.top10 td {
-    padding: 10px 12px;
     text-align: left;
-    border-bottom: 1px solid var(--border);
     font-size: 0.92rem;
     vertical-align: middle;
 }
 
-table.top10 th {
-    background: var(--header-bg);
-    color: var(--header-text);
-    font-weight: 600;
-    position: sticky;
-    top: var(--masthead-h, 0px);
-    z-index: 10;
-}
+table.top10 tbody td { padding: 0; } /* spacing comes from the row grid, not per-cell padding */
 
-table.top10 th:first-child,
-table.top10 td:first-child {
-    text-align: center;
+/* ---- the row itself: a self-contained card, poster on the left,
+   everything else stacked in a column on the right -------------------
+     columns:  38% (poster)  |  1fr (content)
+     rows:     title+rank | genre | cast | weeks-in-top10 | release date |
+               (flexible spacer) | score+stream
+   Deliberately taller than a table row ever was -- min-height plus a big
+   poster column means the image reads as a genuinely large, pronounced
+   piece of art, at the cost of fewer titles fitting on screen at once. */
+table.top10 tbody tr {
+    display: grid;
+    grid-template-columns: 38% 1fr;
+    /* trailing 1fr row is unused by any text content, but the poster
+       (grid-row: 1 / -1, below) spans through it too, so it claims all the
+       leftover height once min-height forces the card taller than its
+       (short, tightly-packed) text content needs. */
+    grid-template-rows: auto auto auto auto auto 1fr auto;
+    column-gap: 16px;
+    row-gap: 3px;
+    align-items: start;
+    min-height: 140px; /* was 240px -- ~30% shorter so more cards fit per screen */
+    padding: 10px;
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 28px rgba(0, 0, 0, 0.07);
+    margin-bottom: 10px;
 }
-
-table.top10 tbody tr:last-child td {
-    border-bottom: none;
-}
+table.top10 tbody tr:last-child { margin-bottom: 0; }
+table.top10 tbody tr td { border-bottom: none; }
 
 table.top10 tbody tr:hover {
     background: var(--row-hover);
 }
 
-.rank {
-    width: 2.2em;
-    font-weight: 700;
+/* rank: large, extra-bold purple numeral pinned to the card's top-right
+   corner, next to the title -- the title reserves room for it via
+   padding-right below. table.top10 .rank (not plain .rank) so this beats
+   the generic "table.top10 td { font-size }" rule on specificity. */
+table.top10 .rank {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: auto;
     color: var(--brand-purple);
+    font-weight: 900;
+    font-size: 2.2rem;
+    line-height: 1;
 }
 
+/* .title-cell and .title-cell-inner are collapsed with display: contents
+   so the poster link and title link become direct grid items of the <tr>
+   and can be placed independently -- no HTML/JS change needed. */
+.title-cell { display: contents; }
+.title-cell-inner { display: contents; }
+
+/* Box art: object-fit: contain inside a tile that fills the poster column
+   and the card's full height, poster-style. Source art is a mix of
+   landscape title cards (~1.8-2.4:1) and portrait movie posters -- contain
+   shows either in full, never cropped.
+
+   Deliberately position: absolute rather than a grid item sharing the row
+   (grid-column/grid-row like the mobile version below): a grid item whose
+   only sizing hint is "fill the row" still gets asked to contribute a
+   preferred size when the browser sizes the row's auto/1fr tracks, and for
+   an <img> with no explicit non-percentage height, that preferred size is
+   its own aspect-ratio-driven auto-height at the column's width -- for a
+   portrait poster at this column's width, that can be 400px+, ballooning
+   the entire row. Taking the poster out of grid flow entirely removes it
+   from that sizing negotiation: the row's height is set purely by the
+   content column's text, and the poster (sized from the row's *resolved*
+   height via top/bottom) just fills whatever that turns out to be.
+   grid-template-columns on the row (38% 1fr) still reserves the poster's
+   column even though nothing is placed in it, so the content column
+   starts in the same place either way. */
 .boxart-link {
-    display: block;
-    width: 92px;
-    height: 58px;
-    flex: none;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    bottom: 12px;
+    /* Matches the row's declared 38% column width -- computed against the
+       *content* box (row width minus this same 12px+12px padding), not
+       the *padding* box that an absolutely positioned element's own
+       percentage width actually resolves against. */
+    width: calc(38% - 9px);
+    border-radius: 12px;
+    overflow: hidden;
+    background: linear-gradient(155deg, #fbfafb 0%, #f2f1f3 100%);
+    box-shadow: 0 0 0 1px rgba(103, 39, 123, 0.16), 0 1px 2px rgba(0, 0, 0, 0.05);
     text-decoration: none;
+    display: block;
 }
 
 .boxart {
-    width: 92px;
-    height: 58px;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
     display: block;
+    object-fit: contain;
+    padding: 6px;
+    box-sizing: border-box;
+    background: transparent;
 }
 
 .boxart-placeholder {
-    width: 92px;
-    height: 58px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 4px;
+    border-radius: 0; /* corners already clipped by .boxart-link's overflow: hidden */
     text-align: center;
-    padding: 3px;
+    padding: 10px;
     overflow: hidden;
 }
 
 .boxart-placeholder .bubble-title {
     font-family: 'Baloo 2', 'Lato', sans-serif;
     font-weight: 700;
-    font-size: 0.8rem;
-    line-height: 1.05;
+    font-size: 1.3rem;
+    line-height: 1.15;
     color: #ffffff;
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2), 0 0 6px rgba(255, 255, 255, 0.25);
     letter-spacing: 0.01em;
@@ -368,59 +443,74 @@ table.top10 tbody tr:hover {
 .bubble-bg-6 { background: linear-gradient(135deg, #00907a, #00cec9); }
 .bubble-bg-7 { background: linear-gradient(135deg, #fdcb6e, #e17055); }
 
-.title-cell {
-    text-align: center;
-    width: 190px;
-    max-width: 190px;
-}
-
-.genre-cell {
-    width: 100px;
-    max-width: 100px;
-}
-
-.title-cell-inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-}
-
 .title-cell .title-name {
-    font-weight: 600;
-    color: var(--brand-purple);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 2px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+    min-width: 0;
+    padding-right: 56px; /* leave room for the rank numeral pinned top-right */
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 700;
+    font-size: 1.15rem;
+    line-height: 1.2;
 }
 
 .title-cell .title-name:hover {
     color: var(--accent);
-    text-decoration-color: var(--accent);
+}
+
+/* Line-clamp lives on the nested span, not on .title-name itself: since
+   title-cell/title-cell-inner are display: contents, .title-name is
+   promoted to a direct CSS Grid item, and Chrome silently breaks
+   -webkit-line-clamp on an element that is itself a grid item -- the
+   clamp's height math still applies, but it stops actually truncating the
+   rendered text at 2 lines. The nested .title-name-text span is not
+   itself a grid item, so the clamp works correctly on it. */
+.title-cell .title-name-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .muted {
     color: var(--text-muted);
 }
 
+/* genre: plain, no chip/token -- bare uppercase text, click-to-filter via
+   the same button, directly under the title. */
+.genre-cell {
+    grid-column: 2;
+    grid-row: 2;
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    margin: 0;
+}
+.genre-cell .cell-filter-btn {
+    display: inline-block;
+    background: none;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0;
+}
+.genre-cell .cell-filter-btn:hover { color: var(--accent); }
+
+/* top cast: left-aligned under the genre, one name per line. */
 .cast-cell {
-    width: 160px;
-    max-width: 160px;
-}
-
-.date-cell {
-    width: 105px;
-    max-width: 105px;
-}
-
-.weeks-cell {
-    width: 75px;
-    max-width: 75px;
-}
-
-.stream-cell {
-    width: 95px;
-    max-width: 95px;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    font-size: 0.8rem;
+    line-height: 1.15;
 }
 
 .cast-link {
@@ -432,12 +522,76 @@ table.top10 tbody tr:hover {
 }
 
 .cast-link + .cast-link {
-    margin-top: 3px;
+    margin-top: 2px;
 }
 
 .cast-link:hover {
     color: var(--accent);
     text-decoration-color: var(--accent);
+}
+
+/* weeks-in-top10 and release date: small muted stat lines, each with an
+   inline label baked into the text (dashboard.js) since there's no column
+   header to explain a bare number or date anymore. */
+.weeks-cell {
+    grid-column: 2;
+    grid-row: 4;
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+.date-cell {
+    grid-column: 2;
+    grid-row: 5;
+    justify-self: start;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* footer row: the flexible spacer above (grid row 6) pushes this row to
+   the card's bottom edge. Score bars sit bottom-left, streaming logo
+   bottom-right -- both share this last grid row. */
+.score-cell {
+    grid-column: 2;
+    grid-row: 7;
+    justify-self: start;
+    align-self: end;
+    width: auto;
+    max-width: none;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+/* mini play-button mark (cropped from the logo) as a small label icon
+   sitting just to the left of the score bars */
+.score-cell::before {
+    content: "";
+    display: block;
+    flex: none;
+    width: 10px;
+    height: 13px;
+    margin-right: 5px;
+    background-image: url("../img/vidmired-icon.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.stream-cell {
+    grid-column: 2;
+    grid-row: 7;
+    justify-self: end;
+    align-self: end;
+    width: auto;
+    max-width: none;
+    margin: 0;
 }
 
 .watch-logos {
@@ -452,6 +606,9 @@ table.top10 tbody tr:hover {
     max-width: 72px;
     object-fit: contain;
 }
+
+.stream-cell .watch-logos { justify-content: flex-end; }
+.stream-cell .watch-logo { height: 20px; max-width: 74px; }
 
 #status {
     text-align: center;
@@ -475,55 +632,43 @@ table.top10 tbody tr:hover {
     text-decoration: underline;
 }
 /* ==========================================================================
-   VIDMIRED — MOBILE REDESIGN (Design B: "Compact editorial list")
-   Drop-in replacement for the existing @media (max-width: 640px) block in
-   site/style.css. Nothing outside this media query is touched — desktop
-   stays pixel-identical. Scoped to the same 640px breakpoint.
-
-   Structural approach: instead of letting each hidden-column-collapsed
-   <tr> wrap into an accidental multi-line flex flow (the old bug — a
-   78px margin-left "guess" that happened to look like an indentation
-   error), each data row becomes an explicit 2-column CSS Grid:
-
-     col 1 (28px)   col 2 (1fr)
-     ┌────────────┬───────────────────────────────┐
-     │            │  [poster] Title (2-line clamp) │  <- row 1 of the grid
-     │   rank      ├───────────────────────────────┤
-     │            │  Genre chip      Stream logo   │  <- row 2 of the grid
-     └────────────┴───────────────────────────────┘
-
-   The existing <td> elements (.rank, .title-cell, .genre-cell,
-   .stream-cell) are placed onto that grid with explicit grid-row /
-   grid-column rules — no new markup required. .genre-cell and
-   .stream-cell share the same grid cell and are pulled to opposite
-   edges with justify-self, which is what produces the calm
-   "metadata line under the title, logo flush right" look instead of a
-   hand-tuned margin.
+   VIDMIRED — MOBILE REDESIGN
+   Everything below @media (max-width: 640px) shrinks the same card-per-row
+   layout used at every width (see table.top10 tbody tr in the base rules
+   above) down to a compact size, hides three lower-priority attributes
+   (top cast is kept; weeks-in-top10 and release date are dropped) to fit
+   a narrow screen, and repositions a few pieces (title text width, rank
+   size, genre/score/stream placement) for the tighter card. Structural
+   technique (display: contents to promote the poster+title out of their
+   wrapper into direct grid items) is shared with the base rules, just
+   re-declared here with mobile-scale numbers.
    ========================================================================== */
 
 @media (max-width: 640px) {
 
     /* ---- page-level breathing room ------------------------------------ */
     body { padding: 18px 14px 40px; }
-
-    /* ---- table card chrome --------------------------------------------- */
-    .table-wrap {
-        border-radius: 16px;
-        overflow: hidden;
-        border-color: rgba(0, 0, 0, 0.06);
-        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 10px 24px rgba(0, 0, 0, 0.06);
-    }
+    header.masthead { margin-bottom: 10px; }
 
     /* ---- controls: bordered-pill soup -> wrapping chip bar. (Originally
        a horizontally-scrolling strip, but that hid filters off-screen;
        wrapping keeps every control visible without a scroll gesture.) --- */
     .controls {
         flex-wrap: wrap;
-        justify-content: flex-start;
+        justify-content: center;
         gap: 8px;
-        margin-top: 14px;
-        padding: 2px 0 4px;
+        margin-top: 10px;
+        padding: 2px 0 2px;
     }
+
+    /* Genre / streaming-service filter panels are dropped on mobile — no
+       room for two more chip buttons once the metadata row already carries
+       genre + score + stream. Filtering by tapping a genre pill or a
+       streaming logo in the list (applyExclusiveFilter) still works; only
+       the dedicated toggle+panel UI for picking filters ahead of time is
+       gone. "Clear all filters" and the active-filter-token chips stay, so
+       a filter applied by tapping a cell is still visible and removable. */
+    #genre-filter, #service-filter { display: none; }
 
     .controls label,
     .controls .filter,
@@ -574,8 +719,9 @@ table.top10 tbody tr:hover {
     }
 
     .active-filter-tokens {
-        justify-content: flex-start;
-        margin-top: 10px;
+        justify-content: center;
+        margin-top: 8px;
+        min-height: 0; /* don't reserve 25px of empty space when no filter is active */
     }
 
     /* ---- filter panel: bigger touch targets, softer sheet feel -------- */
@@ -595,97 +741,144 @@ table.top10 tbody tr:hover {
         font-size: 0.92rem;
     }
 
-    /* ---- table chrome cleanup ------------------------------------------ */
-    /* was tagline-row + column-headers row before the tagline banner was
-       removed; now the column-headers row is the only <thead> row. */
-    table.top10 thead tr { display: none; }
-    .cast-cell, .weeks-cell, .date-cell { display: none; }
+    /* ---- table chrome cleanup: drop the two attributes with no room on a
+       narrow card (base already hides the header row and zeroes td padding
+       for every width) ----------------------------------------------------- */
+    .weeks-cell, .date-cell { display: none; }
 
     table.top10 th,
     table.top10 td {
         font-size: 0.9rem;
     }
-    table.top10 tbody td { padding: 0; } /* spacing now comes from the row grid, not per-cell padding */
 
-    /* ---- the row itself: explicit grid, no accidental margins --------- */
+    /* ---- the row itself: a self-contained card, poster on the left,
+       everything else stacked in a column on the right -------------------
+         columns:  50% (poster)  |  1fr (content)
+         rows:     title+rank  |  genre  |  cast  |  (flexible spacer)  |  score+stream
+       Source images are a mix of vertical (movie posters) and horizontal
+       (title cards) — min-height gives vertical ones enough room to render
+       at a reasonable size under `contain` instead of shrinking down to
+       match a short, text-driven card. Title/genre/cast stay packed at the
+       top; the spacer row pushes score (bottom-left) and stream (bottom-
+       right) down to the card's bottom edge. */
     table.top10 tbody tr {
         display: grid;
-        /* Genre column is a fixed width (sized to fit the longest genre
-           label, "Reality & Competition") rather than auto, so the score
-           icon always starts at the same x position regardless of how
-           long/short that row's genre text is -- each <tr> is its own
-           independent grid, so "auto" would size column 2 per-row. */
-        grid-template-columns: 32px 150px auto 1fr;
-        grid-template-rows: auto auto;
-        column-gap: 10px;
-        row-gap: 5px;
-        align-items: center;
-        padding: 12px 14px;
+        grid-template-columns: 50% 1fr;
+        grid-template-rows: auto auto auto 1fr auto;
+        column-gap: 14px;
+        row-gap: 6px;
+        align-items: start;
+        min-height: 168px; /* was 210px — ~20% shorter so more cards fit per screen */
+        padding: 14px;
+        position: relative;
+        background: var(--card-bg);
+        border-radius: 16px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 20px rgba(0, 0, 0, 0.06);
+        margin-bottom: 12px;
     }
+    table.top10 tbody tr:last-child { margin-bottom: 0; }
     table.top10 tbody tr td { border-bottom: none; }
-    table.top10 tbody tr:not(:last-child) {
-        border-bottom: 1px solid rgba(0, 0, 0, 0.07); /* calm hairline, not a harsh border */
-    }
     table.top10 tbody tr:active { background: var(--row-hover); }
 
-    /* rank: a solid rounded-square purple badge on every row (not just
-       top-3) — the most legible of three rank treatments tried, per
-       cross-critique consensus; consistent treatment scans better than a
-       badge that reverts to plain text past rank 3. */
-    .rank {
-        grid-column: 1;
-        grid-row: 1 / 3;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-self: center;
-        align-self: center;
-        width: 26px;
-        height: 26px;
-        border-radius: 8px;
-        background: var(--brand-purple);
-        color: #fff;
-        font-weight: 700;
-        font-size: 0.78rem;
+    /* rank: large, extra-bold purple numeral pinned to the card's top-right
+       corner, next to the title, rather than a badge beside the poster —
+       the title reserves room for it via padding-right below. */
+    /* table.top10 .rank (not plain .rank) so this beats the generic
+       "table.top10 td { font-size: 0.9rem }" rule on specificity — a plain
+       class selector loses to that rule since it has more type/class
+       components, silently capping the rank at 0.9rem otherwise. */
+    table.top10 .rank {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        width: auto; /* desktop's "width: 2.2em" scales with this rule's much bigger font-size otherwise, ballooning to ~148px and pushing the digit left of where right:14 implies */
+        color: var(--brand-purple);
+        font-weight: 900;
+        font-size: 2.94rem; /* was 4.2rem — 30% smaller, freeing horizontal room for the title */
+        line-height: 1;
     }
 
-    /* title row: poster + title, grid row 1, spans all content columns */
-    .title-cell {
-        grid-column: 2 / -1;
-        grid-row: 1;
-        text-align: left;
-        width: auto;
-        max-width: none;
+    /* .title-cell and .title-cell-inner are collapsed with display: contents
+       so the poster link and title link become direct grid items of the
+       <tr> and can be placed independently — no HTML/JS change needed. */
+    .title-cell { display: contents; }
+    .title-cell-inner { display: contents; }
+
+    /* Box art: object-fit: contain inside a tile that fills its 50%-wide
+       column and stretches to the card's full height (poster-style). The
+       ratio stays deliberately narrower than every real source image
+       (1.78-2.43:1) via `contain`, so a source is always constrained by
+       width and letterboxed top/bottom only, never cropped and never
+       bar-cropped left/right (the failure mode that used to eat wordmark
+       letters, e.g. "Slow Horses" -> "N HOI"). The link owns the soft
+       brand-purple backdrop so any letterboxed space still reads as an
+       intentional card mat. */
+    .boxart-link {
+        grid-column: 1;
+        grid-row: 1 / -1;
+        align-self: stretch;
+        position: relative;
+        width: 100%;
+        height: 100%; /* override the desktop rule's fixed 58px — stretch alone doesn't win over an explicit height */
+        border-radius: 10px;
+        overflow: hidden;
+        background: linear-gradient(155deg, #fbfafb 0%, #f2f1f3 100%);
+        box-shadow: 0 0 0 1px rgba(103, 39, 123, 0.16), 0 1px 2px rgba(0, 0, 0, 0.05);
     }
-    .title-cell-inner {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
+    .boxart {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: contain;
+        padding: 4px;
+        box-sizing: border-box;
+        background: transparent;
     }
-    .boxart-link, .boxart, .boxart-placeholder {
-        width: 76px;
-        height: 48px;
-        border-radius: 7px;
-        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+    .boxart-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; /* corners already clipped by .boxart-link's overflow: hidden */
+        box-shadow: none;
+        padding: 4px;
     }
-    .boxart { object-fit: cover; } /* consistent tile look across mixed-aspect source crops */
-    .boxart-placeholder .bubble-title { font-size: 0.68rem; line-height: 1.05; }
+    .boxart-placeholder .bubble-title { font-size: 0.76rem; line-height: 1.1; }
 
     .title-cell .title-name {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: start;
+        min-width: 0;
+        /* The rank numeral is position: absolute, so it doesn't contribute
+           to this row's auto height on its own — without reserving height
+           here, a short one-line title lets row 2 (genre) start high enough
+           to sit underneath the numeral's tall glyph box. 34px of padding
+           covers the worst case (a 1-line title, ~21px tall) up to the
+           numeral's ~47px rendered height. */
+        padding-bottom: 34px;
+        padding-right: 56px; /* leave room for the rank numeral pinned top-right — widest 2-digit rank measures ~51px, so this trims the excess reserved space */
+        display: block;
         text-decoration: none; /* was inheriting the desktop "click to filter" underline */
+        color: var(--text);
         font-weight: 700;
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         line-height: 1.25;
+    }
+    /* Line-clamp lives on the nested span, not on .title-name itself: since
+       title-cell/title-cell-inner are display: contents, .title-name is
+       promoted to a direct CSS Grid item, and Chrome silently breaks
+       -webkit-line-clamp on an element that is itself a grid item — the
+       clamp's height math still applies, but it stops actually truncating
+       the rendered text at 2 lines. The nested .title-name-text span is
+       not itself a grid item, so the clamp works correctly on it. */
+    .title-cell .title-name-text {
         display: -webkit-box;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 3; /* was 2 — a 3rd line shows meaningfully more of longer titles before truncating */
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
 
-    /* metadata row: genre chip, then Vidmired score, then streaming logo
-       flush right — three explicit columns on grid row 2 (this replaces
-       the old fixed 78px margin, and the old genre/stream-share-one-cell
-       trick, now that a third item sits between them). */
+    /* genre: plain, no "Genre:" prefix (dashboard.js already only ever
+       emits the bare label) — sits directly under the title. */
     .genre-cell {
         grid-column: 2;
         grid-row: 2;
@@ -694,13 +887,32 @@ table.top10 tbody tr:hover {
         max-width: none;
         margin: 0;
     }
-    .score-cell {
-        grid-column: 3;
-        grid-row: 2;
+
+    /* top cast: left-aligned under the genre, one name per line (same
+       treatment as desktop's .cast-link stack), just smaller/muted to
+       stay compact in the card. */
+    .cast-cell {
+        grid-column: 2;
+        grid-row: 3;
         justify-self: start;
         width: auto;
         max-width: none;
-        margin: 0 0 0 8px;
+        margin: 0;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+    }
+
+    /* footer row: the flexible spacer above (grid row 4) pushes this row to
+       the card's bottom edge. Score bars sit bottom-left, streaming logo
+       bottom-right — both share this last grid row. */
+    .score-cell {
+        grid-column: 2;
+        grid-row: 5;
+        justify-self: start;
+        align-self: end;
+        width: auto;
+        max-width: none;
+        margin: 0;
         display: flex;
         align-items: center;
     }
@@ -719,32 +931,33 @@ table.top10 tbody tr:hover {
         background-position: center;
     }
     .stream-cell {
-        grid-column: 4;
-        grid-row: 2;
+        grid-column: 2;
+        grid-row: 5;
         justify-self: end;
+        align-self: end;
         width: auto;
         max-width: none;
         margin: 0;
     }
 
-    /* genre becomes a small pill/tag instead of underlined gray text */
+    /* genre: no chip/token — bare uppercase black text, matching the
+       title's color, click-to-filter still works via the same button. */
     .genre-cell .cell-filter-btn {
         display: inline-block;
-        background: rgba(103, 39, 123, 0.08);
-        color: var(--brand-purple);
+        background: none;
+        color: var(--text);
         text-decoration: none;
-        font-size: 0.7rem;
+        font-size: 0.72rem;
         font-weight: 700;
-        letter-spacing: 0.01em;
+        letter-spacing: 0.02em;
         text-transform: uppercase;
-        padding: 3px 9px;
-        border-radius: 999px;
+        padding: 0;
         max-width: 100%;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
     }
-    .genre-cell .cell-filter-btn:hover { color: #fff; background: var(--brand-purple); }
+    .genre-cell .cell-filter-btn:hover { color: var(--accent); }
 
     .stream-cell .watch-logos { gap: 8px; justify-content: flex-end; }
     .stream-cell .watch-logo { height: 16px; max-width: 56px; }

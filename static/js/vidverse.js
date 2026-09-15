@@ -19,10 +19,12 @@
         talk_variety: "Talk & Variety",
     };
 
+    var PERIOD_ORDER = ["this_week", "last_week", "last_month", "last_3_months"];
+
     var state = {
         payload: null,
         type: "series",
-        weekStart: null,
+        period: "this_week",
         topN: 25,
         selectedGenres: new Set(),
         selectedServices: new Set(),
@@ -63,19 +65,11 @@
         return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
     }
 
-    function formatWeekRange(weekStart, weekEnd) {
-        var start = new Date(weekStart + "T00:00:00");
-        var end = new Date(weekEnd + "T00:00:00");
-        var sameYear = start.getFullYear() === end.getFullYear();
-        var startStr = start.toLocaleDateString(undefined, { month: "short", day: "numeric" });
-        var endOpts = sameYear
-            ? { month: "short", day: "numeric", year: "numeric" }
-            : { month: "short", day: "numeric", year: "numeric" };
-        if (!sameYear) {
-            startStr = start.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-        }
-        var endStr = end.toLocaleDateString(undefined, endOpts);
-        return startStr + " – " + endStr;
+    function formatMonthDay(dateStr) {
+        if (!dateStr) return null;
+        var d = new Date(dateStr + "T00:00:00");
+        if (isNaN(d)) return null;
+        return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
     }
 
     function makeBubblePlaceholder(title) {
@@ -125,7 +119,17 @@
         titleLink.href = wikipediaUrl(row.wiki_page);
         titleLink.target = "_blank";
         titleLink.rel = "noopener";
-        titleLink.textContent = row.title;
+        // Text lives in an inner span, not directly on the <a>: on mobile
+        // the <a> is promoted to a direct CSS Grid item (title-cell and
+        // title-cell-inner are display: contents), and Chrome silently
+        // breaks -webkit-line-clamp on an element that is itself a grid
+        // item (the clamp's height math still applies, but it stops
+        // actually truncating the text at N lines). Clamping the nested,
+        // non-grid-item span instead sidesteps that.
+        var titleText = document.createElement("span");
+        titleText.className = "title-name-text";
+        titleText.textContent = row.title;
+        titleLink.appendChild(titleText);
         inner.appendChild(titleLink);
 
         td.appendChild(inner);
@@ -182,9 +186,9 @@
         var count = maxScore > 0
             ? Math.max(1, Math.round((score / maxScore) * SCORE_BAR_MAX))
             : 1;
-        for (var i = 0; i < count; i++) {
+        for (var i = 0; i < SCORE_BAR_MAX; i++) {
             var bar = document.createElement("div");
-            bar.className = "score-bar";
+            bar.className = i < count ? "score-bar" : "score-bar score-bar-empty";
             wrap.appendChild(bar);
         }
 
@@ -240,7 +244,11 @@
 
         var timesTd = document.createElement("td");
         timesTd.className = "weeks-cell";
-        timesTd.textContent = row.times_in_top10 != null ? row.times_in_top10 : "—";
+        // No column header in the card layout (mobile or desktop), so the
+        // bare number needs an inline label to stay self-explanatory.
+        timesTd.textContent = row.times_in_top10 != null
+            ? row.times_in_top10 + " week" + (row.times_in_top10 === 1 ? "" : "s") + " in Top 10"
+            : "—";
         tr.appendChild(timesTd);
 
         tr.appendChild(makeScoreCell(row.vidmired_score, maxScore));
@@ -249,8 +257,9 @@
         dateTd.className = "date-cell";
         var dateVal = type === "series" ? row.latest_season_release_date : row.release_date;
         var formatted = formatDate(dateVal);
+        var dateLabel = type === "series" ? "Latest season: " : "Released: ";
         if (formatted) {
-            dateTd.textContent = formatted;
+            dateTd.textContent = dateLabel + formatted;
         } else {
             dateTd.textContent = "—";
             dateTd.className += " muted";
@@ -284,12 +293,12 @@
         tbody.innerHTML = "";
         dateHeader.textContent = state.type === "series" ? "Latest Season Release" : "Release date";
 
-        var allRows = (state.payload.data[state.type] || {})[state.weekStart] || [];
+        var allRows = (state.payload.data[state.type] || {})[state.period] || [];
 
-        // Score bars are scaled against the full week/type ranking, not
+        // Score bars are scaled against the full period/type ranking, not
         // whatever's currently visible -- so a title's bar count stays fixed
         // as the Top-N / genre / service filters narrow the view, and only
-        // changes when the underlying week or type actually changes.
+        // changes when the underlying period or type actually changes.
         var maxScore = allRows.length
             ? Math.max.apply(null, allRows.map(function (r) { return r.vidmired_score; }))
             : 0;
@@ -317,24 +326,27 @@
         });
     }
 
-    function populateWeekSelect() {
-        var select = document.getElementById("week-select");
+    function populatePeriodSelect() {
+        var select = document.getElementById("period-select");
         select.innerHTML = "";
-        state.payload.weeks.forEach(function (w) {
+        PERIOD_ORDER.forEach(function (key) {
+            var meta = state.payload.periods[key];
             var opt = document.createElement("option");
-            opt.value = w.week_start;
-            opt.textContent = formatWeekRange(w.week_start, w.week_end);
+            opt.value = key;
+            opt.textContent = meta.through
+                ? meta.label + " (thru " + formatMonthDay(meta.through) + ")"
+                : meta.label;
             select.appendChild(opt);
         });
-        select.value = state.weekStart;
+        select.value = state.period;
     }
 
     function collectAllRows(payload) {
         var all = [];
         Object.keys(payload.data).forEach(function (type) {
-            var byWeek = payload.data[type];
-            Object.keys(byWeek).forEach(function (week) {
-                all = all.concat(byWeek[week]);
+            var byPeriod = payload.data[type];
+            Object.keys(byPeriod).forEach(function (period) {
+                all = all.concat(byPeriod[period]);
             });
         });
         return all;
@@ -521,8 +533,7 @@
     function init() {
         var status = document.getElementById("status");
         var typeSelect = document.getElementById("type-select");
-        var weekSelect = document.getElementById("week-select");
-        var topNSelect = document.getElementById("topn-select");
+        var periodSelect = document.getElementById("period-select");
 
         window.addEventListener("resize", updateMastheadOffset);
 
@@ -530,13 +541,8 @@
             state.type = typeSelect.value;
             render();
         });
-        weekSelect.addEventListener("change", function () {
-            state.weekStart = weekSelect.value;
-            render();
-        });
-        topNSelect.value = String(state.topN);
-        topNSelect.addEventListener("change", function () {
-            state.topN = parseInt(topNSelect.value, 10);
+        periodSelect.addEventListener("change", function () {
+            state.period = periodSelect.value;
             render();
         });
         document.getElementById("clear-filters-btn").addEventListener("click", clearAllFilters);
@@ -549,13 +555,12 @@
             })
             .then(function (payload) {
                 state.payload = payload;
-                if (!payload.weeks || payload.weeks.length === 0) {
+                if (!payload.periods || !payload.data) {
                     status.textContent = "No data yet — run scripts/generate_top10.py.";
                     status.hidden = false;
                     return;
                 }
-                state.weekStart = payload.weeks[0].week_start;
-                populateWeekSelect();
+                populatePeriodSelect();
 
                 var allRows = collectAllRows(payload);
                 setupFilter({

@@ -11,30 +11,21 @@
         <header class="masthead">
             <img class="logo" src="../static/img/vidmired-logo.png" alt="Vidmired">
 
-            <p id="subtitle"><b>Stop scrolling, start streaming. Discover trending titles loved by both critics and audiences</b></p>
+            <p id="subtitle"><b>Stop scrolling, start streaming. Discover trending titles loved by both critics and audiences with vidmired</b></p>
 
             <div class="controls">
                 <button type="button" id="clear-filters-btn" class="clear-filters-btn" hidden>Clear all filters</button>
                 <label>
-                    Show
+                    Type
                     <select id="type-select">
                         <option value="series">Series</option>
                         <option value="film">Films</option>
                     </select>
                 </label>
                 <label>
-                    Week
-                    <select id="week-select"></select>
+                    Period
+                    <select id="period-select"></select>
                 </label>
-                <label>
-                    Top
-                    <select id="topn-select">
-                        <option value="10">10</option>
-                        <option value="25" selected>25</option>
-                        <option value="50">50</option>
-                    </select>
-                </label>
-
                 <div class="filter" id="genre-filter">
                     <button type="button" class="filter-toggle" id="genre-filter-toggle" aria-haspopup="true" aria-expanded="false">
                         Genre <span class="filter-count" id="genre-filter-count">All</span>
