@@ -46,11 +46,6 @@
         return wikipediaUrl(name.trim().replace(/\s+/g, "_"));
     }
 
-    function whereToWatchSearchUrl(title) {
-        var q = "where to watch " + title;
-        return "https://www.google.com/search?q=" + encodeURIComponent(q).replace(/%20/g, "+");
-    }
-
     var BUBBLE_BG_COUNT = 8;
 
     function bubbleBgClass(title) {
@@ -137,17 +132,10 @@
         return td;
     }
 
-    function makeWhereToWatchCell(list, title) {
+    function makeWhereToWatchCell(list) {
         var td = document.createElement("td");
         td.className = "stream-cell";
         if (!list || list.length === 0) {
-            var a = document.createElement("a");
-            a.className = "cast-link";
-            a.href = whereToWatchSearchUrl(title);
-            a.target = "_blank";
-            a.rel = "noopener";
-            a.textContent = "Unknown";
-            td.appendChild(a);
             return td;
         }
 
@@ -269,7 +257,7 @@
         }
         tr.appendChild(dateTd);
 
-        tr.appendChild(makeWhereToWatchCell(row.where_to_watch, row.title));
+        tr.appendChild(makeWhereToWatchCell(row.where_to_watch));
 
         return tr;
     }
