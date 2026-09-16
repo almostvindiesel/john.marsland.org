@@ -765,7 +765,7 @@ table.top10 .rank {
         display: grid;
         grid-template-columns: 50% 1fr;
         grid-template-rows: auto auto auto 1fr auto;
-        column-gap: 14px;
+        column-gap: 22px;
         row-gap: 6px;
         align-items: start;
         min-height: 168px; /* was 210px — ~20% shorter so more cards fit per screen */
@@ -804,22 +804,32 @@ table.top10 .rank {
     .title-cell { display: contents; }
     .title-cell-inner { display: contents; }
 
-    /* Box art: object-fit: contain inside a tile that fills its 50%-wide
-       column and stretches to the card's full height (poster-style). The
-       ratio stays deliberately narrower than every real source image
-       (1.78-2.43:1) via `contain`, so a source is always constrained by
-       width and letterboxed top/bottom only, never cropped and never
-       bar-cropped left/right (the failure mode that used to eat wordmark
-       letters, e.g. "Slow Horses" -> "N HOI"). The link owns the soft
-       brand-purple backdrop so any letterboxed space still reads as an
-       intentional card mat. */
+    /* Box art: object-fit: contain inside a tile that fills the poster
+       column and the card's full height (poster-style). The ratio stays
+       deliberately narrower than every real source image (1.78-2.43:1) via
+       `contain`, so a source is always constrained by width and
+       letterboxed top/bottom only, never cropped and never bar-cropped
+       left/right (the failure mode that used to eat wordmark letters, e.g.
+       "Slow Horses" -> "N HOI"). The link owns the soft brand-purple
+       backdrop so any letterboxed space still reads as an intentional card
+       mat.
+
+       position: absolute (not a grid item, unlike the rank/title/etc. —
+       see the desktop rule's comment for why) so it can't inflate the
+       row's height, and so its own top/left/bottom offsets are absolute
+       coordinates rather than relative-positioning nudges: with
+       position: relative, this rule's old top/left/bottom (still applied
+       from... no rule set them, but overriding to relative here would let
+       an unrelated rule's top/left/bottom apply as offsets instead of a
+       no-op, silently shifting the poster within its cell). */
     .boxart-link {
-        grid-column: 1;
-        grid-row: 1 / -1;
-        align-self: stretch;
-        position: relative;
-        width: 100%;
-        height: 100%; /* override the desktop rule's fixed 58px — stretch alone doesn't win over an explicit height */
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        bottom: 14px;
+        /* Matches the row's declared 50% column width, adjusted for the
+           containing-block/content-box mismatch (see desktop rule). */
+        width: calc(50% - 14px);
         border-radius: 10px;
         overflow: hidden;
         background: linear-gradient(155deg, #fbfafb 0%, #f2f1f3 100%);
