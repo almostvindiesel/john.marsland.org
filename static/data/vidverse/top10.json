@@ -1611,7 +1611,12 @@
           "top_cast": [],
           "release_date": "1997-08-13",
           "latest_season_release_date": "2026-09-16",
-          "where_to_watch": [],
+          "where_to_watch": [
+            {
+              "name": "Paramount+",
+              "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Paramount_Plus_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
           "vidmired_score": 179133920,
           "times_in_top10": 0,
           "image_direct_url": "https://upload.wikimedia.org/wikipedia/en/5/59/South_Park.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
@@ -3113,7 +3118,12 @@
           "top_cast": [],
           "release_date": "1997-08-13",
           "latest_season_release_date": "2026-09-16",
-          "where_to_watch": [],
+          "where_to_watch": [
+            {
+              "name": "Paramount+",
+              "logo_url": "https://upload.wikimedia.org/wikipedia/commons/9/93/Paramount_Plus_logo.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original"
+            }
+          ],
           "vidmired_score": 350445920,
           "image_direct_url": "https://upload.wikimedia.org/wikipedia/en/5/59/South_Park.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
           "times_in_top10": 0
