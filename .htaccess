@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Clean URLs: /ruminations/<slug> → /ruminations/<slug>.html
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(ruminations)/([^/]+)$ /$1/$2.html [L]
+
+# /recipes/<slug> → /recipes/index.html (JS handles the slug redirect)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(recipes)/([^/]+)$ /$1/index.html [L]

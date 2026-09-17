@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Recipe — John Marsland</title>
+  <meta property="og:site_name" content="John Marsland">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Recipe — John Marsland">
+  <meta property="og:description" content="A recipe from John Marsland's kitchen.">
+</head>
+<body>
+<script>
+(function() {
+  var parts = window.location.pathname.replace(/\/$/, '').split('/');
+  var slug = parts[parts.length - 1];
+  if (slug && slug !== 'index.html' && slug !== 'recipes') {
+    window.location.replace('https://john.marsland.org/#' + slug + '-recipe');
+  } else {
+    window.location.replace('https://john.marsland.org/#recipes');
+  }
+})();
+</script>
+<p>Redirecting… <a href="https://john.marsland.org/#recipes">back to recipes</a></p>
+</body>
+</html>
