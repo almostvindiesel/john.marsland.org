@@ -1109,3 +1109,19 @@ table.top10 tbody tr.detail-row.open .detail-panel { opacity: 1; }
     .detail-panel { padding: 0 14px; }
     .detail-summary { font-size: 0.85rem; }
 }
+
+/* Score tooltip */
+.score-tooltip {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    max-width: 240px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    background: var(--card-bg, #1e1e1e);
+    color: var(--text, #e8e8e8);
+    border: 1px solid var(--border, rgba(255,255,255,0.1));
+    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}

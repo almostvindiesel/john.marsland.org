@@ -124,7 +124,7 @@
         return link;
     }
 
-    function makeTitleCell(row) {
+    function makeTitleCell(row, year) {
         var td = document.createElement("td");
         td.className = "title-cell";
 
@@ -145,7 +145,7 @@
         // nested, non-grid-item span instead sidesteps that.
         var titleText = document.createElement("span");
         titleText.className = "title-name-text";
-        titleText.textContent = row.title;
+        titleText.textContent = year ? row.title + " (" + year + ")" : row.title;
         titleBtn.appendChild(titleText);
 
         // The chevron is a sibling of the clamped span, not nested inside
@@ -209,6 +209,7 @@
         google: "img/google-icon.png",
         wikipedia: "img/wiki-icon.svg",
         rt: "img/rt-icon.svg",
+        imdb: "img/imdb-icon.webp",
     };
 
     function makeDetailIcon(kind, href, label) {
@@ -251,11 +252,14 @@
 
         var links = document.createElement("div");
         links.className = "detail-links";
-        links.appendChild(makeDetailIcon("google", googleSearchUrl(row.title), "Search " + row.title + " on Google"));
-        links.appendChild(makeDetailIcon("wikipedia", wikipediaUrl(row.wiki_page), row.title + " on Wikipedia"));
+        if (row.imdb_id) {
+            links.appendChild(makeDetailIcon("imdb", "https://www.imdb.com/title/" + row.imdb_id + "/", row.title + " on IMDb"));
+        }
         if (row.rt_url) {
             links.appendChild(makeDetailIcon("rt", row.rt_url, row.title + " on Rotten Tomatoes"));
         }
+        links.appendChild(makeDetailIcon("wikipedia", wikipediaUrl(row.wiki_page), row.title + " on Wikipedia"));
+        links.appendChild(makeDetailIcon("google", googleSearchUrl(row.title), "Search " + row.title + " on Google"));
         inner.appendChild(links);
 
         panel.appendChild(inner);
@@ -296,13 +300,30 @@
 
     var SCORE_BAR_MAX = 10;
 
+    var scoreTooltip = (function () {
+        var el = document.createElement("div");
+        el.className = "score-tooltip";
+        el.textContent = "Vidmired Score: Measure of title popularity adjusted for quality";
+        el.hidden = true;
+        document.addEventListener("DOMContentLoaded", function () { document.body.appendChild(el); });
+        return el;
+    })();
+
     function makeScoreCell(score, maxScore) {
         var td = document.createElement("td");
         td.className = "score-cell";
         var wrap = document.createElement("div");
         wrap.className = "score-bars";
-        wrap.title = "Vidmired score, relative to this week's ranking";
         wrap.setAttribute("aria-label", "Vidmired score, relative to this week's ranking");
+
+        wrap.addEventListener("mouseenter", function (e) {
+            scoreTooltip.hidden = false;
+            positionScoreTooltip(e);
+        });
+        wrap.addEventListener("mousemove", positionScoreTooltip);
+        wrap.addEventListener("mouseleave", function () {
+            scoreTooltip.hidden = true;
+        });
 
         var count = maxScore > 0
             ? Math.max(1, Math.round((score / maxScore) * SCORE_BAR_MAX))
@@ -317,6 +338,19 @@
         return td;
     }
 
+    function positionScoreTooltip(e) {
+        var margin = 12;
+        var tw = scoreTooltip.offsetWidth;
+        var th = scoreTooltip.offsetHeight;
+        var vw = window.innerWidth;
+        var x = e.clientX + margin;
+        var y = e.clientY - th - margin;
+        if (x + tw > vw - margin) x = e.clientX - tw - margin;
+        if (y < margin) y = e.clientY + margin;
+        scoreTooltip.style.left = x + "px";
+        scoreTooltip.style.top  = y + "px";
+    }
+
     var expandCounter = 0;
 
     function renderRow(row, rank, type, maxScore) {
@@ -327,7 +361,8 @@
         rankTd.textContent = rank;
         tr.appendChild(rankTd);
 
-        var titleCell = makeTitleCell(row);
+        var year = row.release_date ? new Date(row.release_date + "T00:00:00").getFullYear() : null;
+        var titleCell = makeTitleCell(row, year);
         tr.appendChild(titleCell.td);
 
         var genreTd = document.createElement("td");
