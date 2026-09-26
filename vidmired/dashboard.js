@@ -941,7 +941,13 @@
         // #2 are hidden.
         var rankMap = new Map(topRows.map(function (row, i) { return [row, i + 1]; }));
 
-        var rows = topRows;
+        var cutoff = new Date();
+        cutoff.setFullYear(cutoff.getFullYear() - 1);
+
+        var rows = topRows.filter(function (r) {
+            var dateStr = state.type === "series" ? r.latest_season_release_date : r.release_date;
+            return dateStr && new Date(dateStr) >= cutoff;
+        });
         if (state.selectedGenres.size > 0) {
             rows = rows.filter(function (r) { return state.selectedGenres.has(r.primary_genre); });
         }
