@@ -1159,12 +1159,19 @@ table.top10 tbody tr.detail-row.open .detail-panel { opacity: 1; }
     font-size: 0.82rem;
 }
 
-/* ── Account button ──────────────────────────────────────────────────── */
-.account-btn {
-    font-family: inherit;
+/* ── Header actions (My List + account icon, top-right of header) ────── */
+.header-actions {
     position: absolute;
     top: 10px;
     right: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Account button ──────────────────────────────────────────────────── */
+.account-btn {
+    font-family: inherit;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1177,12 +1184,20 @@ table.top10 tbody tr.detail-row.open .detail-panel { opacity: 1; }
     cursor: pointer;
     padding: 0;
     transition: border-color 0.15s, color 0.15s, background 0.15s;
+    flex: none;
 }
 .account-btn:hover {
     background: rgba(103, 39, 123, 0.08);
 }
 .account-btn.signed-in {
     background: rgba(103, 39, 123, 0.08);
+}
+
+/* ── Gray out all filters when My List is active ─────────────────────── */
+.controls.my-list-active > * {
+    opacity: 0.35;
+    pointer-events: none;
+    user-select: none;
 }
 
 /* ── Bookmark button (overlaid on card poster) ───────────────────────── */

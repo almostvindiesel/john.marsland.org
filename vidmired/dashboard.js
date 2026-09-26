@@ -30,7 +30,42 @@
         selectedServices: new Set(),
         showMyList: false,
         watchlistIds: new Set(),
+        allRowsMap: {},  // wiki_page → { row, type } — best score across all periods/types
     };
+
+    var TITLE_CACHE_KEY = "vidmired_title_cache";
+
+    function getCachedTitles() {
+        try {
+            return JSON.parse(localStorage.getItem(TITLE_CACHE_KEY) || "{}");
+        } catch (e) { return {}; }
+    }
+
+    function cacheTitleData(wikiPage, entry) {
+        try {
+            var cache = getCachedTitles();
+            var row = entry.row;
+            cache[wikiPage] = {
+                wiki_page: row.wiki_page,
+                title: row.title,
+                _type: entry.type,
+                image_direct_url: row.image_direct_url,
+                vidmired_score: row.vidmired_score,
+                primary_genre: row.primary_genre,
+                avg_runtime_mins: row.avg_runtime_mins,
+                top_cast: row.top_cast,
+                where_to_watch: row.where_to_watch,
+                rt_url: row.rt_url,
+                imdb_id: row.imdb_id,
+                times_in_top10: row.times_in_top10,
+                release_date: row.release_date,
+                latest_season_release_date: row.latest_season_release_date,
+                summary: row.summary,
+                keywords: row.keywords,
+            };
+            localStorage.setItem(TITLE_CACHE_KEY, JSON.stringify(cache));
+        } catch (e) {}
+    }
 
     // Populated by setupFilter, keyed by filter name ("genre" / "service"),
     // so table-cell clicks and the "Clear all filters" button can drive the
@@ -430,6 +465,8 @@
             ids.splice(idx, 1);
         } else {
             ids.push(wikiPage);
+            var entry = state.allRowsMap[wikiPage];
+            if (entry) cacheTitleData(wikiPage, entry);
             maybeShowNudge();
         }
         state.watchlistIds = new Set(ids);
@@ -827,18 +864,64 @@
 
     function updateClearFiltersButton() {
         var btn = document.getElementById("clear-filters-btn");
-        btn.hidden = !anyFilterActive();
+        btn.hidden = state.showMyList || !anyFilterActive();
     }
 
     function render() {
         var tbody = document.getElementById("top10-body");
         var status = document.getElementById("status");
         var dateHeader = document.getElementById("date-col-header");
+        var controls = document.querySelector(".controls");
 
-        updateClearFiltersButton();
-        renderActiveFilterTokens();
-        updateMastheadOffset();
         tbody.innerHTML = "";
+        updateMastheadOffset();
+        updateClearFiltersButton();
+
+        if (controls) controls.classList.toggle("my-list-active", state.showMyList);
+
+        if (state.showMyList) {
+            var tokensEl = document.getElementById("active-filter-tokens");
+            if (tokensEl) tokensEl.innerHTML = "";
+
+            if (state.watchlistIds.size === 0) {
+                status.textContent = "Your list is empty — bookmark titles to save them here.";
+                status.hidden = false;
+                return;
+            }
+
+            var cache = getCachedTitles();
+            var myRows = [];
+            state.watchlistIds.forEach(function (wp) {
+                var entry = state.allRowsMap[wp];
+                if (entry) {
+                    myRows.push(entry);
+                } else {
+                    var cached = cache[wp];
+                    if (cached) myRows.push({ row: cached, type: cached._type || "series" });
+                }
+            });
+
+            myRows.sort(function (a, b) { return (b.row.vidmired_score || 0) - (a.row.vidmired_score || 0); });
+
+            if (myRows.length === 0) {
+                status.textContent = "Your list is empty — bookmark titles to save them here.";
+                status.hidden = false;
+                return;
+            }
+
+            var maxScore = Math.max.apply(null, myRows.map(function (e) { return e.row.vidmired_score || 0; }));
+            dateHeader.textContent = "Release Date";
+            status.hidden = true;
+            myRows.forEach(function (entry, i) {
+                var pair = renderRow(entry.row, i + 1, entry.type, maxScore);
+                tbody.appendChild(pair.tr);
+                tbody.appendChild(pair.detailTr);
+            });
+            return;
+        }
+
+        // ── Normal (non-My List) rendering ───────────────────────────────
+        renderActiveFilterTokens();
         dateHeader.textContent = state.type === "series" ? "Latest Season Release" : "Release date";
 
         var allRows = (state.payload.data[state.type] || {})[state.period] || [];
@@ -866,14 +949,6 @@
             rows = rows.filter(function (r) {
                 return (r.where_to_watch || []).some(function (w) { return state.selectedServices.has(w.name); });
             });
-        }
-        if (state.showMyList) {
-            if (state.watchlistIds.size === 0) {
-                status.textContent = "Your list is empty — bookmark titles to save them here.";
-                status.hidden = false;
-                return;
-            }
-            rows = rows.filter(function (r) { return state.watchlistIds.has(r.wiki_page); });
         }
 
         if (rows.length === 0) {
@@ -1135,6 +1210,18 @@
             .then(function (results) {
                 var payload = results[0];
                 state.payload = payload;
+                var allRowsMap = {};
+                Object.keys(payload.data).forEach(function (type) {
+                    Object.keys(payload.data[type]).forEach(function (period) {
+                        payload.data[type][period].forEach(function (row) {
+                            var existing = allRowsMap[row.wiki_page];
+                            if (!existing || row.vidmired_score > existing.row.vidmired_score) {
+                                allRowsMap[row.wiki_page] = { row: row, type: type };
+                            }
+                        });
+                    });
+                });
+                state.allRowsMap = allRowsMap;
                 if (!payload.periods || !payload.data) {
                     status.textContent = "No data yet — run scripts/generate_top10.py.";
                     status.hidden = false;
