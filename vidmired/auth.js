@@ -8,8 +8,8 @@
     //   3. In Authentication → URL Configuration, add this page's URL as a
     //      Redirect URL (e.g. https://john.marsland.org/vidmired/)
     // ─────────────────────────────────────────────────────────────────────────
-    var SUPABASE_URL = "YOUR_SUPABASE_URL";
-    var SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
+    var SUPABASE_URL = "https://zmvoukgorfzwwjhaakyr.supabase.co";
+    var SUPABASE_ANON_KEY = "sb_publishable_-JF-t4n_LitMZ7pDHpherA_y8zG_klj";
 
     var LS_KEY = "vidmired_watchlist";
     var _client = null;
