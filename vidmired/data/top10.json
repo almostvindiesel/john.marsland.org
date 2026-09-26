@@ -35,7 +35,13 @@
           "vidmired_score": 637785864,
           "times_in_top10": 28,
           "image_direct_url": "https://resizing.flixster.com/A6I9ex8FRe7tDW-mI3eP3tx_HmE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkyOGVlMzAxLThhN2ItNGYyMy04NzdjLTYyNTEyMDRmYTQzOS5qcGc=",
-          "imdb_id": "tt33764258"
+          "imdb_id": "tt33764258",
+          "avg_runtime_mins": 10373,
+          "keywords": [
+            "Adventure",
+            "Action",
+            "Fantasy"
+          ]
         },
         {
           "title": "Spider-Man: Brand New Day",
@@ -54,7 +60,13 @@
           "vidmired_score": 571762620,
           "times_in_top10": 26,
           "image_direct_url": "https://resizing.flixster.com/A0AhY7vcoHLlqwO6nfwnyOB6wZA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E1NWUwMWJhLWI5OTUtNDZkMy04NmE4LWU5Y2I5NTQ2NTE4OC5qcGc=",
-          "imdb_id": "tt22084616"
+          "imdb_id": "tt22084616",
+          "avg_runtime_mins": 145,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Coyote vs. Acme",
@@ -73,7 +85,13 @@
           "vidmired_score": 503590060,
           "times_in_top10": 9,
           "image_direct_url": "https://resizing.flixster.com/2tWOVnwNoN3mVPGeTtFxCACoAPM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwMjUzNTNmLWNkZWQtNDVmNS1iZWI3LTY4MjQ4OTc5NGNlZi5qcGc=",
-          "imdb_id": "tt1756855"
+          "imdb_id": "tt1756855",
+          "avg_runtime_mins": 103,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Weapons",
@@ -92,7 +110,12 @@
           "vidmired_score": 342357645,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/uaS9Buuct1GoHPTsNXIUBfvORbg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzY2U4OWM5LWUyNTctNDJmMy1hYTc3LTAwMDY5NjU0N2VjZS5qcGc=",
-          "imdb_id": "tt26581740"
+          "imdb_id": "tt26581740",
+          "avg_runtime_mins": 128,
+          "keywords": [
+            "Horror",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "The End of Oak Street",
@@ -111,7 +134,11 @@
           "vidmired_score": 323022192,
           "times_in_top10": 3,
           "image_direct_url": "https://resizing.flixster.com/mh5WwBB4gOPvlxaLkoz6aYdsisg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzllNzkxYjJhLWEyNTgtNDNlNS1iZGM5LWQyOTU4ZGQ0YWI4MC5qcGc=",
-          "imdb_id": "tt27165187"
+          "imdb_id": "tt27165187",
+          "avg_runtime_mins": 99,
+          "keywords": [
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Teenage Sex and Death at Camp Miasma",
@@ -130,7 +157,13 @@
           "vidmired_score": 281123544,
           "times_in_top10": 3,
           "image_direct_url": "https://resizing.flixster.com/e6L--SBRx1PvceaQoUsdgmWeZqs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q2OTE2MjRiLTI0OWMtNDE1ZC04YTQwLTg0ZmVmMzhmMWE4Mi5qcGc=",
-          "imdb_id": "tt35298123"
+          "imdb_id": "tt35298123",
+          "avg_runtime_mins": 112,
+          "keywords": [
+            "Horror",
+            "Comedy",
+            "LGBTQ+"
+          ]
         },
         {
           "title": "Avengers: Endgame",
@@ -149,7 +182,13 @@
           "vidmired_score": 217515060,
           "times_in_top10": 5,
           "image_direct_url": "https://resizing.flixster.com/hu13NxX2cqnYsnL7vDtkOoq7Z-A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwYTA0ZmQyLTEzZmMtNGIwMS1hNDdjLTE3NWIwOTY2MzNkYi5qcGc=",
-          "imdb_id": "tt4154796"
+          "imdb_id": "tt4154796",
+          "avg_runtime_mins": 181,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Barbarian",
@@ -168,7 +207,12 @@
           "vidmired_score": 203278600,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/Ym6ucXdlZjGTqRWEMVr0r3H16Ro=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzA3ZGY2MjgxLTI1NjEtNGFhMC1iYzQ0LTllOGFhYTczNzYxNy5qcGc=",
-          "imdb_id": "tt15791034"
+          "imdb_id": "tt15791034",
+          "avg_runtime_mins": 103,
+          "keywords": [
+            "Horror",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Project Hail Mary",
@@ -187,7 +231,12 @@
           "vidmired_score": 199858625,
           "times_in_top10": 31,
           "image_direct_url": "https://resizing.flixster.com/6EeDwgqrKFi1ADO4k4VzZtrOVhM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NlNDNmOTM0LTc3NDctNDcxNi05ZWY1LTQ3NzI0OWIxYTlhNC5qcGc=",
-          "imdb_id": "tt12042730"
+          "imdb_id": "tt12042730",
+          "avg_runtime_mins": 156,
+          "keywords": [
+            "Sci-Fi",
+            "Adventure"
+          ]
         },
         {
           "title": "Buddy",
@@ -206,7 +255,9 @@
           "vidmired_score": 187595664,
           "times_in_top10": 5,
           "image_direct_url": "https://resizing.flixster.com/yl5JN7R8Zb7ZuFbu4xFCxx-Npzs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y5N2E5Yjc2LTEzNjEtNDhiYi05MWQ5LWQ3ODg4YzY2NzRhYi5qcGc=",
-          "imdb_id": "tt37281055"
+          "imdb_id": "tt37281055",
+          "avg_runtime_mins": 96,
+          "keywords": []
         },
         {
           "title": "Hope",
@@ -225,7 +276,13 @@
           "vidmired_score": 185376423,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/RwjjB3RtYxPrTBa--yN1TmEWEiM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzExNzBlYTg1LTA0ZmMtNGE4MS1iOTVmLWYxYzExNzRlZWYyZS5qcGc=",
-          "imdb_id": "tt27369017"
+          "imdb_id": "tt27369017",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Horror",
+            "Action",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Backrooms",
@@ -244,7 +301,13 @@
           "vidmired_score": 173581356,
           "times_in_top10": 19,
           "image_direct_url": "https://resizing.flixster.com/rhgxSrAD0DJLjAa7CXGBQU5h81E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U3YzFlM2U0LWM1NzctNDg5Yy05M2Y4LTVmYWYxOTQyMDEyMy5qcGc=",
-          "imdb_id": "tt26657236"
+          "imdb_id": "tt26657236",
+          "avg_runtime_mins": 110,
+          "keywords": [
+            "Sci-Fi",
+            "Fantasy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Hasan Minhaj: Homecoming King",
@@ -261,7 +324,12 @@
           "vidmired_score": 147212520,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/w4kj84MtdcFDHyFO0ea28mt4U58=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzBlMTc4Y2RlLTYwZDQtNDhhZC1iYTkwLWQ3NzMwOGRkYmE1NC53ZWJw",
-          "imdb_id": "tt6900644"
+          "imdb_id": "tt6900644",
+          "avg_runtime_mins": 72,
+          "keywords": [
+            "Comedy",
+            "Stand-Up"
+          ]
         },
         {
           "title": "The Weight",
@@ -280,7 +348,12 @@
           "vidmired_score": 140161602,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/e5HLtf5YBa002e2bPylOBjLTqAg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VjMzliYjUxLTc2ZGEtNDE1My04NTg0LTBkMmI1ZjZlMjkwOC5qcGc=",
-          "imdb_id": "tt10794054"
+          "imdb_id": "tt10794054",
+          "avg_runtime_mins": 113,
+          "keywords": [
+            "Adventure",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Once Upon a Time in Hollywood",
@@ -299,7 +372,12 @@
           "vidmired_score": 106337280,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/XZhUDb2br0TYzoMUa0T5B-Az_c0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2VkMmI3OGU4LWRlZDYtNGQ2MS1hZWRmLWU4ZGEzMjhkNTViNS53ZWJw",
-          "imdb_id": "tt7131622"
+          "imdb_id": "tt7131622",
+          "avg_runtime_mins": 161,
+          "keywords": [
+            "Comedy",
+            "Drama"
+          ]
         }
       ],
       "last_week": [
@@ -320,7 +398,13 @@
           "vidmired_score": 857303460,
           "times_in_top10": 26,
           "image_direct_url": "https://resizing.flixster.com/A0AhY7vcoHLlqwO6nfwnyOB6wZA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E1NWUwMWJhLWI5OTUtNDZkMy04NmE4LWU5Y2I5NTQ2NTE4OC5qcGc=",
-          "imdb_id": "tt22084616"
+          "imdb_id": "tt22084616",
+          "avg_runtime_mins": 145,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Odyssey",
@@ -339,7 +423,13 @@
           "vidmired_score": 846907194,
           "times_in_top10": 28,
           "image_direct_url": "https://resizing.flixster.com/A6I9ex8FRe7tDW-mI3eP3tx_HmE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkyOGVlMzAxLThhN2ItNGYyMy04NzdjLTYyNTEyMDRmYTQzOS5qcGc=",
-          "imdb_id": "tt33764258"
+          "imdb_id": "tt33764258",
+          "avg_runtime_mins": 10373,
+          "keywords": [
+            "Adventure",
+            "Action",
+            "Fantasy"
+          ]
         },
         {
           "title": "Coyote vs. Acme",
@@ -358,7 +448,13 @@
           "vidmired_score": 691185420,
           "times_in_top10": 9,
           "image_direct_url": "https://resizing.flixster.com/2tWOVnwNoN3mVPGeTtFxCACoAPM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwMjUzNTNmLWNkZWQtNDVmNS1iZWI3LTY4MjQ4OTc5NGNlZi5qcGc=",
-          "imdb_id": "tt1756855"
+          "imdb_id": "tt1756855",
+          "avg_runtime_mins": 103,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Hope",
@@ -377,7 +473,13 @@
           "vidmired_score": 372968401,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/RwjjB3RtYxPrTBa--yN1TmEWEiM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzExNzBlYTg1LTA0ZmMtNGE4MS1iOTVmLWYxYzExNzRlZWYyZS5qcGc=",
-          "imdb_id": "tt27369017"
+          "imdb_id": "tt27369017",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Horror",
+            "Action",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Buddy",
@@ -396,7 +498,9 @@
           "vidmired_score": 316013928,
           "times_in_top10": 5,
           "image_direct_url": "https://resizing.flixster.com/yl5JN7R8Zb7ZuFbu4xFCxx-Npzs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y5N2E5Yjc2LTEzNjEtNDhiYi05MWQ5LWQ3ODg4YzY2NzRhYi5qcGc=",
-          "imdb_id": "tt37281055"
+          "imdb_id": "tt37281055",
+          "avg_runtime_mins": 96,
+          "keywords": []
         },
         {
           "title": "The End of Oak Street",
@@ -415,7 +519,11 @@
           "vidmired_score": 304891328,
           "times_in_top10": 3,
           "image_direct_url": "https://resizing.flixster.com/mh5WwBB4gOPvlxaLkoz6aYdsisg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzllNzkxYjJhLWEyNTgtNDNlNS1iZGM5LWQyOTU4ZGQ0YWI4MC5qcGc=",
-          "imdb_id": "tt27165187"
+          "imdb_id": "tt27165187",
+          "avg_runtime_mins": 99,
+          "keywords": [
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Project Hail Mary",
@@ -434,7 +542,12 @@
           "vidmired_score": 218982600,
           "times_in_top10": 31,
           "image_direct_url": "https://resizing.flixster.com/6EeDwgqrKFi1ADO4k4VzZtrOVhM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NlNDNmOTM0LTc3NDctNDcxNi05ZWY1LTQ3NzI0OWIxYTlhNC5qcGc=",
-          "imdb_id": "tt12042730"
+          "imdb_id": "tt12042730",
+          "avg_runtime_mins": 156,
+          "keywords": [
+            "Sci-Fi",
+            "Adventure"
+          ]
         },
         {
           "title": "Backrooms",
@@ -453,7 +566,13 @@
           "vidmired_score": 197492088,
           "times_in_top10": 19,
           "image_direct_url": "https://resizing.flixster.com/rhgxSrAD0DJLjAa7CXGBQU5h81E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U3YzFlM2U0LWM1NzctNDg5Yy05M2Y4LTVmYWYxOTQyMDEyMy5qcGc=",
-          "imdb_id": "tt26657236"
+          "imdb_id": "tt26657236",
+          "avg_runtime_mins": 110,
+          "keywords": [
+            "Sci-Fi",
+            "Fantasy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Pressure",
@@ -472,7 +591,13 @@
           "vidmired_score": 183285780,
           "times_in_top10": 4,
           "image_direct_url": "https://resizing.flixster.com/vSoBhL9C3wLF2sF4vN6nFkkT6RE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzk2MTViZTc0LWM4MWQtNDYyYi05MWJkLWJjY2E2YWMwYThkYi5qcGc=",
-          "imdb_id": "tt32547691"
+          "imdb_id": "tt32547691",
+          "avg_runtime_mins": 100,
+          "keywords": [
+            "History",
+            "Drama",
+            "War"
+          ]
         },
         {
           "title": "Runner",
@@ -491,7 +616,13 @@
           "vidmired_score": 182433713,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/SqeO7biIEgLsJcRFZu3CLJw4JCM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E4NjJlZGY0LTE4ODYtNGI1Ni1hOGM1LThkZjM0NmEyNDFkZi5qcGc=",
-          "imdb_id": "tt31349844"
+          "imdb_id": "tt31349844",
+          "avg_runtime_mins": 98,
+          "keywords": [
+            "Action",
+            "Comedy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Avengers: Endgame",
@@ -510,7 +641,13 @@
           "vidmired_score": 172161000,
           "times_in_top10": 5,
           "image_direct_url": "https://resizing.flixster.com/hu13NxX2cqnYsnL7vDtkOoq7Z-A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwYTA0ZmQyLTEzZmMtNGIwMS1hNDdjLTE3NWIwOTY2MzNkYi5qcGc=",
-          "imdb_id": "tt4154796"
+          "imdb_id": "tt4154796",
+          "avg_runtime_mins": 181,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "United 93",
@@ -527,7 +664,11 @@
           "vidmired_score": 171660600,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p160837_p_v8_an.jpg",
-          "imdb_id": "tt0475276"
+          "imdb_id": "tt0475276",
+          "avg_runtime_mins": 111,
+          "keywords": [
+            "Drama"
+          ]
         },
         {
           "title": "Weapons",
@@ -546,7 +687,12 @@
           "vidmired_score": 169767780,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/uaS9Buuct1GoHPTsNXIUBfvORbg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YzY2U4OWM5LWUyNTctNDJmMy1hYTc3LTAwMDY5NjU0N2VjZS5qcGc=",
-          "imdb_id": "tt26581740"
+          "imdb_id": "tt26581740",
+          "avg_runtime_mins": 128,
+          "keywords": [
+            "Horror",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "DC",
@@ -565,7 +711,13 @@
           "vidmired_score": 156914096,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/5jAFGUmAOmmJrb58yed3Eg6b1Qs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzIzMDFmNzZkLWM2NzMtNGMxOC1iODdlLTljODc3OTYwYjQ1Ni5qcGc=",
-          "imdb_id": "tt37501035"
+          "imdb_id": "tt37501035",
+          "avg_runtime_mins": 142,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Drama"
+          ]
         },
         {
           "title": "The Gentlemen",
@@ -584,7 +736,13 @@
           "vidmired_score": 115989300,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/tDoTBxvQLbbdFRobsy1hOWMg2Uc=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQzZjMyMThmLTBlMzYtNDcyYy05OGY2LWRlOTUyOTlkYzdkMy53ZWJw",
-          "imdb_id": "tt8367814"
+          "imdb_id": "tt8367814",
+          "avg_runtime_mins": 113,
+          "keywords": [
+            "Crime",
+            "Drama",
+            "Comedy"
+          ]
         }
       ],
       "last_month": [
@@ -605,7 +763,13 @@
           "vidmired_score": 4838523930,
           "image_direct_url": "https://resizing.flixster.com/A0AhY7vcoHLlqwO6nfwnyOB6wZA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E1NWUwMWJhLWI5OTUtNDZkMy04NmE4LWU5Y2I5NTQ2NTE4OC5qcGc=",
           "imdb_id": "tt22084616",
-          "times_in_top10": 26
+          "avg_runtime_mins": 145,
+          "times_in_top10": 26,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Odyssey",
@@ -624,7 +788,13 @@
           "vidmired_score": 4653717784,
           "image_direct_url": "https://resizing.flixster.com/A6I9ex8FRe7tDW-mI3eP3tx_HmE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkyOGVlMzAxLThhN2ItNGYyMy04NzdjLTYyNTEyMDRmYTQzOS5qcGc=",
           "imdb_id": "tt33764258",
-          "times_in_top10": 28
+          "avg_runtime_mins": 10373,
+          "times_in_top10": 28,
+          "keywords": [
+            "Adventure",
+            "Action",
+            "Fantasy"
+          ]
         },
         {
           "title": "Coyote vs. Acme",
@@ -643,7 +813,13 @@
           "vidmired_score": 4066241300,
           "image_direct_url": "https://resizing.flixster.com/2tWOVnwNoN3mVPGeTtFxCACoAPM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwMjUzNTNmLWNkZWQtNDVmNS1iZWI3LTY4MjQ4OTc5NGNlZi5qcGc=",
           "imdb_id": "tt1756855",
-          "times_in_top10": 9
+          "avg_runtime_mins": 103,
+          "times_in_top10": 9,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Buddy",
@@ -662,7 +838,9 @@
           "vidmired_score": 1899501972,
           "image_direct_url": "https://resizing.flixster.com/yl5JN7R8Zb7ZuFbu4xFCxx-Npzs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y5N2E5Yjc2LTEzNjEtNDhiYi05MWQ5LWQ3ODg4YzY2NzRhYi5qcGc=",
           "imdb_id": "tt37281055",
-          "times_in_top10": 5
+          "avg_runtime_mins": 96,
+          "times_in_top10": 5,
+          "keywords": []
         },
         {
           "title": "The Rocky Horror Picture Show",
@@ -681,7 +859,13 @@
           "vidmired_score": 1064001015,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12793_p_v12_at.jpg",
           "imdb_id": "tt0073629",
-          "times_in_top10": 2
+          "avg_runtime_mins": 100,
+          "times_in_top10": 2,
+          "keywords": [
+            "Musical",
+            "Comedy",
+            "Horror"
+          ]
         },
         {
           "title": "Project Hail Mary",
@@ -700,7 +884,12 @@
           "vidmired_score": 1000376125,
           "image_direct_url": "https://resizing.flixster.com/6EeDwgqrKFi1ADO4k4VzZtrOVhM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NlNDNmOTM0LTc3NDctNDcxNi05ZWY1LTQ3NzI0OWIxYTlhNC5qcGc=",
           "imdb_id": "tt12042730",
-          "times_in_top10": 31
+          "avg_runtime_mins": 156,
+          "times_in_top10": 31,
+          "keywords": [
+            "Sci-Fi",
+            "Adventure"
+          ]
         },
         {
           "title": "Backrooms",
@@ -719,7 +908,13 @@
           "vidmired_score": 949959090,
           "image_direct_url": "https://resizing.flixster.com/rhgxSrAD0DJLjAa7CXGBQU5h81E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U3YzFlM2U0LWM1NzctNDg5Yy05M2Y4LTVmYWYxOTQyMDEyMy5qcGc=",
           "imdb_id": "tt26657236",
-          "times_in_top10": 19
+          "avg_runtime_mins": 110,
+          "times_in_top10": 19,
+          "keywords": [
+            "Sci-Fi",
+            "Fantasy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Avengers: Endgame",
@@ -738,7 +933,13 @@
           "vidmired_score": 824410080,
           "image_direct_url": "https://resizing.flixster.com/hu13NxX2cqnYsnL7vDtkOoq7Z-A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwYTA0ZmQyLTEzZmMtNGIwMS1hNDdjLTE3NWIwOTY2MzNkYi5qcGc=",
           "imdb_id": "tt4154796",
-          "times_in_top10": 5
+          "avg_runtime_mins": 181,
+          "times_in_top10": 5,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Teenage Sex and Death at Camp Miasma",
@@ -757,7 +958,13 @@
           "vidmired_score": 804687000,
           "image_direct_url": "https://resizing.flixster.com/e6L--SBRx1PvceaQoUsdgmWeZqs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q2OTE2MjRiLTI0OWMtNDE1ZC04YTQwLTg0ZmVmMzhmMWE4Mi5qcGc=",
           "imdb_id": "tt35298123",
-          "times_in_top10": 3
+          "avg_runtime_mins": 112,
+          "times_in_top10": 3,
+          "keywords": [
+            "Horror",
+            "Comedy",
+            "LGBTQ+"
+          ]
         },
         {
           "title": "Toy Story 5",
@@ -776,7 +983,13 @@
           "vidmired_score": 742047186,
           "image_direct_url": "https://resizing.flixster.com/mA3D_vy893aAyLJ9qFLLW4U6LIU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YxNjlmZDVkLWU1YjEtNGU5Mi1hMDQwLWE0ZjNhYmNiMGFkZS5qcGc=",
           "imdb_id": "tt29355505",
-          "times_in_top10": 14
+          "avg_runtime_mins": 102,
+          "times_in_top10": 14,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "9 to 5",
@@ -795,7 +1008,11 @@
           "vidmired_score": 674718680,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p3006_p_v8_bd.jpg",
           "imdb_id": "tt0080319",
-          "times_in_top10": 2
+          "avg_runtime_mins": 110,
+          "times_in_top10": 2,
+          "keywords": [
+            "Comedy"
+          ]
         },
         {
           "title": "Spider-Man: No Way Home",
@@ -814,7 +1031,13 @@
           "vidmired_score": 658866777,
           "image_direct_url": "https://resizing.flixster.com/8PNiwC2bpe9OecfYZSOVkvYC5vk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U5NGM0Y2Q1LTAyYTItNGFjNC1hNWZhLWMzYjJjOTdjMTFhOS5qcGc=",
           "imdb_id": "tt10872600",
-          "times_in_top10": 4
+          "avg_runtime_mins": 148,
+          "times_in_top10": 4,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Invite",
@@ -833,7 +1056,13 @@
           "vidmired_score": 655922880,
           "image_direct_url": "https://resizing.flixster.com/oQP7j5g3mdXhrPzuVM1Kt5yKNbo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzMyM2E1MzNiLWJjYzgtNDQ1MC05M2Q0LTY2NWJmM2IyYjk4ZC5qcGc=",
           "imdb_id": "tt14173636",
-          "times_in_top10": 7
+          "avg_runtime_mins": 107,
+          "times_in_top10": 7,
+          "keywords": [
+            "Comedy",
+            "Drama",
+            "Romance"
+          ]
         },
         {
           "title": "Hope",
@@ -852,7 +1081,13 @@
           "vidmired_score": 622358761,
           "image_direct_url": "https://resizing.flixster.com/RwjjB3RtYxPrTBa--yN1TmEWEiM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzExNzBlYTg1LTA0ZmMtNGE4MS1iOTVmLWYxYzExNzRlZWYyZS5qcGc=",
           "imdb_id": "tt27369017",
-          "times_in_top10": 2
+          "avg_runtime_mins": null,
+          "times_in_top10": 2,
+          "keywords": [
+            "Horror",
+            "Action",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Steel Magnolias",
@@ -871,7 +1106,12 @@
           "vidmired_score": 527770801,
           "image_direct_url": "https://resizing.flixster.com/jpx4_682HCg0XHgLsCCGIv78h90=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkyNDA4YTY1LTZlZjItNGM4Zi1iNDAzLWNiODE3OGJkMDQ1Yy5qcGc=",
           "imdb_id": "tt0098384",
-          "times_in_top10": 0
+          "avg_runtime_mins": 118,
+          "times_in_top10": 0,
+          "keywords": [
+            "Comedy",
+            "Drama"
+          ]
         },
         {
           "title": "The End of Oak Street",
@@ -890,7 +1130,11 @@
           "vidmired_score": 502173952,
           "image_direct_url": "https://resizing.flixster.com/mh5WwBB4gOPvlxaLkoz6aYdsisg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzllNzkxYjJhLWEyNTgtNDNlNS1iZGM5LWQyOTU4ZGQ0YWI4MC5qcGc=",
           "imdb_id": "tt27165187",
-          "times_in_top10": 3
+          "avg_runtime_mins": 99,
+          "times_in_top10": 3,
+          "keywords": [
+            "Mystery & Thriller"
+          ]
         }
       ],
       "last_3_months": [
@@ -911,7 +1155,13 @@
           "vidmired_score": 39630128716,
           "image_direct_url": "https://resizing.flixster.com/A6I9ex8FRe7tDW-mI3eP3tx_HmE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzkyOGVlMzAxLThhN2ItNGYyMy04NzdjLTYyNTEyMDRmYTQzOS5qcGc=",
           "imdb_id": "tt33764258",
-          "times_in_top10": 28
+          "avg_runtime_mins": 10373,
+          "times_in_top10": 28,
+          "keywords": [
+            "Adventure",
+            "Action",
+            "Fantasy"
+          ]
         },
         {
           "title": "Spider-Man: Brand New Day",
@@ -930,7 +1180,13 @@
           "vidmired_score": 25357786560,
           "image_direct_url": "https://resizing.flixster.com/A0AhY7vcoHLlqwO6nfwnyOB6wZA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2E1NWUwMWJhLWI5OTUtNDZkMy04NmE4LWU5Y2I5NTQ2NTE4OC5qcGc=",
           "imdb_id": "tt22084616",
-          "times_in_top10": 26
+          "avg_runtime_mins": 145,
+          "times_in_top10": 26,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Toy Story 5",
@@ -949,7 +1205,13 @@
           "vidmired_score": 6896817318,
           "image_direct_url": "https://resizing.flixster.com/mA3D_vy893aAyLJ9qFLLW4U6LIU=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2YxNjlmZDVkLWU1YjEtNGU5Mi1hMDQwLWE0ZjNhYmNiMGFkZS5qcGc=",
           "imdb_id": "tt29355505",
-          "times_in_top10": 14
+          "avg_runtime_mins": 102,
+          "times_in_top10": 14,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Project Hail Mary",
@@ -968,7 +1230,12 @@
           "vidmired_score": 6449427450,
           "image_direct_url": "https://resizing.flixster.com/6EeDwgqrKFi1ADO4k4VzZtrOVhM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2NlNDNmOTM0LTc3NDctNDcxNi05ZWY1LTQ3NzI0OWIxYTlhNC5qcGc=",
           "imdb_id": "tt12042730",
-          "times_in_top10": 31
+          "avg_runtime_mins": 156,
+          "times_in_top10": 31,
+          "keywords": [
+            "Sci-Fi",
+            "Adventure"
+          ]
         },
         {
           "title": "Backrooms",
@@ -987,7 +1254,13 @@
           "vidmired_score": 6435360420,
           "image_direct_url": "https://resizing.flixster.com/rhgxSrAD0DJLjAa7CXGBQU5h81E=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U3YzFlM2U0LWM1NzctNDg5Yy05M2Y4LTVmYWYxOTQyMDEyMy5qcGc=",
           "imdb_id": "tt26657236",
-          "times_in_top10": 19
+          "avg_runtime_mins": 110,
+          "times_in_top10": 19,
+          "keywords": [
+            "Sci-Fi",
+            "Fantasy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Coyote vs. Acme",
@@ -1006,7 +1279,13 @@
           "vidmired_score": 5445684240,
           "image_direct_url": "https://resizing.flixster.com/2tWOVnwNoN3mVPGeTtFxCACoAPM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2UwMjUzNTNmLWNkZWQtNDVmNS1iZWI3LTY4MjQ4OTc5NGNlZi5qcGc=",
           "imdb_id": "tt1756855",
-          "times_in_top10": 9
+          "avg_runtime_mins": 103,
+          "times_in_top10": 9,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Spider-Man: No Way Home",
@@ -1025,7 +1304,13 @@
           "vidmired_score": 4175938173,
           "image_direct_url": "https://resizing.flixster.com/8PNiwC2bpe9OecfYZSOVkvYC5vk=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U5NGM0Y2Q1LTAyYTItNGFjNC1hNWZhLWMzYjJjOTdjMTFhOS5qcGc=",
           "imdb_id": "tt10872600",
-          "times_in_top10": 4
+          "avg_runtime_mins": 148,
+          "times_in_top10": 4,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Invite",
@@ -1044,7 +1329,13 @@
           "vidmired_score": 3619452000,
           "image_direct_url": "https://resizing.flixster.com/oQP7j5g3mdXhrPzuVM1Kt5yKNbo=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzMyM2E1MzNiLWJjYzgtNDQ1MC05M2Q0LTY2NWJmM2IyYjk4ZC5qcGc=",
           "imdb_id": "tt14173636",
-          "times_in_top10": 7
+          "avg_runtime_mins": 107,
+          "times_in_top10": 7,
+          "keywords": [
+            "Comedy",
+            "Drama",
+            "Romance"
+          ]
         },
         {
           "title": "The Sheep Detectives",
@@ -1063,7 +1354,13 @@
           "vidmired_score": 3425061600,
           "image_direct_url": "https://resizing.flixster.com/LviGdc9-5BykrMyhX1oGyU-HhXE=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzYzNjA4ZWQ1LTE1M2UtNGI2Mi05NTJlLWM0ZTg2NWM5ODJhNC5qcGc=",
           "imdb_id": "tt32566481",
-          "times_in_top10": 10
+          "avg_runtime_mins": 109,
+          "times_in_top10": 10,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Oppenheimer",
@@ -1082,7 +1379,13 @@
           "vidmired_score": 3392816700,
           "image_direct_url": "https://resizing.flixster.com/dV1vfa4w_dB4wzk7A_VzThWUWw8=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzEyZDMyYjZmLThmNzAtNDliNC1hMjFmLTA2ZWY4M2UyMjJhMi5qcGc=",
           "imdb_id": "tt15398776",
-          "times_in_top10": 3
+          "avg_runtime_mins": 180,
+          "times_in_top10": 3,
+          "keywords": [
+            "Biography",
+            "History",
+            "Drama"
+          ]
         },
         {
           "title": "Minions & Monsters",
@@ -1101,7 +1404,13 @@
           "vidmired_score": 2653806450,
           "image_direct_url": "https://resizing.flixster.com/1gyu0k41JOFVHiGEh8aA1Pw7X14=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzY0ZTNhMGQwLWEwN2QtNDIxNS05ZTNmLTEzMGM1YmM0ZmYyNC5qcGc=",
           "imdb_id": "tt32890033",
-          "times_in_top10": 2
+          "avg_runtime_mins": 90,
+          "times_in_top10": 2,
+          "keywords": [
+            "Kids & Family",
+            "Comedy",
+            "Adventure"
+          ]
         },
         {
           "title": "Avengers: Endgame",
@@ -1120,7 +1429,13 @@
           "vidmired_score": 2441336040,
           "image_direct_url": "https://resizing.flixster.com/hu13NxX2cqnYsnL7vDtkOoq7Z-A=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQwYTA0ZmQyLTEzZmMtNGIwMS1hNDdjLTE3NWIwOTY2MzNkYi5qcGc=",
           "imdb_id": "tt4154796",
-          "times_in_top10": 5
+          "avg_runtime_mins": 181,
+          "times_in_top10": 5,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Buddy",
@@ -1139,7 +1454,9 @@
           "vidmired_score": 2401822224,
           "image_direct_url": "https://resizing.flixster.com/yl5JN7R8Zb7ZuFbu4xFCxx-Npzs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Y5N2E5Yjc2LTEzNjEtNDhiYi05MWQ5LWQ3ODg4YzY2NzRhYi5qcGc=",
           "imdb_id": "tt37281055",
-          "times_in_top10": 5
+          "avg_runtime_mins": 96,
+          "times_in_top10": 5,
+          "keywords": []
         },
         {
           "title": "Evil Dead Burn",
@@ -1158,7 +1475,12 @@
           "vidmired_score": 2232135630,
           "image_direct_url": "https://resizing.flixster.com/QAiR2e3WJLT9yUP9q0DmhXep1wg=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzVkZDMwNjYxLTYyY2MtNGUwZS05M2M2LTc2MTY5NDY0Y2M0OC5qcGc=",
           "imdb_id": "tt31170389",
-          "times_in_top10": 2
+          "avg_runtime_mins": 109,
+          "times_in_top10": 2,
+          "keywords": [
+            "Horror",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Spider-Man: Homecoming",
@@ -1177,7 +1499,13 @@
           "vidmired_score": 2127215076,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p12798844_p_v8_ao.jpg",
           "imdb_id": "tt2250912",
-          "times_in_top10": 2
+          "avg_runtime_mins": 7996,
+          "times_in_top10": 2,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Thunderbolts*",
@@ -1196,7 +1524,13 @@
           "vidmired_score": 1982582184,
           "image_direct_url": "https://resizing.flixster.com/9GzvfSWe1iPtRk_vtcfpHIQGyCI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2U2MzgyZDIyLWNjZmYtNGU5NS05ZjczLTYyZGE1ZGIyYzIxNC5qcGc=",
           "imdb_id": "tt20969586",
-          "times_in_top10": 1
+          "avg_runtime_mins": 7600,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Crime"
+          ]
         },
         {
           "title": "Interstellar",
@@ -1215,7 +1549,13 @@
           "vidmired_score": 1933498440,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg",
           "imdb_id": "tt0816692",
-          "times_in_top10": 2
+          "avg_runtime_mins": 169,
+          "times_in_top10": 2,
+          "keywords": [
+            "Sci-Fi",
+            "Adventure",
+            "Action"
+          ]
         },
         {
           "title": "The Devil Wears Prada 2",
@@ -1234,7 +1574,12 @@
           "vidmired_score": 1881550944,
           "image_direct_url": "https://resizing.flixster.com/nDyeWG-KIXjAvnuOzKB2sLzbaNI=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzZiNzQyMTM3LWMwMWEtNDcwZS1hYTNmLWIwZTRlOWU1ODcyOC5qcGc=",
           "imdb_id": "tt33612209",
-          "times_in_top10": 8
+          "avg_runtime_mins": 119,
+          "times_in_top10": 8,
+          "keywords": [
+            "Comedy",
+            "Drama"
+          ]
         },
         {
           "title": "Superman",
@@ -1253,7 +1598,13 @@
           "vidmired_score": 1849609350,
           "image_direct_url": "https://resizing.flixster.com/08R7NSRbZV4s8n5wlLgZLVyMrZ0=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzBhZDkzNTk2LTk3MzktNDY0ZS1hN2NkLWFkMmQxMDc3MjAzOC5qcGc=",
           "imdb_id": "tt5950044",
-          "times_in_top10": 1
+          "avg_runtime_mins": 129,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Sci-Fi"
+          ]
         },
         {
           "title": "Teenage Sex and Death at Camp Miasma",
@@ -1272,7 +1623,13 @@
           "vidmired_score": 1795210872,
           "image_direct_url": "https://resizing.flixster.com/e6L--SBRx1PvceaQoUsdgmWeZqs=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2Q2OTE2MjRiLTI0OWMtNDE1ZC04YTQwLTg0ZmVmMzhmMWE4Mi5qcGc=",
           "imdb_id": "tt35298123",
-          "times_in_top10": 3
+          "avg_runtime_mins": 112,
+          "times_in_top10": 3,
+          "keywords": [
+            "Horror",
+            "Comedy",
+            "LGBTQ+"
+          ]
         },
         {
           "title": "The Drama",
@@ -1290,7 +1647,13 @@
           "vidmired_score": 1454814192,
           "image_direct_url": "https://resizing.flixster.com/71RGJ8iQzbcgL8AA3zpDH2u6ZEM=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzQ2NzQ1YTJjLTljMzAtNDAzMS1hOWExLTYyZWI5ZDEwZWI1Mi5qcGc=",
           "imdb_id": "tt33071426",
-          "times_in_top10": 7
+          "avg_runtime_mins": 106,
+          "times_in_top10": 7,
+          "keywords": [
+            "Drama",
+            "Romance",
+            "Comedy"
+          ]
         },
         {
           "title": "Tenet",
@@ -1309,7 +1672,13 @@
           "vidmired_score": 1377199040,
           "image_direct_url": "https://resizing.flixster.com/zHrh5Wu9CxOi55eiImv27H-7zMw=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzLzliMTVjNTkwLTA1ZTUtNDEyMS04NmNmLTBiMzA2OThhMGY0MC5qcGc=",
           "imdb_id": "tt6723592",
-          "times_in_top10": 1
+          "avg_runtime_mins": 150,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Sci-Fi",
+            "Mystery & Thriller"
+          ]
         }
       ]
     },
@@ -1337,7 +1706,13 @@
           "vidmired_score": 1055772468,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/UCh0UP728hWIpF33hfgkX5HaA1U=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNjk3ZDI1OTEtNmZhYS00NjM3LTgwMmMtMTYxOWJlOTc5ZjZmLmpwZw==",
-          "imdb_id": "tt26545992"
+          "imdb_id": "tt26545992",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Drama",
+            "Detective",
+            "Neo-Western"
+          ]
         },
         {
           "title": "Widow's Bay",
@@ -1361,7 +1736,13 @@
           "vidmired_score": 659935136,
           "times_in_top10": 22,
           "image_direct_url": "https://resizing.flixster.com/FBLr2H6SulNALtamrstRyoLPGnc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMDZlZTNiYzItYTY4Yy00ZmZmLWJmNzktOTk4NGFjMGJkZTE0LnBuZw==",
-          "imdb_id": "tt33332385"
+          "imdb_id": "tt33332385",
+          "avg_runtime_mins": 40,
+          "keywords": [
+            "Comedy horror",
+            "Supernatural horror",
+            "Mystery"
+          ]
         },
         {
           "title": "Neagley",
@@ -1385,7 +1766,13 @@
           "vidmired_score": 640086890,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/3mvkzA2I_5T9EqWlLYjYNlgcQFE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNzBhMTI5OTEtYmRhOS00NDBmLWIwMDAtNGUxMDkyNmY0OTc0LmpwZw==",
-          "imdb_id": "tt33539520"
+          "imdb_id": "tt33539520",
+          "avg_runtime_mins": 49,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "Slow Horses",
@@ -1409,7 +1796,13 @@
           "vidmired_score": 602929712,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/BGMtJsGP5WfnzdELSHA_uqXPOGk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZmMyZWYwNjktMWYyNS00MGY3LTk1MmEtZjRlYzA4MzAxNmU1LnBuZw==",
-          "imdb_id": "tt5875444"
+          "imdb_id": "tt5875444",
+          "avg_runtime_mins": 46,
+          "keywords": [
+            "Black comedy",
+            "Drama",
+            "Spy thriller"
+          ]
         },
         {
           "title": "Lioness",
@@ -1433,7 +1826,13 @@
           "vidmired_score": 392581800,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/zsbrieER7s5v4EyhVipVh_JO8CQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDA0Mzk3OGQtOTA3MS00Yzc2LWI0MGYtNjA0ZTgyODU1NWQzLmpwZw==",
-          "imdb_id": "tt13111078"
+          "imdb_id": "tt13111078",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Action drama",
+            "Spy thriller",
+            "Crime"
+          ]
         },
         {
           "title": "The Gentlemen",
@@ -1457,7 +1856,13 @@
           "vidmired_score": 368634630,
           "times_in_top10": 4,
           "image_direct_url": "https://resizing.flixster.com/Nd2iz5z5MJkPNDBCgmdCD1hFNaM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTE2NWRlY2MtN2YxZC00NTg3LWFiMjktZTM3ZGJjNDViYzljLnBuZw==",
-          "imdb_id": "tt13210838"
+          "imdb_id": "tt13210838",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Action comedy",
+            "Black comedy",
+            "Crime drama"
+          ]
         },
         {
           "title": "Ted Lasso",
@@ -1481,7 +1886,11 @@
           "vidmired_score": 341914682,
           "times_in_top10": 11,
           "image_direct_url": "https://resizing.flixster.com/BDlR1G-WwsPIXtywPgW9Gdvlyu4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYmY5NDVmZjgtYWRmMC00YTNmLThiOGMtMzQyMjQ4N2E3Y2YyLnBuZw==",
-          "imdb_id": "tt10986410"
+          "imdb_id": "tt10986410",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Sports comedy drama"
+          ]
         },
         {
           "title": "Reacher",
@@ -1505,7 +1914,13 @@
           "vidmired_score": 319304310,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/WVApYaaI4nczsWQqjG6p_cBD_uE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODBmMTI0ZmMtM2NlZC00NzdjLTg0NDktNzdlM2NmNDhkN2Q2LndlYnA=",
-          "imdb_id": "tt9288030"
+          "imdb_id": "tt9288030",
+          "avg_runtime_mins": 49,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "The Traitors",
@@ -1527,7 +1942,12 @@
           "vidmired_score": 216473310,
           "times_in_top10": 4,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23420171_b_v12_aw.jpg",
-          "imdb_id": "tt15557874"
+          "imdb_id": "tt15557874",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Reality",
+            "Game show"
+          ]
         },
         {
           "title": "Stuart Fails to Save the Universe",
@@ -1551,7 +1971,13 @@
           "vidmired_score": 193517786,
           "times_in_top10": 6,
           "image_direct_url": "https://resizing.flixster.com/OcTqg5V8FXrBe_dEBrcNbwsLAp4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmIxNDdhYzYtMGY3ZS00NTc4LWIwY2QtMjYzY2VjMDE5MmM4LmpwZw==",
-          "imdb_id": "tt27497393"
+          "imdb_id": "tt27497393",
+          "avg_runtime_mins": 22,
+          "keywords": [
+            "Comedy",
+            "Science fiction",
+            "Action-adventure"
+          ]
         },
         {
           "title": "The Pitt",
@@ -1575,7 +2001,13 @@
           "vidmired_score": 184353696,
           "times_in_top10": 23,
           "image_direct_url": "https://resizing.flixster.com/ZNfE8Ccij3sgJBYqpywF9MFE-tE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvY2U5ZWE1MzgtYjUyZC00NGQ0LTg1NGYtZTc1NWM2YmZmNzQ3LmpwZw==",
-          "imdb_id": "tt31938062"
+          "imdb_id": "tt31938062",
+          "avg_runtime_mins": 51,
+          "keywords": [
+            "Medical drama",
+            "Procedural drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Dark Matter",
@@ -1599,7 +2031,13 @@
           "vidmired_score": 157932550,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/_SrpOsrXWO-QQEYdKrTTMGkwJgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTU1OWM5ZjYtYTM0MC00OTQ3LWI2ZmEtNmIxNTY2Nzg5NTJhLnBuZw==",
-          "imdb_id": "tt19231492"
+          "imdb_id": "tt19231492",
+          "avg_runtime_mins": 52,
+          "keywords": [
+            "Science fiction",
+            "Drama",
+            "Thriller"
+          ]
         },
         {
           "title": "South Park",
@@ -1619,7 +2057,13 @@
           "vidmired_score": 157241840,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184338_b_v12_au.jpg",
-          "imdb_id": "tt0121955"
+          "imdb_id": "tt0121955",
+          "avg_runtime_mins": 22,
+          "keywords": [
+            "Animated sitcom",
+            "Black comedy",
+            "Satire"
+          ]
         },
         {
           "title": "The Sopranos",
@@ -1643,7 +2087,13 @@
           "vidmired_score": 140835072,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184487_b_v8_am.jpg",
-          "imdb_id": "tt0141842"
+          "imdb_id": "tt0141842",
+          "avg_runtime_mins": 59,
+          "keywords": [
+            "Crime drama",
+            "Serial drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Furious",
@@ -1667,7 +2117,13 @@
           "vidmired_score": 138886704,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/WsQPeEYJKSC3sRMbOgMFKN1OaxA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTk2YWYyM2UtZTQ2OS00MjUyLTgxYmYtNjY1NmUwYWE2M2U3LnBuZw==",
-          "imdb_id": "tt36303968"
+          "imdb_id": "tt36303968",
+          "avg_runtime_mins": 52,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Fauda",
@@ -1686,7 +2142,13 @@
           "vidmired_score": 133077800,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/quWS2OKobkFLYxIRU5RQ0HT7_V8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjMwMDg5Ni53ZWJw",
-          "imdb_id": "tt4565380"
+          "imdb_id": "tt4565380",
+          "avg_runtime_mins": 45,
+          "keywords": [
+            "Action",
+            "Serial drama",
+            "Psychological thriller"
+          ]
         },
         {
           "title": "Breaking Bad",
@@ -1705,7 +2167,13 @@
           "vidmired_score": 126671136,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185846_b_v8_ad.jpg",
-          "imdb_id": "tt0903747"
+          "imdb_id": "tt0903747",
+          "avg_runtime_mins": 50,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Neo-Western"
+          ]
         },
         {
           "title": "Game of Thrones",
@@ -1727,7 +2195,13 @@
           "vidmired_score": 115653720,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8553063_b_v12_ax.jpg",
-          "imdb_id": "tt0944947"
+          "imdb_id": "tt0944947",
+          "avg_runtime_mins": 66,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Adults",
@@ -1751,7 +2225,12 @@
           "vidmired_score": 112871440,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29957001_b_v12_ad.jpg",
-          "imdb_id": "tt33049767"
+          "imdb_id": "tt33049767",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Sitcom",
+            "Comedy"
+          ]
         },
         {
           "title": "Severance",
@@ -1775,7 +2254,13 @@
           "vidmired_score": 102478400,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/SjOz5i_l74oCydVXE0g2_zxspTY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNTVmYjhkNDgtM2MyZi00OGM2LThhYWUtMTg2ZTkzMzg2Mzc2LnBuZw==",
-          "imdb_id": "tt11280740"
+          "imdb_id": "tt11280740",
+          "avg_runtime_mins": 56,
+          "keywords": [
+            "Black comedy",
+            "Dystopian",
+            "Mystery box"
+          ]
         },
         {
           "title": "Ludwig",
@@ -1799,7 +2284,13 @@
           "vidmired_score": 101080863,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/zXqkNakCcOGUkZUUszEgga_lgwk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMjk1OGQzMzAtZmRiMC00YmZkLThlOTQtMmQ5NDI0ZGNlZDAwLmpwZw==",
-          "imdb_id": "tt27846061"
+          "imdb_id": "tt27846061",
+          "avg_runtime_mins": 56,
+          "keywords": [
+            "Comedy drama",
+            "Detective",
+            "Mystery"
+          ]
         },
         {
           "title": "Stranger Things",
@@ -1823,7 +2314,13 @@
           "vidmired_score": 92844630,
           "times_in_top10": 7,
           "image_direct_url": "https://resizing.flixster.com/3kl0YaaOu8zAfi13ohK0kRnMdFc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzdiMGI2YTItOWU1My00ODNkLTgzNTItOGZmNzE3Y2M0MzBiLmpwZw==",
-          "imdb_id": "tt4574334"
+          "imdb_id": "tt4574334",
+          "avg_runtime_mins": 92,
+          "keywords": [
+            "Science fiction",
+            "Horror",
+            "Mystery"
+          ]
         },
         {
           "title": "The Beast in Me",
@@ -1847,7 +2344,13 @@
           "vidmired_score": 89900250,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/wVI-JliwKMpttuM3MjhCW2IUslo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzY1OTQzOTYtMTMyNC00M2NmLWIyZDktOWZjODZlYjAwOWQ0LmpwZw==",
-          "imdb_id": "tt31974367"
+          "imdb_id": "tt31974367",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Psychological thriller",
+            "Crime drama",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Last Seen",
@@ -1871,7 +2374,13 @@
           "vidmired_score": 83941848,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/n2w7A7mJJTG3Hr3ksQrGwusw1zk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYWViYWQ3MjItM2I0NS00NjgwLWJlZmMtMzBhMzNmZjRmOGQ0LnBuZw==",
-          "imdb_id": "tt6037988"
+          "imdb_id": "tt6037988",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Drama",
+            "Crime",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "House of the Dragon",
@@ -1895,7 +2404,13 @@
           "vidmired_score": 76664016,
           "times_in_top10": 11,
           "image_direct_url": "https://resizing.flixster.com/Pa4kLesNhuM7u454evqcJSjOaZM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODI1MmM4ZGYtMDk3Yi00MTU2LTkwNzQtOWY4NDQ1YWYyYzRiLmpwZw==",
-          "imdb_id": "tt11198330"
+          "imdb_id": "tt11198330",
+          "avg_runtime_mins": 62,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         }
       ],
       "last_week": [
@@ -1921,7 +2436,13 @@
           "vidmired_score": 1607183144,
           "times_in_top10": 22,
           "image_direct_url": "https://resizing.flixster.com/FBLr2H6SulNALtamrstRyoLPGnc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMDZlZTNiYzItYTY4Yy00ZmZmLWJmNzktOTk4NGFjMGJkZTE0LnBuZw==",
-          "imdb_id": "tt33332385"
+          "imdb_id": "tt33332385",
+          "avg_runtime_mins": 40,
+          "keywords": [
+            "Comedy horror",
+            "Supernatural horror",
+            "Mystery"
+          ]
         },
         {
           "title": "Lanterns",
@@ -1945,7 +2466,13 @@
           "vidmired_score": 1306136016,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/UCh0UP728hWIpF33hfgkX5HaA1U=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNjk3ZDI1OTEtNmZhYS00NjM3LTgwMmMtMTYxOWJlOTc5ZjZmLmpwZw==",
-          "imdb_id": "tt26545992"
+          "imdb_id": "tt26545992",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Drama",
+            "Detective",
+            "Neo-Western"
+          ]
         },
         {
           "title": "Slow Horses",
@@ -1969,7 +2496,13 @@
           "vidmired_score": 639943920,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/BGMtJsGP5WfnzdELSHA_uqXPOGk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZmMyZWYwNjktMWYyNS00MGY3LTk1MmEtZjRlYzA4MzAxNmU1LnBuZw==",
-          "imdb_id": "tt5875444"
+          "imdb_id": "tt5875444",
+          "avg_runtime_mins": 46,
+          "keywords": [
+            "Black comedy",
+            "Drama",
+            "Spy thriller"
+          ]
         },
         {
           "title": "The Gentlemen",
@@ -1993,7 +2526,13 @@
           "vidmired_score": 588744000,
           "times_in_top10": 4,
           "image_direct_url": "https://resizing.flixster.com/Nd2iz5z5MJkPNDBCgmdCD1hFNaM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTE2NWRlY2MtN2YxZC00NTg3LWFiMjktZTM3ZGJjNDViYzljLnBuZw==",
-          "imdb_id": "tt13210838"
+          "imdb_id": "tt13210838",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Action comedy",
+            "Black comedy",
+            "Crime drama"
+          ]
         },
         {
           "title": "Reacher",
@@ -2017,7 +2556,13 @@
           "vidmired_score": 446534010,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/WVApYaaI4nczsWQqjG6p_cBD_uE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODBmMTI0ZmMtM2NlZC00NzdjLTg0NDktNzdlM2NmNDhkN2Q2LndlYnA=",
-          "imdb_id": "tt9288030"
+          "imdb_id": "tt9288030",
+          "avg_runtime_mins": 49,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "Neagley",
@@ -2041,7 +2586,13 @@
           "vidmired_score": 397462550,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/3mvkzA2I_5T9EqWlLYjYNlgcQFE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNzBhMTI5OTEtYmRhOS00NDBmLWIwMDAtNGUxMDkyNmY0OTc0LmpwZw==",
-          "imdb_id": "tt33539520"
+          "imdb_id": "tt33539520",
+          "avg_runtime_mins": 49,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "Ted Lasso",
@@ -2065,7 +2616,11 @@
           "vidmired_score": 395618172,
           "times_in_top10": 11,
           "image_direct_url": "https://resizing.flixster.com/BDlR1G-WwsPIXtywPgW9Gdvlyu4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYmY5NDVmZjgtYWRmMC00YTNmLThiOGMtMzQyMjQ4N2E3Y2YyLnBuZw==",
-          "imdb_id": "tt10986410"
+          "imdb_id": "tt10986410",
+          "avg_runtime_mins": 54,
+          "keywords": [
+            "Sports comedy drama"
+          ]
         },
         {
           "title": "Lioness",
@@ -2089,7 +2644,13 @@
           "vidmired_score": 327755700,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/zsbrieER7s5v4EyhVipVh_JO8CQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDA0Mzk3OGQtOTA3MS00Yzc2LWI0MGYtNjA0ZTgyODU1NWQzLmpwZw==",
-          "imdb_id": "tt13111078"
+          "imdb_id": "tt13111078",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Action drama",
+            "Spy thriller",
+            "Crime"
+          ]
         },
         {
           "title": "The Pitt",
@@ -2113,7 +2674,13 @@
           "vidmired_score": 279967392,
           "times_in_top10": 23,
           "image_direct_url": "https://resizing.flixster.com/ZNfE8Ccij3sgJBYqpywF9MFE-tE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvY2U5ZWE1MzgtYjUyZC00NGQ0LTg1NGYtZTc1NWM2YmZmNzQ3LmpwZw==",
-          "imdb_id": "tt31938062"
+          "imdb_id": "tt31938062",
+          "avg_runtime_mins": 51,
+          "keywords": [
+            "Medical drama",
+            "Procedural drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Fauda",
@@ -2132,7 +2699,13 @@
           "vidmired_score": 236078000,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/quWS2OKobkFLYxIRU5RQ0HT7_V8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjMwMDg5Ni53ZWJw",
-          "imdb_id": "tt4565380"
+          "imdb_id": "tt4565380",
+          "avg_runtime_mins": 45,
+          "keywords": [
+            "Action",
+            "Serial drama",
+            "Psychological thriller"
+          ]
         },
         {
           "title": "The Beast in Me",
@@ -2156,7 +2729,13 @@
           "vidmired_score": 226656750,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/wVI-JliwKMpttuM3MjhCW2IUslo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzY1OTQzOTYtMTMyNC00M2NmLWIyZDktOWZjODZlYjAwOWQ0LmpwZw==",
-          "imdb_id": "tt31974367"
+          "imdb_id": "tt31974367",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Psychological thriller",
+            "Crime drama",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "DTF St. Louis",
@@ -2180,7 +2759,13 @@
           "vidmired_score": 216480040,
           "times_in_top10": 3,
           "image_direct_url": "https://resizing.flixster.com/IEKPMfnQSZAqvIwqCe0xj_l-8YA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOTM5OTFhNGMtNjBjYS00NDFhLTgwMTAtYzcxN2NiOWZhOGJjLmpwZw==",
-          "imdb_id": "tt34385331"
+          "imdb_id": "tt34385331",
+          "avg_runtime_mins": 49,
+          "keywords": [
+            "Dark comedy",
+            "Crime drama",
+            "Romance"
+          ]
         },
         {
           "title": "Furious",
@@ -2204,7 +2789,13 @@
           "vidmired_score": 215534880,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/WsQPeEYJKSC3sRMbOgMFKN1OaxA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTk2YWYyM2UtZTQ2OS00MjUyLTgxYmYtNjY1NmUwYWE2M2U3LnBuZw==",
-          "imdb_id": "tt36303968"
+          "imdb_id": "tt36303968",
+          "avg_runtime_mins": 52,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Dark Matter",
@@ -2228,7 +2819,13 @@
           "vidmired_score": 191953290,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/_SrpOsrXWO-QQEYdKrTTMGkwJgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTU1OWM5ZjYtYTM0MC00OTQ3LWI2ZmEtNmIxNTY2Nzg5NTJhLnBuZw==",
-          "imdb_id": "tt19231492"
+          "imdb_id": "tt19231492",
+          "avg_runtime_mins": 52,
+          "keywords": [
+            "Science fiction",
+            "Drama",
+            "Thriller"
+          ]
         },
         {
           "title": "Stuart Fails to Save the Universe",
@@ -2252,7 +2849,13 @@
           "vidmired_score": 177909578,
           "times_in_top10": 6,
           "image_direct_url": "https://resizing.flixster.com/OcTqg5V8FXrBe_dEBrcNbwsLAp4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmIxNDdhYzYtMGY3ZS00NTc4LWIwY2QtMjYzY2VjMDE5MmM4LmpwZw==",
-          "imdb_id": "tt27497393"
+          "imdb_id": "tt27497393",
+          "avg_runtime_mins": 22,
+          "keywords": [
+            "Comedy",
+            "Science fiction",
+            "Action-adventure"
+          ]
         },
         {
           "title": "Ludwig",
@@ -2276,7 +2879,13 @@
           "vidmired_score": 177022989,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/zXqkNakCcOGUkZUUszEgga_lgwk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMjk1OGQzMzAtZmRiMC00YmZkLThlOTQtMmQ5NDI0ZGNlZDAwLmpwZw==",
-          "imdb_id": "tt27846061"
+          "imdb_id": "tt27846061",
+          "avg_runtime_mins": 56,
+          "keywords": [
+            "Comedy drama",
+            "Detective",
+            "Mystery"
+          ]
         },
         {
           "title": "South Park",
@@ -2296,7 +2905,13 @@
           "vidmired_score": 175521760,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184338_b_v12_au.jpg",
-          "imdb_id": "tt0121955"
+          "imdb_id": "tt0121955",
+          "avg_runtime_mins": 22,
+          "keywords": [
+            "Animated sitcom",
+            "Black comedy",
+            "Satire"
+          ]
         },
         {
           "title": "Hacks",
@@ -2320,7 +2935,12 @@
           "vidmired_score": 171914344,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/_eZG296P3lVv1p6t0vS1l7SCEOc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzA3YmQxMmItNzYzZi00ZGUyLThkMTEtZDFmNzhlZDk2ZWM1LmpwZw==",
-          "imdb_id": "tt11815682"
+          "imdb_id": "tt11815682",
+          "avg_runtime_mins": 36,
+          "keywords": [
+            "Comedy drama",
+            "Dark comedy"
+          ]
         },
         {
           "title": "Adults",
@@ -2344,7 +2964,12 @@
           "vidmired_score": 157598144,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29957001_b_v12_ad.jpg",
-          "imdb_id": "tt33049767"
+          "imdb_id": "tt33049767",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Sitcom",
+            "Comedy"
+          ]
         },
         {
           "title": "The Diplomat",
@@ -2368,7 +2993,13 @@
           "vidmired_score": 151648200,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/lxaT27UQw72Ed019V_D8Jilpbug=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvN2ExNWY5ODYtMDkzNi00MTYxLWI5M2MtM2I2YzllYzljZGU4LmpwZw==",
-          "imdb_id": "tt17491088"
+          "imdb_id": "tt17491088",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Drama",
+            "Political thriller",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Breaking Bad",
@@ -2387,7 +3018,13 @@
           "vidmired_score": 144764352,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185846_b_v8_ad.jpg",
-          "imdb_id": "tt0903747"
+          "imdb_id": "tt0903747",
+          "avg_runtime_mins": 50,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Neo-Western"
+          ]
         },
         {
           "title": "The Sopranos",
@@ -2411,7 +3048,13 @@
           "vidmired_score": 142619136,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184487_b_v8_am.jpg",
-          "imdb_id": "tt0141842"
+          "imdb_id": "tt0141842",
+          "avg_runtime_mins": 59,
+          "keywords": [
+            "Crime drama",
+            "Serial drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "The Traitors",
@@ -2433,7 +3076,12 @@
           "vidmired_score": 142047270,
           "times_in_top10": 4,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p23420171_b_v12_aw.jpg",
-          "imdb_id": "tt15557874"
+          "imdb_id": "tt15557874",
+          "avg_runtime_mins": null,
+          "keywords": [
+            "Reality",
+            "Game show"
+          ]
         },
         {
           "title": "Task",
@@ -2457,7 +3105,11 @@
           "vidmired_score": 135809856,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/KKETGJGtLokaQrINcJoRi2syWLc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOTIzYzQwYjEtOGE4ZC00MWUzLTljZDMtZmM0NzI3ZTdjZjgxLmpwZw==",
-          "imdb_id": "tt28013708"
+          "imdb_id": "tt28013708",
+          "avg_runtime_mins": 62,
+          "keywords": [
+            "Crime drama"
+          ]
         },
         {
           "title": "Last Seen",
@@ -2481,7 +3133,13 @@
           "vidmired_score": 125608848,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/n2w7A7mJJTG3Hr3ksQrGwusw1zk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYWViYWQ3MjItM2I0NS00NjgwLWJlZmMtMzBhMzNmZjRmOGQ0LnBuZw==",
-          "imdb_id": "tt6037988"
+          "imdb_id": "tt6037988",
+          "avg_runtime_mins": 48,
+          "keywords": [
+            "Drama",
+            "Crime",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Severance",
@@ -2505,7 +3163,13 @@
           "vidmired_score": 124868000,
           "times_in_top10": 2,
           "image_direct_url": "https://resizing.flixster.com/SjOz5i_l74oCydVXE0g2_zxspTY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNTVmYjhkNDgtM2MyZi00OGM2LThhYWUtMTg2ZTkzMzg2Mzc2LnBuZw==",
-          "imdb_id": "tt11280740"
+          "imdb_id": "tt11280740",
+          "avg_runtime_mins": 56,
+          "keywords": [
+            "Black comedy",
+            "Dystopian",
+            "Mystery box"
+          ]
         },
         {
           "title": "Game of Thrones",
@@ -2527,7 +3191,13 @@
           "vidmired_score": 124224865,
           "times_in_top10": 1,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8553063_b_v12_ax.jpg",
-          "imdb_id": "tt0944947"
+          "imdb_id": "tt0944947",
+          "avg_runtime_mins": 66,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Paradise",
@@ -2551,7 +3221,13 @@
           "vidmired_score": 123143240,
           "times_in_top10": 8,
           "image_direct_url": "https://resizing.flixster.com/8ebILtauJ0ROJw7Unxx62pbyeKA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDAyNTU4YWYtM2RjOS00ZTQ5LTg1NGEtYWNhNTEzMGViNjE3LmpwZw==",
-          "imdb_id": "tt27444205"
+          "imdb_id": "tt27444205",
+          "avg_runtime_mins": 52,
+          "keywords": [
+            "Political thriller",
+            "Post-apocalyptic",
+            "Science fiction"
+          ]
         },
         {
           "title": "The Paper",
@@ -2575,7 +3251,13 @@
           "vidmired_score": 111729537,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/880nUj8KSXg1ugi2rm2OUn5JY00=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNWUyYWIyY2MtY2RhZS00OGFiLTkwNGQtZDEwYjkwOTVjMDMzLnBuZw==",
-          "imdb_id": "tt32159809"
+          "imdb_id": "tt32159809",
+          "avg_runtime_mins": 29,
+          "keywords": [
+            "Mockumentary",
+            "Sitcom",
+            "Workplace comedy"
+          ]
         },
         {
           "title": "Chad Powers",
@@ -2599,7 +3281,11 @@
           "vidmired_score": 109047840,
           "times_in_top10": 0,
           "image_direct_url": "https://resizing.flixster.com/2PMXAA7yZWGZbxtMa2RK-MuJxG8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzczYzQ2NjEtNmU4MS00ZWViLWJiY2MtODhiZmFhMTUxYTNjLmpwZw==",
-          "imdb_id": "tt31449991"
+          "imdb_id": "tt31449991",
+          "avg_runtime_mins": 34,
+          "keywords": [
+            "Comedy"
+          ]
         },
         {
           "title": "House of the Dragon",
@@ -2623,7 +3309,13 @@
           "vidmired_score": 102732608,
           "times_in_top10": 11,
           "image_direct_url": "https://resizing.flixster.com/Pa4kLesNhuM7u454evqcJSjOaZM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODI1MmM4ZGYtMDk3Yi00MTU2LTkwNzQtOWY4NDQ1YWYyYzRiLmpwZw==",
-          "imdb_id": "tt11198330"
+          "imdb_id": "tt11198330",
+          "avg_runtime_mins": 62,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         }
       ],
       "last_month": [
@@ -2649,7 +3341,13 @@
           "vidmired_score": 4535364076,
           "image_direct_url": "https://resizing.flixster.com/UCh0UP728hWIpF33hfgkX5HaA1U=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNjk3ZDI1OTEtNmZhYS00NjM3LTgwMmMtMTYxOWJlOTc5ZjZmLmpwZw==",
           "imdb_id": "tt26545992",
-          "times_in_top10": 8
+          "avg_runtime_mins": 54,
+          "times_in_top10": 8,
+          "keywords": [
+            "Drama",
+            "Detective",
+            "Neo-Western"
+          ]
         },
         {
           "title": "Widow's Bay",
@@ -2673,7 +3371,13 @@
           "vidmired_score": 2306716552,
           "image_direct_url": "https://resizing.flixster.com/FBLr2H6SulNALtamrstRyoLPGnc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMDZlZTNiYzItYTY4Yy00ZmZmLWJmNzktOTk4NGFjMGJkZTE0LnBuZw==",
           "imdb_id": "tt33332385",
-          "times_in_top10": 22
+          "avg_runtime_mins": 40,
+          "times_in_top10": 22,
+          "keywords": [
+            "Comedy horror",
+            "Supernatural horror",
+            "Mystery"
+          ]
         },
         {
           "title": "The Gentlemen",
@@ -2697,7 +3401,13 @@
           "vidmired_score": 1966690050,
           "image_direct_url": "https://resizing.flixster.com/Nd2iz5z5MJkPNDBCgmdCD1hFNaM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTE2NWRlY2MtN2YxZC00NTg3LWFiMjktZTM3ZGJjNDViYzljLnBuZw==",
           "imdb_id": "tt13210838",
-          "times_in_top10": 4
+          "avg_runtime_mins": 54,
+          "times_in_top10": 4,
+          "keywords": [
+            "Action comedy",
+            "Black comedy",
+            "Crime drama"
+          ]
         },
         {
           "title": "Ted Lasso",
@@ -2721,7 +3431,11 @@
           "vidmired_score": 1758357158,
           "image_direct_url": "https://resizing.flixster.com/BDlR1G-WwsPIXtywPgW9Gdvlyu4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYmY5NDVmZjgtYWRmMC00YTNmLThiOGMtMzQyMjQ4N2E3Y2YyLnBuZw==",
           "imdb_id": "tt10986410",
-          "times_in_top10": 11
+          "avg_runtime_mins": 54,
+          "times_in_top10": 11,
+          "keywords": [
+            "Sports comedy drama"
+          ]
         },
         {
           "title": "Reacher",
@@ -2745,7 +3459,13 @@
           "vidmired_score": 1564828980,
           "image_direct_url": "https://resizing.flixster.com/WVApYaaI4nczsWQqjG6p_cBD_uE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODBmMTI0ZmMtM2NlZC00NzdjLTg0NDktNzdlM2NmNDhkN2Q2LndlYnA=",
           "imdb_id": "tt9288030",
-          "times_in_top10": 8
+          "avg_runtime_mins": 49,
+          "times_in_top10": 8,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "Slow Horses",
@@ -2769,7 +3489,13 @@
           "vidmired_score": 1339065728,
           "image_direct_url": "https://resizing.flixster.com/BGMtJsGP5WfnzdELSHA_uqXPOGk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZmMyZWYwNjktMWYyNS00MGY3LTk1MmEtZjRlYzA4MzAxNmU1LnBuZw==",
           "imdb_id": "tt5875444",
-          "times_in_top10": 8
+          "avg_runtime_mins": 46,
+          "times_in_top10": 8,
+          "keywords": [
+            "Black comedy",
+            "Drama",
+            "Spy thriller"
+          ]
         },
         {
           "title": "Lioness",
@@ -2793,7 +3519,13 @@
           "vidmired_score": 1159408500,
           "image_direct_url": "https://resizing.flixster.com/zsbrieER7s5v4EyhVipVh_JO8CQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDA0Mzk3OGQtOTA3MS00Yzc2LWI0MGYtNjA0ZTgyODU1NWQzLmpwZw==",
           "imdb_id": "tt13111078",
-          "times_in_top10": 8
+          "avg_runtime_mins": 48,
+          "times_in_top10": 8,
+          "keywords": [
+            "Action drama",
+            "Spy thriller",
+            "Crime"
+          ]
         },
         {
           "title": "Adults",
@@ -2817,7 +3549,12 @@
           "vidmired_score": 899844704,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p29957001_b_v12_ad.jpg",
           "imdb_id": "tt33049767",
-          "times_in_top10": 2
+          "avg_runtime_mins": null,
+          "times_in_top10": 2,
+          "keywords": [
+            "Sitcom",
+            "Comedy"
+          ]
         },
         {
           "title": "Dark Matter",
@@ -2841,7 +3578,13 @@
           "vidmired_score": 827331180,
           "image_direct_url": "https://resizing.flixster.com/_SrpOsrXWO-QQEYdKrTTMGkwJgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTU1OWM5ZjYtYTM0MC00OTQ3LWI2ZmEtNmIxNTY2Nzg5NTJhLnBuZw==",
           "imdb_id": "tt19231492",
-          "times_in_top10": 1
+          "avg_runtime_mins": 52,
+          "times_in_top10": 1,
+          "keywords": [
+            "Science fiction",
+            "Drama",
+            "Thriller"
+          ]
         },
         {
           "title": "Ludwig",
@@ -2865,7 +3608,13 @@
           "vidmired_score": 728853462,
           "image_direct_url": "https://resizing.flixster.com/zXqkNakCcOGUkZUUszEgga_lgwk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMjk1OGQzMzAtZmRiMC00YmZkLThlOTQtMmQ5NDI0ZGNlZDAwLmpwZw==",
           "imdb_id": "tt27846061",
-          "times_in_top10": 1
+          "avg_runtime_mins": 56,
+          "times_in_top10": 1,
+          "keywords": [
+            "Comedy drama",
+            "Detective",
+            "Mystery"
+          ]
         },
         {
           "title": "Stuart Fails to Save the Universe",
@@ -2889,7 +3638,13 @@
           "vidmired_score": 725251296,
           "image_direct_url": "https://resizing.flixster.com/OcTqg5V8FXrBe_dEBrcNbwsLAp4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmIxNDdhYzYtMGY3ZS00NTc4LWIwY2QtMjYzY2VjMDE5MmM4LmpwZw==",
           "imdb_id": "tt27497393",
-          "times_in_top10": 6
+          "avg_runtime_mins": 22,
+          "times_in_top10": 6,
+          "keywords": [
+            "Comedy",
+            "Science fiction",
+            "Action-adventure"
+          ]
         },
         {
           "title": "The Pitt",
@@ -2913,7 +3668,13 @@
           "vidmired_score": 698377536,
           "image_direct_url": "https://resizing.flixster.com/ZNfE8Ccij3sgJBYqpywF9MFE-tE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvY2U5ZWE1MzgtYjUyZC00NGQ0LTg1NGYtZTc1NWM2YmZmNzQ3LmpwZw==",
           "imdb_id": "tt31938062",
-          "times_in_top10": 23
+          "avg_runtime_mins": 51,
+          "times_in_top10": 23,
+          "keywords": [
+            "Medical drama",
+            "Procedural drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Sterling Point",
@@ -2937,7 +3698,11 @@
           "vidmired_score": 696460128,
           "image_direct_url": "https://resizing.flixster.com/o-76wNQ7H6z8_1SWKHLul1JT9UA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTJiZjZhNzMtMmIzMC00MzQyLWE1YzYtZmQwNjJiNTFmMjY0LmpwZw==",
           "imdb_id": "tt35618070",
-          "times_in_top10": 4
+          "avg_runtime_mins": 48,
+          "times_in_top10": 4,
+          "keywords": [
+            "Drama"
+          ]
         },
         {
           "title": "Furious",
@@ -2961,7 +3726,13 @@
           "vidmired_score": 660979440,
           "image_direct_url": "https://resizing.flixster.com/WsQPeEYJKSC3sRMbOgMFKN1OaxA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTk2YWYyM2UtZTQ2OS00MjUyLTgxYmYtNjY1NmUwYWE2M2U3LnBuZw==",
           "imdb_id": "tt36303968",
-          "times_in_top10": 1
+          "avg_runtime_mins": 52,
+          "times_in_top10": 1,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Mystery & Thriller"
+          ]
         },
         {
           "title": "Neagley",
@@ -2985,7 +3756,13 @@
           "vidmired_score": 582774620,
           "image_direct_url": "https://resizing.flixster.com/3mvkzA2I_5T9EqWlLYjYNlgcQFE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNzBhMTI5OTEtYmRhOS00NDBmLWIwMDAtNGUxMDkyNmY0OTc0LmpwZw==",
           "imdb_id": "tt33539520",
-          "times_in_top10": 2
+          "avg_runtime_mins": 49,
+          "times_in_top10": 2,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "Breaking Bad",
@@ -3004,7 +3781,13 @@
           "vidmired_score": 563329440,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185846_b_v8_ad.jpg",
           "imdb_id": "tt0903747",
-          "times_in_top10": 0
+          "avg_runtime_mins": 50,
+          "times_in_top10": 0,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Neo-Western"
+          ]
         },
         {
           "title": "House of the Dragon",
@@ -3028,7 +3811,13 @@
           "vidmired_score": 559742392,
           "image_direct_url": "https://resizing.flixster.com/Pa4kLesNhuM7u454evqcJSjOaZM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODI1MmM4ZGYtMDk3Yi00MTU2LTkwNzQtOWY4NDQ1YWYyYzRiLmpwZw==",
           "imdb_id": "tt11198330",
-          "times_in_top10": 11
+          "avg_runtime_mins": 62,
+          "times_in_top10": 11,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Sopranos",
@@ -3052,7 +3841,13 @@
           "vidmired_score": 553607424,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184487_b_v8_am.jpg",
           "imdb_id": "tt0141842",
-          "times_in_top10": 1
+          "avg_runtime_mins": 59,
+          "times_in_top10": 1,
+          "keywords": [
+            "Crime drama",
+            "Serial drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Game of Thrones",
@@ -3074,7 +3869,13 @@
           "vidmired_score": 527560405,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8553063_b_v12_ax.jpg",
           "imdb_id": "tt0944947",
-          "times_in_top10": 1
+          "avg_runtime_mins": 66,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Severance",
@@ -3098,7 +3899,13 @@
           "vidmired_score": 495102000,
           "image_direct_url": "https://resizing.flixster.com/SjOz5i_l74oCydVXE0g2_zxspTY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNTVmYjhkNDgtM2MyZi00OGM2LThhYWUtMTg2ZTkzMzg2Mzc2LnBuZw==",
           "imdb_id": "tt11280740",
-          "times_in_top10": 2
+          "avg_runtime_mins": 56,
+          "times_in_top10": 2,
+          "keywords": [
+            "Black comedy",
+            "Dystopian",
+            "Mystery box"
+          ]
         },
         {
           "title": "South Park",
@@ -3118,7 +3925,13 @@
           "vidmired_score": 468631280,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184338_b_v12_au.jpg",
           "imdb_id": "tt0121955",
-          "times_in_top10": 0
+          "avg_runtime_mins": 22,
+          "times_in_top10": 0,
+          "keywords": [
+            "Animated sitcom",
+            "Black comedy",
+            "Satire"
+          ]
         },
         {
           "title": "It's Always Sunny in Philadelphia",
@@ -3142,7 +3955,13 @@
           "vidmired_score": 462905820,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185171_b_v12_ba.jpg",
           "imdb_id": "tt0472954",
-          "times_in_top10": 0
+          "avg_runtime_mins": 30,
+          "times_in_top10": 0,
+          "keywords": [
+            "Sitcom",
+            "Black comedy",
+            "Satire"
+          ]
         },
         {
           "title": "Fauda",
@@ -3161,7 +3980,13 @@
           "vidmired_score": 423210200,
           "image_direct_url": "https://resizing.flixster.com/quWS2OKobkFLYxIRU5RQ0HT7_V8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvUlRUVjMwMDg5Ni53ZWJw",
           "imdb_id": "tt4565380",
-          "times_in_top10": 1
+          "avg_runtime_mins": 45,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Serial drama",
+            "Psychological thriller"
+          ]
         },
         {
           "title": "Chad Powers",
@@ -3185,7 +4010,11 @@
           "vidmired_score": 415398368,
           "image_direct_url": "https://resizing.flixster.com/2PMXAA7yZWGZbxtMa2RK-MuJxG8=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzczYzQ2NjEtNmU4MS00ZWViLWJiY2MtODhiZmFhMTUxYTNjLmpwZw==",
           "imdb_id": "tt31449991",
-          "times_in_top10": 0
+          "avg_runtime_mins": 34,
+          "times_in_top10": 0,
+          "keywords": [
+            "Comedy"
+          ]
         },
         {
           "title": "Stranger Things",
@@ -3209,7 +4038,13 @@
           "vidmired_score": 397859670,
           "image_direct_url": "https://resizing.flixster.com/3kl0YaaOu8zAfi13ohK0kRnMdFc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzdiMGI2YTItOWU1My00ODNkLTgzNTItOGZmNzE3Y2M0MzBiLmpwZw==",
           "imdb_id": "tt4574334",
-          "times_in_top10": 7
+          "avg_runtime_mins": 92,
+          "times_in_top10": 7,
+          "keywords": [
+            "Science fiction",
+            "Horror",
+            "Mystery"
+          ]
         },
         {
           "title": "A Knight of the Seven Kingdoms",
@@ -3232,7 +4067,12 @@
           "vidmired_score": 380879540,
           "image_direct_url": "https://resizing.flixster.com/s-JE_fxn1_PuSOME45yeP1_bHgg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODkzNDU3MTQtMzE4MC00MGNjLWI4OTItMTA0ODY5MGE3NmYyLmpwZw==",
           "imdb_id": "tt27497448",
-          "times_in_top10": 11
+          "avg_runtime_mins": 36,
+          "times_in_top10": 11,
+          "keywords": [
+            "Fantasy drama",
+            "Comedy-drama"
+          ]
         },
         {
           "title": "The Bear",
@@ -3256,7 +4096,13 @@
           "vidmired_score": 361873044,
           "image_direct_url": "https://resizing.flixster.com/as36Hf1XrHOhEFxvqjr1los5lrc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmRkYjFjNzctOWM0OC00YjY1LWIyZjQtNTE4MjE4ZmM1NjQwLmpwZw==",
           "imdb_id": "tt14452776",
-          "times_in_top10": 4
+          "avg_runtime_mins": 45,
+          "times_in_top10": 4,
+          "keywords": [
+            "Comedy-drama",
+            "Psychological drama",
+            "Comedy"
+          ]
         },
         {
           "title": "DTF St. Louis",
@@ -3280,7 +4126,13 @@
           "vidmired_score": 342021571,
           "image_direct_url": "https://resizing.flixster.com/IEKPMfnQSZAqvIwqCe0xj_l-8YA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOTM5OTFhNGMtNjBjYS00NDFhLTgwMTAtYzcxN2NiOWZhOGJjLmpwZw==",
           "imdb_id": "tt34385331",
-          "times_in_top10": 3
+          "avg_runtime_mins": 49,
+          "times_in_top10": 3,
+          "keywords": [
+            "Dark comedy",
+            "Crime drama",
+            "Romance"
+          ]
         },
         {
           "title": "The Beast in Me",
@@ -3304,7 +4156,13 @@
           "vidmired_score": 323907375,
           "image_direct_url": "https://resizing.flixster.com/wVI-JliwKMpttuM3MjhCW2IUslo=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzY1OTQzOTYtMTMyNC00M2NmLWIyZDktOWZjODZlYjAwOWQ0LmpwZw==",
           "imdb_id": "tt31974367",
-          "times_in_top10": 0
+          "avg_runtime_mins": 48,
+          "times_in_top10": 0,
+          "keywords": [
+            "Psychological thriller",
+            "Crime drama",
+            "Mystery & Thriller"
+          ]
         }
       ],
       "last_3_months": [
@@ -3330,7 +4188,13 @@
           "vidmired_score": 7400477056,
           "image_direct_url": "https://resizing.flixster.com/FBLr2H6SulNALtamrstRyoLPGnc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMDZlZTNiYzItYTY4Yy00ZmZmLWJmNzktOTk4NGFjMGJkZTE0LnBuZw==",
           "imdb_id": "tt33332385",
-          "times_in_top10": 22
+          "avg_runtime_mins": 40,
+          "times_in_top10": 22,
+          "keywords": [
+            "Comedy horror",
+            "Supernatural horror",
+            "Mystery"
+          ]
         },
         {
           "title": "Lanterns",
@@ -3354,7 +4218,13 @@
           "vidmired_score": 6934856768,
           "image_direct_url": "https://resizing.flixster.com/UCh0UP728hWIpF33hfgkX5HaA1U=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNjk3ZDI1OTEtNmZhYS00NjM3LTgwMmMtMTYxOWJlOTc5ZjZmLmpwZw==",
           "imdb_id": "tt26545992",
-          "times_in_top10": 8
+          "avg_runtime_mins": 54,
+          "times_in_top10": 8,
+          "keywords": [
+            "Drama",
+            "Detective",
+            "Neo-Western"
+          ]
         },
         {
           "title": "House of the Dragon",
@@ -3378,7 +4248,13 @@
           "vidmired_score": 6079602936,
           "image_direct_url": "https://resizing.flixster.com/Pa4kLesNhuM7u454evqcJSjOaZM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODI1MmM4ZGYtMDk3Yi00MTU2LTkwNzQtOWY4NDQ1YWYyYzRiLmpwZw==",
           "imdb_id": "tt11198330",
-          "times_in_top10": 11
+          "avg_runtime_mins": 62,
+          "times_in_top10": 11,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "Ted Lasso",
@@ -3402,7 +4278,11 @@
           "vidmired_score": 4552194428,
           "image_direct_url": "https://resizing.flixster.com/BDlR1G-WwsPIXtywPgW9Gdvlyu4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYmY5NDVmZjgtYWRmMC00YTNmLThiOGMtMzQyMjQ4N2E3Y2YyLnBuZw==",
           "imdb_id": "tt10986410",
-          "times_in_top10": 11
+          "avg_runtime_mins": 54,
+          "times_in_top10": 11,
+          "keywords": [
+            "Sports comedy drama"
+          ]
         },
         {
           "title": "Reacher",
@@ -3426,7 +4306,13 @@
           "vidmired_score": 3269506890,
           "image_direct_url": "https://resizing.flixster.com/WVApYaaI4nczsWQqjG6p_cBD_uE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODBmMTI0ZmMtM2NlZC00NzdjLTg0NDktNzdlM2NmNDhkN2Q2LndlYnA=",
           "imdb_id": "tt9288030",
-          "times_in_top10": 8
+          "avg_runtime_mins": 49,
+          "times_in_top10": 8,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Detective"
+          ]
         },
         {
           "title": "X-Men '97",
@@ -3446,7 +4332,13 @@
           "vidmired_score": 2648967048,
           "image_direct_url": "https://resizing.flixster.com/mlHZ26Gzw4ay4bYDzb1uQhGj7_c=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOTIxNzdkZTMtMzY0Zi00NWEzLWJkNWUtYzBkYWY3MDM1ZjNhLmpwZw==",
           "imdb_id": "tt16026746",
-          "times_in_top10": 8
+          "avg_runtime_mins": 36,
+          "times_in_top10": 8,
+          "keywords": [
+            "Action-adventure",
+            "Science fiction",
+            "Superhero"
+          ]
         },
         {
           "title": "Slow Horses",
@@ -3470,7 +4362,13 @@
           "vidmired_score": 2589795824,
           "image_direct_url": "https://resizing.flixster.com/BGMtJsGP5WfnzdELSHA_uqXPOGk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZmMyZWYwNjktMWYyNS00MGY3LTk1MmEtZjRlYzA4MzAxNmU1LnBuZw==",
           "imdb_id": "tt5875444",
-          "times_in_top10": 8
+          "avg_runtime_mins": 46,
+          "times_in_top10": 8,
+          "keywords": [
+            "Black comedy",
+            "Drama",
+            "Spy thriller"
+          ]
         },
         {
           "title": "Dutton Ranch",
@@ -3494,7 +4392,13 @@
           "vidmired_score": 2377252800,
           "image_direct_url": "https://resizing.flixster.com/XDHF6zBJEDdI7wR5Ii0EskyKR88=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYTkyYzJkY2ItOTllMS00Yjg2LTg2YzktYmYyZWMxNDg5YzY1LmpwZw==",
           "imdb_id": "tt34991493",
-          "times_in_top10": 10
+          "avg_runtime_mins": 50,
+          "times_in_top10": 10,
+          "keywords": [
+            "Drama",
+            "Neo-Western",
+            "Western"
+          ]
         },
         {
           "title": "Avatar: The Last Airbender",
@@ -3512,7 +4416,13 @@
           "vidmired_score": 2339416800,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p186109_b_v8_ah.jpg",
           "imdb_id": "tt0417299",
-          "times_in_top10": 7
+          "avg_runtime_mins": 23,
+          "times_in_top10": 7,
+          "keywords": [
+            "Action-adventure",
+            "Comedy drama",
+            "Fantasy"
+          ]
         },
         {
           "title": "Lioness",
@@ -3536,7 +4446,13 @@
           "vidmired_score": 2331345600,
           "image_direct_url": "https://resizing.flixster.com/zsbrieER7s5v4EyhVipVh_JO8CQ=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZDA0Mzk3OGQtOTA3MS00Yzc2LWI0MGYtNjA0ZTgyODU1NWQzLmpwZw==",
           "imdb_id": "tt13111078",
-          "times_in_top10": 8
+          "avg_runtime_mins": 48,
+          "times_in_top10": 8,
+          "keywords": [
+            "Action drama",
+            "Spy thriller",
+            "Crime"
+          ]
         },
         {
           "title": "The Bear",
@@ -3560,7 +4476,13 @@
           "vidmired_score": 2329020018,
           "image_direct_url": "https://resizing.flixster.com/as36Hf1XrHOhEFxvqjr1los5lrc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmRkYjFjNzctOWM0OC00YjY1LWIyZjQtNTE4MjE4ZmM1NjQwLmpwZw==",
           "imdb_id": "tt14452776",
-          "times_in_top10": 4
+          "avg_runtime_mins": 45,
+          "times_in_top10": 4,
+          "keywords": [
+            "Comedy-drama",
+            "Psychological drama",
+            "Comedy"
+          ]
         },
         {
           "title": "The Gentlemen",
@@ -3584,7 +4506,13 @@
           "vidmired_score": 2292614220,
           "image_direct_url": "https://resizing.flixster.com/Nd2iz5z5MJkPNDBCgmdCD1hFNaM=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTE2NWRlY2MtN2YxZC00NTg3LWFiMjktZTM3ZGJjNDViYzljLnBuZw==",
           "imdb_id": "tt13210838",
-          "times_in_top10": 4
+          "avg_runtime_mins": 54,
+          "times_in_top10": 4,
+          "keywords": [
+            "Action comedy",
+            "Black comedy",
+            "Crime drama"
+          ]
         },
         {
           "title": "Stuart Fails to Save the Universe",
@@ -3608,7 +4536,13 @@
           "vidmired_score": 2187946222,
           "image_direct_url": "https://resizing.flixster.com/OcTqg5V8FXrBe_dEBrcNbwsLAp4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNmIxNDdhYzYtMGY3ZS00NTc4LWIwY2QtMjYzY2VjMDE5MmM4LmpwZw==",
           "imdb_id": "tt27497393",
-          "times_in_top10": 6
+          "avg_runtime_mins": 22,
+          "times_in_top10": 6,
+          "keywords": [
+            "Comedy",
+            "Science fiction",
+            "Action-adventure"
+          ]
         },
         {
           "title": "Off Campus",
@@ -3632,7 +4566,12 @@
           "vidmired_score": 2138590968,
           "image_direct_url": "https://resizing.flixster.com/inpgeCBpCV7ApS_9IafpZBTqU8Q=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWRiNDFlNDQtMGI0Mi00MmY5LWIzMDMtMmY5YTBhMTk5NWMwLmpwZw==",
           "imdb_id": "tt33546863",
-          "times_in_top10": 10
+          "avg_runtime_mins": 51,
+          "times_in_top10": 10,
+          "keywords": [
+            "Romantic drama",
+            "Romance"
+          ]
         },
         {
           "title": "From",
@@ -3651,7 +4590,13 @@
           "vidmired_score": 2046739584,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p20959089_b_v12_ar.jpg",
           "imdb_id": "tt9813792",
-          "times_in_top10": 11
+          "avg_runtime_mins": 52,
+          "times_in_top10": 11,
+          "keywords": [
+            "Science fiction",
+            "Horror",
+            "Mystery"
+          ]
         },
         {
           "title": "Game of Thrones",
@@ -3673,7 +4618,13 @@
           "vidmired_score": 2043102245,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p8553063_b_v12_ax.jpg",
           "imdb_id": "tt0944947",
-          "times_in_top10": 1
+          "avg_runtime_mins": 66,
+          "times_in_top10": 1,
+          "keywords": [
+            "Action",
+            "Adventure",
+            "Fantasy"
+          ]
         },
         {
           "title": "The Pitt",
@@ -3697,7 +4648,13 @@
           "vidmired_score": 2034163008,
           "image_direct_url": "https://resizing.flixster.com/ZNfE8Ccij3sgJBYqpywF9MFE-tE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvY2U5ZWE1MzgtYjUyZC00NGQ0LTg1NGYtZTc1NWM2YmZmNzQ3LmpwZw==",
           "imdb_id": "tt31938062",
-          "times_in_top10": 23
+          "avg_runtime_mins": 51,
+          "times_in_top10": 23,
+          "keywords": [
+            "Medical drama",
+            "Procedural drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Sterling Point",
@@ -3721,7 +4678,11 @@
           "vidmired_score": 1835217384,
           "image_direct_url": "https://resizing.flixster.com/o-76wNQ7H6z8_1SWKHLul1JT9UA=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTJiZjZhNzMtMmIzMC00MzQyLWE1YzYtZmQwNjJiNTFmMjY0LmpwZw==",
           "imdb_id": "tt35618070",
-          "times_in_top10": 4
+          "avg_runtime_mins": 48,
+          "times_in_top10": 4,
+          "keywords": [
+            "Drama"
+          ]
         },
         {
           "title": "The Sopranos",
@@ -3745,7 +4706,13 @@
           "vidmired_score": 1781856000,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p184487_b_v8_am.jpg",
           "imdb_id": "tt0141842",
-          "times_in_top10": 1
+          "avg_runtime_mins": 59,
+          "times_in_top10": 1,
+          "keywords": [
+            "Crime drama",
+            "Serial drama",
+            "Psychological drama"
+          ]
         },
         {
           "title": "Breaking Bad",
@@ -3764,7 +4731,13 @@
           "vidmired_score": 1773321408,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185846_b_v8_ad.jpg",
           "imdb_id": "tt0903747",
-          "times_in_top10": 0
+          "avg_runtime_mins": 50,
+          "times_in_top10": 0,
+          "keywords": [
+            "Crime drama",
+            "Thriller",
+            "Neo-Western"
+          ]
         },
         {
           "title": "Spider-Noir",
@@ -3783,7 +4756,13 @@
           "vidmired_score": 1727108640,
           "image_direct_url": "https://resizing.flixster.com/A1561EqA71SKfAzkmJiJ7bogp0w=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZjVlYTg4YjYtNjU1ZC00YjY0LWJkYTktZmJjNWE3NTIyNzk5LmpwZw==",
           "imdb_id": "tt30460310",
-          "times_in_top10": 6
+          "avg_runtime_mins": 46,
+          "times_in_top10": 6,
+          "keywords": [
+            "Adventure",
+            "Noir",
+            "Superhero"
+          ]
         },
         {
           "title": "Interview with the Vampire",
@@ -3802,7 +4781,13 @@
           "vidmired_score": 1692495684,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p22633146_b_v13_al.jpg",
           "imdb_id": "tt14921986",
-          "times_in_top10": 3
+          "avg_runtime_mins": 58,
+          "times_in_top10": 3,
+          "keywords": [
+            "Gothic horror",
+            "Gothic romance",
+            "Southern Gothic"
+          ]
         },
         {
           "title": "A Knight of the Seven Kingdoms",
@@ -3825,7 +4810,12 @@
           "vidmired_score": 1667456318,
           "image_direct_url": "https://resizing.flixster.com/s-JE_fxn1_PuSOME45yeP1_bHgg=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvODkzNDU3MTQtMzE4MC00MGNjLWI4OTItMTA0ODY5MGE3NmYyLmpwZw==",
           "imdb_id": "tt27497448",
-          "times_in_top10": 11
+          "avg_runtime_mins": 36,
+          "times_in_top10": 11,
+          "keywords": [
+            "Fantasy drama",
+            "Comedy-drama"
+          ]
         },
         {
           "title": "Severance",
@@ -3849,7 +4839,13 @@
           "vidmired_score": 1643507600,
           "image_direct_url": "https://resizing.flixster.com/SjOz5i_l74oCydVXE0g2_zxspTY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNTVmYjhkNDgtM2MyZi00OGM2LThhYWUtMTg2ZTkzMzg2Mzc2LnBuZw==",
           "imdb_id": "tt11280740",
-          "times_in_top10": 2
+          "avg_runtime_mins": 56,
+          "times_in_top10": 2,
+          "keywords": [
+            "Black comedy",
+            "Dystopian",
+            "Mystery box"
+          ]
         },
         {
           "title": "Rick and Morty",
@@ -3864,7 +4860,13 @@
           "vidmired_score": 1584219091,
           "image_direct_url": "https://resizing.flixster.com/bihSAw4TcuXSbX_o9geS4R0aOfc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMTczYTdkYWMtY2JjYi00MGExLWJjOTYtNjc0MmY0ODVjZWZjLmpwZw==",
           "imdb_id": "tt2861424",
-          "times_in_top10": 1
+          "avg_runtime_mins": 22,
+          "times_in_top10": 1,
+          "keywords": [
+            "Adult animation",
+            "Animated sitcom",
+            "Adventure"
+          ]
         },
         {
           "title": "Teach You a Lesson",
@@ -3888,7 +4890,13 @@
           "vidmired_score": 1569490740,
           "image_direct_url": "https://resizing.flixster.com/hQ-XRzD1gpRpbwd8qllsD5gg0bI=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzUxZWQ4ZjItOTI0OC00YTU2LWE5ZDYtZDJkOTBiN2FlODhiLmpwZw==",
           "imdb_id": "tt34809853",
-          "times_in_top10": 4
+          "avg_runtime_mins": null,
+          "times_in_top10": 4,
+          "keywords": [
+            "Action",
+            "Crime",
+            "Comedy"
+          ]
         },
         {
           "title": "My Adventures with Superman",
@@ -3903,7 +4911,13 @@
           "vidmired_score": 1463759400,
           "image_direct_url": "https://resizing.flixster.com/84_A3Ls7_Ijq-uDVfm6gFPT7YO4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNDZjNzAxMTEtOTczYS00YTk5LTliNjktZTZhMjcxYzQ4OThkLmpwZw==",
           "imdb_id": "tt14681924",
-          "times_in_top10": 0
+          "avg_runtime_mins": 22,
+          "times_in_top10": 0,
+          "keywords": [
+            "Action-adventure",
+            "Romantic comedy",
+            "Science fiction"
+          ]
         },
         {
           "title": "Sugar",
@@ -3927,7 +4941,13 @@
           "vidmired_score": 1450968780,
           "image_direct_url": "https://resizing.flixster.com/OJdCStQstrQFYqMYwmP3e5OX9Qk=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYjg2NzgxODQtZDMzOC00NTIwLThhNDYtM2JiMmI0MGQ3MjAyLnBuZw==",
           "imdb_id": "tt16418808",
-          "times_in_top10": 2
+          "avg_runtime_mins": 40,
+          "times_in_top10": 2,
+          "keywords": [
+            "Drama",
+            "Detective",
+            "Mystery"
+          ]
         },
         {
           "title": "The Agency",
@@ -3946,7 +4966,13 @@
           "vidmired_score": 1440512070,
           "image_direct_url": "https://resizing.flixster.com/Gv5l9lCiXer8hVXseLW8gfEgIZE=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNjQ5MDY3ZDMtNDYzNS00OTlmLWJmYmUtOTQ1N2NjMTM0MzI0LmpwZw==",
           "imdb_id": "tt26656917",
-          "times_in_top10": 2
+          "avg_runtime_mins": 52,
+          "times_in_top10": 2,
+          "keywords": [
+            "Drama",
+            "Political thriller",
+            "Spy thriller"
+          ]
         },
         {
           "title": "For All Mankind",
@@ -3970,7 +4996,13 @@
           "vidmired_score": 1426070100,
           "image_direct_url": "https://resizing.flixster.com/_RXalpxUD4PtqoN78t7JHzZNSN4=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvN2Q4ZThlMjItOGY0OC00MGMyLTllYWYtOTQ1N2M0ZTk3ZDU3LnBuZw==",
           "imdb_id": "tt7772588",
-          "times_in_top10": 8
+          "avg_runtime_mins": 62,
+          "times_in_top10": 8,
+          "keywords": [
+            "Alternate history",
+            "Drama",
+            "Science fiction"
+          ]
         },
         {
           "title": "Stranger Things",
@@ -3994,7 +5026,13 @@
           "vidmired_score": 1380060090,
           "image_direct_url": "https://resizing.flixster.com/3kl0YaaOu8zAfi13ohK0kRnMdFc=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvMzdiMGI2YTItOWU1My00ODNkLTgzNTItOGZmNzE3Y2M0MzBiLmpwZw==",
           "imdb_id": "tt4574334",
-          "times_in_top10": 7
+          "avg_runtime_mins": 92,
+          "times_in_top10": 7,
+          "keywords": [
+            "Science fiction",
+            "Horror",
+            "Mystery"
+          ]
         },
         {
           "title": "Star City",
@@ -4018,7 +5056,13 @@
           "vidmired_score": 1374595840,
           "image_direct_url": "https://resizing.flixster.com/cITOqI3LRMu-V-gdKmOrh-wy-9Q=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvYzA5MjAxOWQtYzhkYy00ODNkLTg2MWEtYzg4MTJlZGUyNmFiLnBuZw==",
           "imdb_id": "tt32140872",
-          "times_in_top10": 3
+          "avg_runtime_mins": 60,
+          "times_in_top10": 3,
+          "keywords": [
+            "Alternate history",
+            "Drama",
+            "Spy thriller"
+          ]
         },
         {
           "title": "The Big Bang Theory",
@@ -4037,7 +5081,12 @@
           "vidmired_score": 1249930440,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p185554_b_v8_bk.jpg",
           "imdb_id": "tt0898266",
-          "times_in_top10": 0
+          "avg_runtime_mins": 20,
+          "times_in_top10": 0,
+          "keywords": [
+            "Sitcom",
+            "Comedy"
+          ]
         },
         {
           "title": "Dark Matter",
@@ -4061,7 +5110,13 @@
           "vidmired_score": 1246267280,
           "image_direct_url": "https://resizing.flixster.com/_SrpOsrXWO-QQEYdKrTTMGkwJgU=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvZTU1OWM5ZjYtYTM0MC00OTQ3LWI2ZmEtNmIxNTY2Nzg5NTJhLnBuZw==",
           "imdb_id": "tt19231492",
-          "times_in_top10": 1
+          "avg_runtime_mins": 52,
+          "times_in_top10": 1,
+          "keywords": [
+            "Science fiction",
+            "Drama",
+            "Thriller"
+          ]
         },
         {
           "title": "Euphoria",
@@ -4083,7 +5138,13 @@
           "vidmired_score": 1206948288,
           "image_direct_url": "https://resizing.flixster.com/ZhDWT4DfuJ4jt6Utq_ZxddWfDfY=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvNGM5N2RjYTgtMTdhOS00MGFhLTgyNjMtMzA3NTUyMzJkZDU2LmpwZw==",
           "imdb_id": "tt8772296",
-          "times_in_top10": 11
+          "avg_runtime_mins": 56,
+          "times_in_top10": 11,
+          "keywords": [
+            "Teen drama",
+            "Psychological drama",
+            "Crime drama"
+          ]
         },
         {
           "title": "Yellowstone",
@@ -4107,7 +5168,13 @@
           "vidmired_score": 1127126056,
           "image_direct_url": "https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p15060458_b_v8_ax.jpg",
           "imdb_id": "tt4236770",
-          "times_in_top10": 0
+          "avg_runtime_mins": 64,
+          "times_in_top10": 0,
+          "keywords": [
+            "Drama",
+            "Western",
+            "Crime"
+          ]
         }
       ]
     }

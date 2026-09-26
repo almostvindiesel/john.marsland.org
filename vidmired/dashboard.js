@@ -28,6 +28,8 @@
         topN: 25,
         selectedGenres: new Set(),
         selectedServices: new Set(),
+        showMyList: false,
+        watchlistIds: new Set(),
     };
 
     // Populated by setupFilter, keyed by filter name ("genre" / "service"),
@@ -38,6 +40,14 @@
     function genreLabel(genre) {
         if (!genre) return null;
         return GENRE_LABELS[genre] || genre;
+    }
+
+    function formatRuntime(mins) {
+        if (!mins) return null;
+        if (mins < 60) return mins + "m";
+        var h = Math.floor(mins / 60);
+        var m = mins % 60;
+        return m > 0 ? h + "h " + m + "m" : h + "h";
     }
 
     function wikipediaUrl(wikiPage) {
@@ -245,6 +255,13 @@
         var inner = document.createElement("div");
         inner.className = "detail-panel-inner";
 
+        if (row.keywords && row.keywords.length) {
+            var kw = document.createElement("p");
+            kw.className = "detail-keywords";
+            kw.textContent = row.keywords.join(" • ");
+            inner.appendChild(kw);
+        }
+
         var summary = document.createElement("p");
         summary.className = "detail-summary";
         summary.textContent = truncateSummary(row.summary, SUMMARY_MAX_CHARS);
@@ -351,6 +368,356 @@
         scoreTooltip.style.top  = y + "px";
     }
 
+    // ── Watchlist helpers ──────────────────────────────────────────────────
+
+    var _BOOKMARK_OUTLINE = '<svg viewBox="0 0 16 20" width="12" height="14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 1h12v17l-6-3-6 3V1z"/></svg>';
+    var _BOOKMARK_FILL    = '<svg viewBox="0 0 16 20" width="12" height="14" fill="currentColor" aria-hidden="true"><path d="M2 1h12v17l-6-3-6 3V1z"/></svg>';
+
+    function loadWatchlist() {
+        var auth = window.VidmiredAuth;
+        if (!auth) return Promise.resolve();
+        return auth.getWatchlist().then(function (ids) {
+            state.watchlistIds = new Set(ids);
+        }).catch(function () {
+            state.watchlistIds = new Set((auth.getLocalIds ? auth.getLocalIds() : []));
+        });
+    }
+
+    var _nudgeShown = false;
+
+    function maybeShowNudge() {
+        var auth = window.VidmiredAuth;
+        if (_nudgeShown) return;
+        if (auth && auth.isConfigured && !auth.isConfigured()) return; // not set up, skip
+        // Don't show if already signed in (getUser is async so we skip the check here;
+        // the nudge dismisses itself when the auth state changes to SIGNED_IN)
+        _nudgeShown = true;
+        var nudge = document.getElementById("sync-nudge");
+        if (nudge) nudge.hidden = false;
+    }
+
+    function updateBookmarkButtons() {
+        var tbody = document.getElementById("top10-body");
+        if (!tbody) return;
+        tbody.querySelectorAll(".bookmark-btn").forEach(function (btn) {
+            var wp = btn.getAttribute("data-wp");
+            var saved = state.watchlistIds.has(wp);
+            btn.className = "bookmark-btn" + (saved ? " saved" : "");
+            btn.title = saved ? "Remove from My List" : "Add to My List";
+            btn.setAttribute("aria-label", btn.title);
+            btn.innerHTML = saved ? _BOOKMARK_FILL : _BOOKMARK_OUTLINE;
+        });
+        updateMyListBtn();
+    }
+
+    function updateMyListBtn() {
+        var btn = document.getElementById("my-list-btn");
+        var countEl = document.getElementById("my-list-count");
+        if (!btn) return;
+        var count = state.watchlistIds.size;
+        btn.classList.toggle("active", state.showMyList);
+        btn.setAttribute("aria-pressed", String(state.showMyList));
+        if (countEl) {
+            countEl.textContent = count > 0 ? count : "";
+            countEl.hidden = count === 0;
+        }
+    }
+
+    function toggleWatchlistItem(wikiPage) {
+        var ids = Array.from(state.watchlistIds);
+        var idx = ids.indexOf(wikiPage);
+        if (idx >= 0) {
+            ids.splice(idx, 1);
+        } else {
+            ids.push(wikiPage);
+            maybeShowNudge();
+        }
+        state.watchlistIds = new Set(ids);
+        if (window.VidmiredAuth) window.VidmiredAuth.saveWatchlist(ids);
+        updateBookmarkButtons();
+        if (state.showMyList) render();
+    }
+
+    function makeBookmarkBtn(wikiPage) {
+        var saved = state.watchlistIds.has(wikiPage);
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "bookmark-btn" + (saved ? " saved" : "");
+        btn.title = saved ? "Remove from My List" : "Add to My List";
+        btn.setAttribute("aria-label", btn.title);
+        btn.setAttribute("data-wp", wikiPage);
+        btn.innerHTML = saved ? _BOOKMARK_FILL : _BOOKMARK_OUTLINE;
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            toggleWatchlistItem(wikiPage);
+        });
+        return btn;
+    }
+
+    // ── Auth modal ─────────────────────────────────────────────────────────
+
+    function showAuthView(id) {
+        ["auth-view-user", "auth-view-main", "auth-view-forgot", "auth-view-newpw", "auth-view-setup"].forEach(function (v) {
+            var el = document.getElementById(v);
+            if (el) el.hidden = v !== id;
+        });
+    }
+
+    function openAuthModal(tab) {
+        var overlay = document.getElementById("auth-overlay");
+        if (!overlay) return;
+        var auth = window.VidmiredAuth;
+        if (!auth || !auth.isConfigured()) {
+            showAuthView("auth-view-setup");
+        } else {
+            showAuthView("auth-view-main");
+            if (tab === "signup") switchAuthTab("signup");
+            else switchAuthTab("signin");
+        }
+        overlay.hidden = false;
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeAuthModal() {
+        var overlay = document.getElementById("auth-overlay");
+        if (overlay) overlay.hidden = true;
+        document.body.style.overflow = "";
+    }
+
+    function switchAuthTab(name) {
+        var tabSignin = document.getElementById("tab-signin");
+        var tabSignup = document.getElementById("tab-signup");
+        var panelSignin = document.getElementById("auth-panel-signin");
+        var panelSignup = document.getElementById("auth-panel-signup");
+        if (!tabSignin) return;
+        var isSignin = name !== "signup";
+        tabSignin.classList.toggle("active", isSignin);
+        tabSignup.classList.toggle("active", !isSignin);
+        if (panelSignin) panelSignin.hidden = !isSignin;
+        if (panelSignup) panelSignup.hidden = isSignin;
+    }
+
+    function setAuthErr(id, msg) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = msg || "";
+        el.hidden = !msg;
+    }
+
+    function setAuthOk(id, msg) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.textContent = msg || "";
+        el.hidden = !msg;
+    }
+
+    function updateAuthHeader(user) {
+        var btn = document.getElementById("account-btn");
+        if (!btn) return;
+        btn.classList.toggle("signed-in", !!user);
+        btn.title = user ? (user.email || "Account") : "Sign in";
+        if (user) {
+            var emailEl = document.getElementById("auth-user-email");
+            if (emailEl) emailEl.textContent = user.email || "";
+        }
+    }
+
+    function setupAuthUI() {
+        var auth = window.VidmiredAuth;
+        if (!auth) return;
+
+        // Close on overlay click or Escape
+        var overlay = document.getElementById("auth-overlay");
+        if (overlay) {
+            overlay.addEventListener("click", function (e) {
+                if (e.target === overlay) closeAuthModal();
+            });
+        }
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape") closeAuthModal();
+        });
+        var closeBtn = document.getElementById("auth-close");
+        if (closeBtn) closeBtn.addEventListener("click", closeAuthModal);
+
+        // Tabs
+        var tabSignin = document.getElementById("tab-signin");
+        var tabSignup = document.getElementById("tab-signup");
+        if (tabSignin) tabSignin.addEventListener("click", function () { switchAuthTab("signin"); });
+        if (tabSignup) tabSignup.addEventListener("click", function () { switchAuthTab("signup"); });
+
+        // Sign in
+        var btnSignin = document.getElementById("btn-signin");
+        if (btnSignin) {
+            btnSignin.addEventListener("click", function () {
+                var email = (document.getElementById("signin-email") || {}).value || "";
+                var pw = (document.getElementById("signin-password") || {}).value || "";
+                setAuthErr("signin-err", "");
+                btnSignin.disabled = true;
+                auth.signIn(email, pw).then(function (res) {
+                    if (res.error) setAuthErr("signin-err", res.error.message);
+                    // success handled by onAuthStateChange
+                }).catch(function (e) {
+                    setAuthErr("signin-err", e.message);
+                }).finally(function () { btnSignin.disabled = false; });
+            });
+        }
+
+        // Google sign in (both buttons share the same handler)
+        ["btn-google-signin", "btn-google-signup"].forEach(function (id) {
+            var btn = document.getElementById(id);
+            if (btn) btn.addEventListener("click", function () { auth.signInWithGoogle(); });
+        });
+
+        // Sign up
+        var btnSignup = document.getElementById("btn-signup");
+        if (btnSignup) {
+            btnSignup.addEventListener("click", function () {
+                var email = (document.getElementById("signup-email") || {}).value || "";
+                var pw = (document.getElementById("signup-password") || {}).value || "";
+                setAuthErr("signup-err", "");
+                setAuthOk("signup-ok", "");
+                btnSignup.disabled = true;
+                auth.signUp(email, pw).then(function (res) {
+                    if (res.error) {
+                        setAuthErr("signup-err", res.error.message);
+                    } else {
+                        setAuthOk("signup-ok", "Check your email to verify your account!");
+                    }
+                }).catch(function (e) {
+                    setAuthErr("signup-err", e.message);
+                }).finally(function () { btnSignup.disabled = false; });
+            });
+        }
+
+        // Forgot password link
+        var btnForgot = document.getElementById("btn-forgot");
+        if (btnForgot) {
+            btnForgot.addEventListener("click", function () { showAuthView("auth-view-forgot"); });
+        }
+        var btnBack = document.getElementById("auth-back-from-forgot");
+        if (btnBack) {
+            btnBack.addEventListener("click", function () { showAuthView("auth-view-main"); });
+        }
+
+        // Send reset link
+        var btnForgotSubmit = document.getElementById("btn-forgot-submit");
+        if (btnForgotSubmit) {
+            btnForgotSubmit.addEventListener("click", function () {
+                var email = (document.getElementById("forgot-email") || {}).value || "";
+                setAuthErr("forgot-err", "");
+                setAuthOk("forgot-ok", "");
+                btnForgotSubmit.disabled = true;
+                auth.sendPasswordReset(email).then(function (res) {
+                    if (res.error) setAuthErr("forgot-err", res.error.message);
+                    else setAuthOk("forgot-ok", "Reset link sent! Check your email.");
+                }).catch(function (e) {
+                    setAuthErr("forgot-err", e.message);
+                }).finally(function () { btnForgotSubmit.disabled = false; });
+            });
+        }
+
+        // Set new password
+        var btnNewpw = document.getElementById("btn-newpw");
+        if (btnNewpw) {
+            btnNewpw.addEventListener("click", function () {
+                var pw = (document.getElementById("newpw-input") || {}).value || "";
+                setAuthErr("newpw-err", "");
+                btnNewpw.disabled = true;
+                auth.setNewPassword(pw).then(function (res) {
+                    if (res.error) setAuthErr("newpw-err", res.error.message);
+                    else closeAuthModal();
+                }).catch(function (e) {
+                    setAuthErr("newpw-err", e.message);
+                }).finally(function () { btnNewpw.disabled = false; });
+            });
+        }
+
+        // Sign out
+        var btnSignout = document.getElementById("auth-signout");
+        if (btnSignout) {
+            btnSignout.addEventListener("click", function () {
+                auth.signOut().then(function () {
+                    state.watchlistIds = new Set();
+                    updateBookmarkButtons();
+                    if (state.showMyList) { state.showMyList = false; render(); }
+                    updateAuthHeader(null);
+                    closeAuthModal();
+                });
+            });
+        }
+
+        // Account button
+        var accountBtn = document.getElementById("account-btn");
+        if (accountBtn) {
+            accountBtn.addEventListener("click", function () {
+                auth.getUser().then(function (user) {
+                    if (user) {
+                        var emailEl = document.getElementById("auth-user-email");
+                        if (emailEl) emailEl.textContent = user.email || "";
+                        showAuthView("auth-view-user");
+                    } else {
+                        if (!auth.isConfigured()) {
+                            showAuthView("auth-view-setup");
+                        } else {
+                            showAuthView("auth-view-main");
+                            switchAuthTab("signin");
+                        }
+                    }
+                    var overlay = document.getElementById("auth-overlay");
+                    if (overlay) overlay.hidden = false;
+                    document.body.style.overflow = "hidden";
+                });
+            });
+        }
+
+        // Auth state changes (sign in / sign out / password recovery)
+        auth.onAuthStateChange(function (event, session) {
+            var user = session ? session.user : null;
+            if (event === "SIGNED_IN") {
+                updateAuthHeader(user);
+                var nudge = document.getElementById("sync-nudge");
+                if (nudge) nudge.hidden = true;
+                auth.migrateLocalToAccount().then(function () {
+                    return auth.getWatchlist();
+                }).then(function (ids) {
+                    state.watchlistIds = new Set(ids);
+                    updateBookmarkButtons();
+                    if (state.showMyList) render();
+                });
+                // If modal is open, switch to signed-in view
+                var overlay = document.getElementById("auth-overlay");
+                if (overlay && !overlay.hidden) {
+                    var emailEl = document.getElementById("auth-user-email");
+                    if (emailEl) emailEl.textContent = (user && user.email) || "";
+                    showAuthView("auth-view-user");
+                }
+            } else if (event === "SIGNED_OUT") {
+                updateAuthHeader(null);
+                state.watchlistIds = new Set(auth.getLocalIds ? auth.getLocalIds() : []);
+                updateBookmarkButtons();
+                if (state.showMyList) { state.showMyList = false; render(); }
+            } else if (event === "PASSWORD_RECOVERY") {
+                showAuthView("auth-view-newpw");
+                var overlay = document.getElementById("auth-overlay");
+                if (overlay) overlay.hidden = false;
+                document.body.style.overflow = "hidden";
+            }
+        });
+
+        // Sync nudge actions
+        var nudgeCta = document.getElementById("sync-nudge-cta");
+        var nudgeDismiss = document.getElementById("sync-nudge-dismiss");
+        if (nudgeCta) nudgeCta.addEventListener("click", function () { openAuthModal("signup"); });
+        if (nudgeDismiss) {
+            nudgeDismiss.addEventListener("click", function () {
+                var nudge = document.getElementById("sync-nudge");
+                if (nudge) nudge.hidden = true;
+            });
+        }
+    }
+
+    // ──────────────────────────────────────────────────────────────────────
+
     var expandCounter = 0;
 
     function renderRow(row, rank, type, maxScore) {
@@ -368,6 +735,7 @@
         var genreTd = document.createElement("td");
         genreTd.className = "genre-cell";
         var genre = genreLabel(row.primary_genre);
+        var runtime = formatRuntime(row.avg_runtime_mins);
         if (genre) {
             var genreBtn = document.createElement("button");
             genreBtn.type = "button";
@@ -378,6 +746,14 @@
                 applyExclusiveFilter("genre", row.primary_genre);
             });
             genreTd.appendChild(genreBtn);
+            if (runtime) {
+                var sep = document.createElement("span");
+                sep.className = "genre-runtime-sep";
+                sep.textContent = " | " + runtime;
+                genreTd.appendChild(sep);
+            }
+        } else if (runtime) {
+            genreTd.textContent = runtime;
         } else {
             genreTd.textContent = "—";
             genreTd.className += " muted";
@@ -426,6 +802,7 @@
         tr.appendChild(dateTd);
 
         tr.appendChild(makeWhereToWatchCell(row.where_to_watch));
+        tr.appendChild(makeBookmarkBtn(row.wiki_page));
 
         var panelId = "detail-panel-" + (expandCounter++);
         var detail = makeDetailRow(row, panelId);
@@ -474,8 +851,14 @@
             ? Math.max.apply(null, allRows.map(function (r) { return r.vidmired_score; }))
             : 0;
 
-        var rows = allRows.slice(0, state.topN);
+        var topRows = allRows.slice(0, state.topN);
 
+        // Ranks are fixed to the unfiltered order — a title keeps its rank
+        // whether or not filters are active, so #3 stays #3 even if #1 and
+        // #2 are hidden.
+        var rankMap = new Map(topRows.map(function (row, i) { return [row, i + 1]; }));
+
+        var rows = topRows;
         if (state.selectedGenres.size > 0) {
             rows = rows.filter(function (r) { return state.selectedGenres.has(r.primary_genre); });
         }
@@ -483,6 +866,14 @@
             rows = rows.filter(function (r) {
                 return (r.where_to_watch || []).some(function (w) { return state.selectedServices.has(w.name); });
             });
+        }
+        if (state.showMyList) {
+            if (state.watchlistIds.size === 0) {
+                status.textContent = "Your list is empty — bookmark titles to save them here.";
+                status.hidden = false;
+                return;
+            }
+            rows = rows.filter(function (r) { return state.watchlistIds.has(r.wiki_page); });
         }
 
         if (rows.length === 0) {
@@ -492,8 +883,8 @@
         }
 
         status.hidden = true;
-        rows.forEach(function (row, i) {
-            var pair = renderRow(row, i + 1, state.type, maxScore);
+        rows.forEach(function (row) {
+            var pair = renderRow(row, rankMap.get(row), state.type, maxScore);
             tbody.appendChild(pair.tr);
             tbody.appendChild(pair.detailTr);
         });
@@ -721,12 +1112,28 @@
         document.getElementById("clear-filters-btn").addEventListener("click", clearAllFilters);
         setupFilterDismissal();
 
-        fetch("data/top10.json")
+        var myListBtn = document.getElementById("my-list-btn");
+        if (myListBtn) {
+            myListBtn.addEventListener("click", function () {
+                state.showMyList = !state.showMyList;
+                updateMyListBtn();
+                render();
+            });
+        }
+
+        setupAuthUI();
+
+        // Load watchlist and data in parallel; render only after both are ready.
+        var watchlistReady = loadWatchlist();
+        var dataReady = fetch("data/top10.json")
             .then(function (resp) {
                 if (!resp.ok) throw new Error("HTTP " + resp.status);
                 return resp.json();
-            })
-            .then(function (payload) {
+            });
+
+        Promise.all([dataReady, watchlistReady])
+            .then(function (results) {
+                var payload = results[0];
                 state.payload = payload;
                 if (!payload.periods || !payload.data) {
                     status.textContent = "No data yet — run scripts/generate_top10.py.";
@@ -755,7 +1162,11 @@
                     labelFn: function (v) { return v; },
                 });
 
+                updateMyListBtn();
                 render();
+
+                // Seed My List button count (watchlist loaded before render)
+                updateMyListBtn();
             })
             .catch(function (err) {
                 status.textContent = "Couldn't load top10.json (" + err.message + "). Run scripts/generate_top10.py first.";
