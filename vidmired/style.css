@@ -1162,23 +1162,24 @@ table.top10 tbody tr.detail-row.open .detail-panel { opacity: 1; }
 /* ── Account button ──────────────────────────────────────────────────── */
 .account-btn {
     font-family: inherit;
+    position: absolute;
+    top: 10px;
+    right: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1.5px solid var(--border);
+    border: 1.5px solid var(--brand-purple);
     background: var(--card-bg);
-    color: var(--text-muted);
+    color: var(--brand-purple);
     cursor: pointer;
     padding: 0;
     transition: border-color 0.15s, color 0.15s, background 0.15s;
 }
-.account-btn:hover,
-.account-btn.signed-in {
-    border-color: var(--brand-purple);
-    color: var(--brand-purple);
+.account-btn:hover {
+    background: rgba(103, 39, 123, 0.08);
 }
 .account-btn.signed-in {
     background: rgba(103, 39, 123, 0.08);
