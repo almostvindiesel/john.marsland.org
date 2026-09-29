@@ -20,8 +20,7 @@ var on = addEventListener,
 			['firefox', /Firefox\/([0-9\.]+)/],
 			['edge', /Edge\/([0-9\.]+)/],
 			['safari', /Version\/([0-9\.]+).+Safari/],
-			['chrome', /Chrome\/([0-9\.]+)/],
-			['ie', /Trident\/.+rv:([0-9]+)/]
+			['chrome', /Chrome\/([0-9\.]+)/]
 		];
 		for (i = 0; i < a.length; i++) {
 			if (ua.match(a[i][1])) {
@@ -53,11 +52,7 @@ var on = addEventListener,
 		return o;
 	}()),
 	trigger = function(t) {
-		if (client.browser == 'ie') {
-			var e = document.createEvent('Event');
-			e.initEvent(t, false, true);
-			dispatchEvent(e);
-		} else dispatchEvent(new Event(t));
+		dispatchEvent(new Event(t));
 	};
 on('load', function() {
 
@@ -275,60 +270,7 @@ if (client.os == 'android') {
 			$body.classList.remove('ios-focus-fix');
 		}, true);
 	})();
-} else if (client.browser == 'ie') {
-	(function() {
-		var t, f;
-		f = function() {
-			var mh, h, s, xx, x, i;
-			x = $('#wrapper');
-			x.style.height = 'auto';
-			if (x.scrollHeight <= innerHeight) x.style.height = '100vh';
-			xx = $$('.container.full');
-			for (i = 0; i < xx.length; i++) {
-				x = xx[i];
-				s = getComputedStyle(x);
-				x.style.minHeight = '';
-				x.style.height = '';
-				mh = s.minHeight;
-				x.style.minHeight = 0;
-				x.style.height = '';
-				h = s.height;
-				if (mh == 0) continue;
-				x.style.height = (h > mh ? 'auto' : mh);
-			}
-		};
-		(f)();
-		on('resize', function() {
-			clearTimeout(t);
-			t = setTimeout(f, 250);
-		});
-		on('load', f);
-	})();
 }
-
-// var resta = "[
-// 		{
-// 			"name":"Cento",
-// 			"description":"Amaze"
-// 		},
-// 		{
-// 			"name":"Bludso",
-// 			"description":"bbq"
-// 		}
-// ]"
-
-var restaurant_data = '\
-	[\
-		{\
-			"name" : "Cento Pasta Bar", \
-			"desc" : "Only 2-3 pastas on the menu that rotate often. And the most amazing bread (flown in from NY) and burrata. Get them all. Simple selection of wine glasses on the menu. This is our favorite go to spot in DTLA for a casual lunch which is a French Wine bar at night. Avner-- a former Bestia chef and the owner is a total trip and makes some amazing pasta" \
-		}, \
-		{\
-			"name" : "Bludso", \
-			"desc" : "..." \
-		} \
-	]';
-
 
 function toggleShowEmail() {
     var x = document.getElementById("emailDiv");
@@ -338,37 +280,3 @@ function toggleShowEmail() {
         x.style.display = "none";
     }
 }
-
-function fetch_restaurant_recommendations() {
-	var restaurants = JSON.parse(restaurant_data);
-	
-	//Write to table
-	for (i = 0; i < restaurants.length; i++) {
-		name = restaurants[i].name;
-		desc = restaurants[i].desc;
-
-
-		var reco_tr = document.createElement('tr');
-
-		var name_td = document.createElement('td');
-		var name_p = document.createElement('p');
-		name_p.id = "text09";
-		name_p.innerHTML = name;
-		name_td.appendChild(name_p);
-		reco_tr.appendChild(name_td);
-
-		var desc_td = document.createElement('td');
-		var desc_p = document.createElement('p');
-		desc_p.id = "text09";
-		desc_p.innerHTML = desc;
-		desc_td.appendChild(desc_p);
-		reco_tr.appendChild(desc_td);
-
-	 	document.getElementById("restaurant-recommendations").appendChild(reco_tr);
-	}
-
-}
-// ------------
-//fetch_restaurant_recommendations();
-
-
