@@ -150,6 +150,12 @@
                         <br/><a id="writing-ruminations"></a><li><p id="text07b" class="writing-articles">Ruminations</p></li>
 
                             <li><p id="text07" class="writing-articles">
+                                &nbsp;&nbsp; <i class="fas fa-brain icon-color"></i> <a href="#jev">Jev vs Frontier LLMs</a> - cost effective classification
+                                <span class="updated-date">Oct 2026</span>
+                                </p>
+                            </li>
+
+                            <li><p id="text07" class="writing-articles">
                                 &nbsp;&nbsp; <i class="fas fa-tv icon-color"></i> <a href="#are-you-not-entertained">Are you not entertained?</a> - the new streaming wars
                                 <span class="updated-date">Sept 2026</span>
                                 </p>
@@ -191,6 +197,60 @@
                             </p></li>
 
 					</ul>
+				</section>
+
+
+                <section id="jev-section">
+                <div class="article-text">
+
+                <h3 align=center >Jev vs Frontier LLMs</h3><br/>
+
+                <p id="text12"><b>Primer</b></p>
+                <p id="text07">Every day, millions of datapoints on titles, talent, and companies flowed into Netflix’s <a href="https://netflixtechblog.medium.com/unlocking-entertainment-intelligence-with-knowledge-graph-da4b22090141" target="_blank">Entertainment Knowledge Graph</a> from hundreds of sources, and each one had to be matched to the right entity in the graph. Up to this point, most of the graph was constructed using a suite of ML models, supported by data labelers for edge cases and LLMs for a minority of sources. Both of these supporting solutions had been cost prohibitive to deploy at much larger scale to handle trickier edge cases. Recently, I reran a small version of that problem on a new kind of large language model, and it matched Claude Opus 5.5’s accuracy for about 1% of the cost.</p><br>
+
+                <p id="text12"><b>Background</b></p>
+                <p id="text07">I spent seven years leading product for that graph, which Netflix deployed across the company to inform content licensing, subscriber pricing, competitive positioning, and personalization on the service:</p>
+
+                <br><p align=center id="text07small">
+                    Entertainment knowledge graph. <a href="https://netflixtechblog.medium.com/unlocking-entertainment-intelligence-with-knowledge-graph-da4b22090141" target="_blank">Source</a><br/>
+                    <img src="static/img/jev-knowledge-graph.png" width=87% loading="lazy" alt="Entertainment knowledge graph: source records such as a show, an actor, a country, and a character are linked to Squid Game and assembled into a knowledge graph">
+                </p><br/>
+
+                <p id="text07">A team of multidisciplinary scientists, engineers, and labelers worked on ensuring the graph had sufficient coverage, freshness, and accuracy across the suite of applications. One of the largest challenges was accurately representing the state of the entertainment world through a process called Entity Resolution: the process of identifying, matching, and linking different records or references that refer to the same real-world entity across heterogeneous and evolving sources.</p><br>
+
+                <p id="text07">The original set of algorithms that handled Entity Resolution, specifically the matching step, performed well with source entities that had sufficient, well structured metadata. However, it performed worse with source entities that arrived with little or loosely structured metadata. The ML team that owned matching experimented with attempts to onboard these sources quickly and accurately, but because each source had unique differences that were difficult to generalize, less than desired progress was made to incorporate them into the graph. When critical, many of the low confidence source entities were onboarded with the help of third party data labelers to aid with the matching process.</p><br>
+
+                <p id="text12"><b>Enter: LLMs</b></p>
+                <p id="text07">Human experts were a decent stop gap–but an expensive one, especially when local language expertise and domain knowledge was required. Large language models–equipped with web search tooling–turned out to be the next solution. After much experimentation, these models were able to match these entities at a fraction of the cost of human labelers for some use cases.</p><br>
+
+                <p id="text07">While adding LLMs in the loop helped some last mile matching problems, they were not a complete substitute for the ML-based matching process. Each day, millions of entities needed to be evaluated for matching, and since the cost to deploy the LLM-based matching solution with high enough accuracy was prohibitively high, this LLM process could only be effectively deployed where the cost was justified at smaller scale.</p><br>
+
+                <p id="text12"><b>Enter: TypeSafe AI’s Jev</b></p>
+                <p id="text07">On Sept 15, 2026, <a href="https://typesafe.ai/blog/introducing-system-one-models-and-jev" target="_blank">TypeSafe AI released Jev</a>, which it calls the first “System One” model. Instead of generating language, Jev answers a fixed set of typed questions (choose one option, give a score, or yes/no) with structured values that software can use directly. That is exactly the shape of a matching decision.</p><br>
+
+                <p id="text07">There is a LOT of AI noise out there. Filtering out the breakthroughs from the noise has become a skill itself. When I heard about the promise of Jev, I was excited–so much of my scaled work with LLMs had been using structured outputs via the APIs. So I decided to figure out whether the product lived up to the marketing promise.</p>
+
+                <br><p align=center id="text07small">
+                    Jev: Decision model for classification tasks<br/>
+                    <img src="static/img/jev-vs-frontier-llms.png" width=84% loading="lazy" alt="Jev (decision model) vs frontier LLMs (generative models): typed decisions plus probabilities vs free-form text and code; $0.042 in / $0 out vs $2–$10 in / $10–$50 out per million tokens; excels at classify, route, score vs reasoning, writing, hard cases">
+                </p><br/>
+
+                <p id="text07">To test it, I recreated a small version of the Entertainment Knowledge Graph matching problem. I created an evaluation dataset by sourcing a few hundred popular titles from a Spanish top tv ranking website and manually matched the correct Wikipedia page for each program (or supplied none if no page exists), as a human annotator would do. Next, I sourced web context search data via <a href="https://serper.dev/" target="_blank">Serper.dev</a> so that each model would be making decisions based on the same internet context. Finally, I developed scripts and provided them with the matching task and the search results. I selected a leading frontier model (Opus 5.5), more cost effective open source model (Qwen 3.8 Max + Flash), and lastly the challenger Jev to evaluate accuracy and cost per task performance.</p><br>
+
+                <p id="text12"><b>The Results</b></p>
+                <p id="text07">In success, each model would reach 95% accuracy or higher. On the first pass, Jev lagged far behind at 52%. After I split Jev’s decision into two questions (which candidate is best, and is any candidate right at all), Jev reached 96%, the same accuracy as Opus 5.5 on the same candidates. Qwen 3.8 Max scored 96%.</p><br>
+
+                <p id="text07">The big surprise, however, was cost. Jev was about 100x cheaper than Opus 5.5, 70x cheaper than Qwen 3.8 Max, and just over 5x cheaper than Qwen 3.8 Flash, which also scored lower than the threshold (89%).</p>
+
+                <br><p align=center id="text07small">
+                    Jev: 100x cheaper than Opus 5.5 and 5x cheaper than Qwen 3.8 Flash<br/>
+                    <img src="static/img/jev-results.png" width=70% loading="lazy" alt="Results table, accuracy and cost per 1,000 tasks: Jev 95%, $0.16; Opus 5.5 95%, $16.30; Qwen 3.8 Max 96%, $11.27; Qwen 3.8 Flash 89%, $0.92">
+                </p><br/>
+
+                <p id="text07">A two-orders-of-magnitude cost reduction at comparable accuracy is a breakthrough. At Netflix scale, millions of matches a day, that is the difference between a budget line item and a rounding error. Assuming that this generalizes to many other classification tasks, I can see System One models like this becoming the default for high-volume classification. This was only a small test for one matching task against a small sample set. But the scale of improvement is hard to ignore.</p><br>
+
+                <br/><p id="text07small">⬅️ &nbsp;<a href=http://john.marsland.org/#writing>back to writing</a> &nbsp;|&nbsp; <button class="share-btn" onclick="shareUrl(this, 'Jev vs Frontier LLMs', 'https://john.marsland.org/ruminations/jev')" title="Copy link">🔗 <u>copy link</u></button></p>
+                </div>
 				</section>
 
 
