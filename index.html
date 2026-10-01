@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400&display=swap" rel="stylesheet">
-	<link href="static/css/style.css?v=20261001" rel="stylesheet">
+	<link href="static/css/style.css?v=20261001c" rel="stylesheet">
 	<link rel="stylesheet" href="static/css/fontawesome/all.min.css">
     <style>
       #main { opacity: 0; }
@@ -1261,7 +1261,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="static/js/profile.js?v=20261001"></script>
+	<script src="static/js/profile.js?v=20261001c"></script>
 
 
 
@@ -1429,10 +1429,19 @@
 			    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')";
 			    	img_div.style.backgroundColor = "#F8F8F8";
 
+				    // Favorites get a star badge over the image instead of in the title
+				    if (cats.includes('favorites')) {
+				    	var badge = document.createElement('span');
+				    	badge.className = "recipe-badge";
+				    	badge.setAttribute('role', 'img');
+				    	badge.setAttribute('aria-label', 'Favorite');
+				    	badge.textContent = '🌟';
+				    	img_div.appendChild(badge);
+				    }
+
 				    var p = document.createElement('p');
 				    p.className = "text11";
-				    var isFavorite = cats.includes('favorites');
-				    p.innerHTML = recipes[i]['name'] + (isFavorite ? ' 🌟' : '');
+				    p.innerHTML = recipes[i]['name'];
 
 					a.appendChild(img_div);
 					a.appendChild(p);
@@ -1446,6 +1455,35 @@
 				for (var c = 0; c < countEls.length; c++) {
 					var grid = document.getElementById(countEls[c].getAttribute('data-count-for'));
 					if (grid) countEls[c].textContent = '\u00a0(' + grid.children.length + ')';
+				}
+
+				// Show the first 12 recipes per category, with a button to expand the rest
+				var RECIPES_VISIBLE = 12;
+				var grids = document.querySelectorAll('#recipes-section .grid-container');
+				for (var g = 0; g < grids.length; g++) {
+					var items = grids[g].children;
+					var next = grids[g].nextElementSibling;
+					if (next && next.classList.contains('recipe-more')) next.remove();
+					if (items.length <= RECIPES_VISIBLE) continue;
+					grids[g].classList.add('is-collapsed');
+					for (var k = RECIPES_VISIBLE; k < items.length; k++) items[k].classList.add('recipe-extra');
+					var more = document.createElement('button');
+					more.type = 'button';
+					more.className = 'recipe-more';
+					more.setAttribute('aria-expanded', 'false');
+					more.setAttribute('aria-controls', grids[g].id);
+					more.textContent = 'Show all ' + items.length;
+					more.onclick = (function(grid, total) {
+						return function() {
+							var expanded = grid.classList.toggle('is-collapsed') === false;
+							this.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+							this.textContent = expanded ? 'Show fewer' : 'Show all ' + total;
+							// When collapsing, keep the band header in view instead of stranding the reader below it
+							var band = grid.previousElementSibling;
+							if (!expanded && band) band.scrollIntoView({ behavior: 'smooth' });
+						};
+					})(grids[g], items.length);
+					grids[g].insertAdjacentElement('afterend', more);
 				}
 
 				// If opened at a band anchor (e.g. #meals_bestof_header), re-scroll now that the grids have height

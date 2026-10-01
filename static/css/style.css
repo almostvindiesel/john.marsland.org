@@ -992,6 +992,66 @@ body {
 		padding-top: 75%;
 	}
 }
+/* Favorite star badge: a tab set flush into the image's top-left corner */
+#recipes-section .thumb {
+	position: relative;
+	overflow: hidden;
+}
+/* Bleeds 1px past the clipped edge (offset by padding) so no photo fringe shows at the corner */
+#recipes-section .recipe-badge {
+	position: absolute;
+	top: -1px;
+	left: -1px;
+	z-index: 1;
+	box-sizing: border-box;
+	display: grid;
+	place-items: center;
+	width: 29px;
+	height: 29px;
+	padding: 1px 0 0 1px;
+	border-radius: 0 0 6px 0;
+	background: rgba(71, 71, 71, 0.88);
+	font: 16px/1 "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+	pointer-events: none;
+}
+@media (max-width: 479px) {
+	#recipes-section .recipe-badge {
+		width: 27px;
+		height: 27px;
+		font-size: 15px;
+	}
+}
+/* Collapsed categories show the first 12 recipes; .recipe-more expands the rest */
+#recipes-section .grid-container.is-collapsed .recipe-extra {
+	display: none;
+}
+#recipes-section .recipe-more {
+	display: block;
+	min-height: 44px;
+	margin: 24px auto 0;
+	padding: 0 24px;
+	font-family: 'Source Sans Pro';
+	font-size: 13px;
+	font-weight: 400;
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
+	color: #474747;
+	background: none;
+	border: solid 1px #CCCCCC;
+	border-radius: 1.625rem;
+	cursor: pointer;
+	transition: color 0.25s ease, border-color 0.25s ease;
+}
+#recipes-section .recipe-more:focus-visible {
+	color: #309EDB;
+	border-color: #309EDB;
+}
+@media (hover: hover) {
+	#recipes-section .recipe-more:hover {
+		color: #309EDB;
+		border-color: #309EDB;
+	}
+}
 #recipes-section a.recipe p {
 	width: auto;
 	margin-top: 7px;
@@ -1040,6 +1100,15 @@ body {
 	text-align: center;
 	margin-bottom: 24px;
 }
+/* Short centered rule under the title */
+#individual-recipe .recipe-title::after {
+	content: '';
+	display: block;
+	width: 40px;
+	height: 1px;
+	margin: 12px auto 0;
+	background: #CCCCCC;
+}
 #individual-recipe .recipe-full-image {
 	float: right;
 	width: 40%;
@@ -1051,14 +1120,18 @@ body {
 	border-radius: 8px;
 	background-color: #F8F8F8;
 }
+/* Small spaced labels with a light rule; flow-root stops the rule short of the floated image */
 #individual-recipe .recipe-heading {
-	font-size: max(12px, 0.75em);
-	font-weight: 600;
-	letter-spacing: 0.2rem;
+	display: flow-root;
+	font-size: max(12px, 0.55em);
+	font-weight: 400;
+	letter-spacing: 0.25rem;
 	width: auto;
 	line-height: 1.5;
 	color: #474747;
-	margin: 24px 0 8px;
+	margin: 28px 0 10px;
+	padding-bottom: 6px;
+	border-bottom: 1px solid #E5E5E5;
 }
 #individual-recipe .recipe-description,
 #individual-recipe .recipe-ingredients,
