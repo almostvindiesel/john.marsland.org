@@ -89,7 +89,7 @@ on('load', function() {
 	}, 100);
 });
 (function() {
-	var initialSection, initialScrollPoint, initialId, h, e, ee, k, sectionIdFor, locked = false,
+	var initialSection, initialScrollPoint, initialId, h, e, ee, k, sectionIdFor, anchorFor, locked = false,
 		initialized = false,
 		doScrollTop = function() {
 			scrollTo(0, 0);
@@ -109,6 +109,10 @@ on('load', function() {
 					if (e.previousElementSibling) pos = e.previousElementSibling.offsetTop + e.previousElementSibling.offsetHeight;
 					else pos = e.offsetTop;
 					break;
+				case 'anchor':
+					// In-page anchor nested inside a section: use its page position, honoring CSS scroll-margin-top
+					pos = e.getBoundingClientRect().top + window.pageYOffset - (parseFloat(getComputedStyle(e).scrollMarginTop) || 0);
+					break;
 			}
 			if ('scrollBehavior' in $body.style && initialized && !instant) scrollTo({
 				behavior: 'smooth',
@@ -119,8 +123,21 @@ on('load', function() {
 		};
 	if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 	// Recipe permalinks (e.g. #cheddar-apple-crumble-recipe) all resolve to the single recipe-detail section
+	// Recipe band anchors (e.g. #meals_bestof_header) resolve to the recipes section, then scroll to the anchor
 	sectionIdFor = function(hash) {
-		return (hash && /-recipe$/.test(hash)) ? 'recipe-detail' : (hash ? hash : 'home');
+		if (hash && /-recipe$/.test(hash)) return 'recipe-detail';
+		if (hash && /_header$/.test(hash)) return 'recipes';
+		return hash ? hash : 'home';
+	};
+	anchorFor = function(hash) {
+		return (hash && /_header$/.test(hash)) ? document.getElementById(hash) : null;
+	};
+	// Re-scroll to a recipe band anchor once the recipe grids have rendered (called from loadRecipes)
+	window.scrollToRecipeAnchor = function() {
+		var h = location.hash ? location.hash.substring(1) : null,
+			el = anchorFor(h),
+			section = $('#recipes-section');
+		if (el && section && !section.classList.contains('inactive')) doScroll(el, true);
 	};
 	h = location.hash ? location.hash.substring(1) : null;
 	if (e = $('[data-scroll-id="' + h + '"]')) {
@@ -128,7 +145,7 @@ on('load', function() {
 		initialSection = initialScrollPoint.parentElement;
 		initialId = initialSection.id;
 	} else if (e = $('#' + sectionIdFor(h) + '-section')) {
-		initialScrollPoint = null;
+		initialScrollPoint = anchorFor(h);
 		initialSection = e;
 		initialId = initialSection.id;
 
@@ -159,7 +176,7 @@ on('load', function() {
 			section = scrollPoint.parentElement;
 			id = section.id;
 		} else if (e = $('#' + sectionIdFor(h) + '-section')) {
-			scrollPoint = null;
+			scrollPoint = anchorFor(h);
 			section = e;
 			id = section.id;
 		} else return false;

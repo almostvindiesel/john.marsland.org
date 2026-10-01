@@ -10,7 +10,7 @@
 	<meta content="https://john.marsland.org" property="og:url">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;1,200;1,400&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400&display=swap" rel="stylesheet">
 	<link href="static/css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="static/css/fontawesome/all.min.css">
     <style>
@@ -62,31 +62,31 @@
 				</section>
 
 				<section id="recipes-section">
+					<h2 class="recipe-visually-hidden">Recipes</h2>
 <!-- 					<li><a class="button n03" href="#recipe">Test</a></li>
  -->				<p class="text10">
-                        Fifteen years of personalized recipes: <a href=#bakes_header>bakes</a>, <a href=#meals_bestof_header>meals</a>, and <a href=#drinks_cocktails_header>drinks</a>.<br/>Start with the stars (🌟)
+                        Fifteen years of personalized recipes: <a href=#bakes_header>bakes</a><span class="recipe-count" data-count-for="bakes"></span>, <a href=#meals_bestof_header>meals</a><span class="recipe-count" data-count-for="meals_bestof"></span>, and <a href=#drinks_cocktails_header>drinks</a><span class="recipe-count" data-count-for="drinks_cocktails"></span>.<br/>Start with the stars (🌟)
  					</p>
-					<div id=recipes-quickjump-bar></div>
 
 					
 					<div class="total-recipe-container" >
 
 						<div id=recipes-bestof style="">				
 								<div class="recipe-section-band">
-									<h3 id="bakes_header">Bakes &#129366;</h3>
-									<p class="text11">Bread + Butter is on my execution meal</p>
+									<h3 id="bakes_header" class="recipe-band-title" data-scroll-behavior="anchor">Bakes &#129366;</h3>
+									<p class="text11 recipe-band-sub">Bread + Butter is on my execution meal</p>
 								</div>
 								<div id="bakes" class="grid-container"></div>
 
 								<div class="recipe-section-band">
-									<h3 id="meals_bestof_header">Meals &#x1f37d;</h3>
-									<p class="text11">Mains catered especially for lovers of garlic, butter, and gluttony</p>
+									<h3 id="meals_bestof_header" class="recipe-band-title" data-scroll-behavior="anchor">Meals &#x1f37d;</h3>
+									<p class="text11 recipe-band-sub">Mains catered especially for lovers of garlic, butter, and gluttony</p>
 								</div>
 								<div id="meals_bestof" class="grid-container"></div>
 
 								<div class="recipe-section-band">
-									<h3 id="drinks_cocktails_header">Drinks 🍸</h3>
-									<p class="text11">Bright, brash, bitter, and balanced cocktails</p>
+									<h3 id="drinks_cocktails_header" class="recipe-band-title" data-scroll-behavior="anchor">Drinks 🍸</h3>
+									<p class="text11 recipe-band-sub">Bright, brash, bitter, and balanced cocktails</p>
 								</div>
 								<div id="drinks_cocktails" class="grid-container"></div>
 
@@ -98,7 +98,7 @@
 
 				</section>
 				<section id="recipe-detail-section">
-					<div class="grid-container" id="individual-recipe">
+					<div id="individual-recipe">
 					</div>
 					<div id="recipe-loading-spinner" style="display:none; text-align:center; padding:3rem;">
 						<img src="static/img/spinner.gif" width="50"/><br/>
@@ -1278,24 +1278,27 @@
 	    	// console.log(recipes)
 
 	    	var recipe_div=document.createElement('div'); 
-	    	recipe_div.className="article-text"
+	    	recipe_div.className="article-text recipe-detail"
 
 	    	var recipe_name_h2 = document.createElement("H2")
+	    	recipe_name_h2.className = "recipe-title";
 	    	var t = document.createTextNode(recipe['name']);   
 			recipe_name_h2.appendChild(t); 
 
 
-	    	var ingredients_h2 = document.createElement("H2")
+	    	var ingredients_h2 = document.createElement("H3")
 	    	ingredients_h2.innerHTML = "Ingredients";
+	    	ingredients_h2.className = "recipe-heading";
 	    	var ingredients_p = document.createElement("p")
-	    	ingredients_p.id = "text10"
-	    	ingredients_p.innerHTML = recipe['ingredients'].replace(/\n/g, "<br/>") + "<br/><br/>";
+	    	ingredients_p.className = "recipe-ingredients";
+	    	ingredients_p.innerHTML = recipe['ingredients'].replace(/\n/g, "<br/>");
 
-	    	var directions_h2 = document.createElement("H2")
+	    	var directions_h2 = document.createElement("H3")
 	    	directions_h2.innerHTML = "Directions";
+	    	directions_h2.className = "recipe-heading";
 			var directions_p = document.createElement("p")
-			directions_p.id = "text10"
-			directions_p.innerHTML = recipe['directions'].replace(/\n\n/g, "<br class='directions'/>") ;
+			directions_p.className = "recipe-directions";
+			directions_p.innerHTML = recipe['directions'].replace(/\n\n/g, "<span class='recipe-step-gap'></span>") ;
 
 
 	    	// Finally show current recipe
@@ -1314,12 +1317,9 @@
 		    } 
 			if (recipe['description'].length >= 2) {
 		    	var description_p = document.createElement("p")
-		    	description_p.id = "text10"
-		    	description_p.clear = "left"
-		    	description_p.innerHTML = recipe['description'] + "<br/><br/>";
+		    	description_p.className = "recipe-description";
+		    	description_p.innerHTML = recipe['description'];
 				recipe_div.appendChild(description_p);
-			} else {
-				recipe_div.appendChild(document.createElement("br"));
 			}
 			recipe_div.appendChild(ingredients_h2);
 			recipe_div.appendChild(ingredients_p);
@@ -1328,10 +1328,10 @@
 
 			var back_p = document.createElement("p");
 			back_p.id = "text07small";
+			back_p.className = "recipe-detail-footer";
 			var recipeShareUrl = "https://john.marsland.org/recipes/" + recipe['slug'];
 			var recipeTitle = recipe['name'].replace(/'/g, "\\'");
-			back_p.innerHTML = "⬅️ &nbsp;<a href=http://john.marsland.org/#recipes>back to recipes</a> &nbsp;|&nbsp; <button class='share-btn' onclick=\"shareUrl(this, '" + recipeTitle + "', '" + recipeShareUrl + "')\">🔗 <u>copy link</u></button>";
-			recipe_div.appendChild(document.createElement("br"));
+			back_p.innerHTML = "⬅️ &nbsp;<a href='#recipes'>back to recipes</a> &nbsp;|&nbsp; <button class='share-btn' onclick=\"shareUrl(this, '" + recipeTitle + "', '" + recipeShareUrl + "')\">🔗 <u>copy link</u></button>";
 			recipe_div.appendChild(back_p);
 
 
@@ -1429,20 +1429,27 @@
 			    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')";
 			    	img_div.style.backgroundColor = "#F8F8F8";
 
-				    var br = document.createElement('br');
-
 				    var p = document.createElement('p');
 				    p.className = "text11";
 				    var isFavorite = cats.includes('favorites');
 				    p.innerHTML = recipes[i]['name'] + (isFavorite ? ' 🌟' : '');
 
 					a.appendChild(img_div);
-					a.appendChild(br);
 					a.appendChild(p);
 					div.appendChild(a);
 					document.getElementById(recipes[i]['category_site']).appendChild(div);
 				}
 				localStorage.setItem('recipes', JSON.stringify(recipes));
+
+				// Show recipe counts next to the intro links, e.g. "bakes (30)"
+				var countEls = document.querySelectorAll('#recipes-section [data-count-for]');
+				for (var c = 0; c < countEls.length; c++) {
+					var grid = document.getElementById(countEls[c].getAttribute('data-count-for'));
+					if (grid) countEls[c].textContent = '\u00a0(' + grid.children.length + ')';
+				}
+
+				// If opened at a band anchor (e.g. #meals_bestof_header), re-scroll now that the grids have height
+				if (window.scrollToRecipeAnchor) window.scrollToRecipeAnchor();
 
 				// If a recipe URL was opened before XHR finished, load it now
 				if (window._pendingRecipeSlug) {
