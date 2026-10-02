@@ -1606,6 +1606,8 @@
 		        	// Resolve image url (for every recipe, since hidden ones can still open from search)
 		        	if (recipes[i]['uid'] != null) {
 		        		recipes[i]['img_url'] = server + 'api/v3/recipes/image/' + recipes[i]['uid'];
+		        		// Version by photo hash so browsers refetch when a photo is replaced in Paprika
+		        		if (recipes[i]['photo_hash']) recipes[i]['img_url'] += '?v=' + recipes[i]['photo_hash'];
 		        	} else if (recipes[i]['image_url'] != null) {
 		        		recipes[i]['img_url'] = recipes[i]['image_url'];
 		        	} else if (recipes[i]['photo_url'] != null) {
