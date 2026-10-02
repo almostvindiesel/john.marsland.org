@@ -11,7 +11,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;1,200;1,400&display=swap" rel="stylesheet">
-	<link href="static/css/style.css?v=20261001c" rel="stylesheet">
+	<link href="static/css/style.css?v=20261002b" rel="stylesheet">
 	<link rel="stylesheet" href="static/css/fontawesome/all.min.css">
     <style>
       #main { opacity: 0; }
@@ -68,10 +68,19 @@
                         Fifteen years of personalized recipes: <a href=#bakes_header>bakes</a><span class="recipe-count" data-count-for="bakes"></span>, <a href=#meals_bestof_header>meals</a><span class="recipe-count" data-count-for="meals_bestof"></span>, and <a href=#drinks_cocktails_header>drinks</a><span class="recipe-count" data-count-for="drinks_cocktails"></span>.<br/>Start with the stars (🌟)
  					</p>
 
-					
+					<div class="recipe-search" role="search">
+						<svg class="recipe-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.5" y1="15.5" x2="20.5" y2="20.5"/></svg>
+						<input type="search" id="recipe-search-input" placeholder="Search ingredients, e.g. butter" autocomplete="off" spellcheck="false" aria-label="Search recipes by ingredient or name" aria-controls="recipe-search-results">
+						<button type="button" id="recipe-search-clear" aria-label="Clear search" hidden>&times;</button>
+					</div>
+					<p id="recipe-search-status" class="recipe-search-status" aria-live="polite"></p>
+
 					<div class="total-recipe-container" >
 
-						<div id=recipes-bestof style="">				
+						<!-- Search results replace the category bands while a query is active (see searchRecipes) -->
+						<div id="recipe-search-results" hidden></div>
+
+						<div id=recipes-bestof style="">
 								<div class="recipe-section-band">
 									<h3 id="bakes_header" class="recipe-band-title" data-scroll-behavior="anchor">Bakes &#129366;</h3>
 									<p class="text11 recipe-band-sub">Bread + Butter is on my execution meal</p>
@@ -1261,7 +1270,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="static/js/profile.js?v=20261001c"></script>
+	<script src="static/js/profile.js?v=20261002a"></script>
 
 
 
@@ -1291,14 +1300,14 @@
 	    	ingredients_h2.className = "recipe-heading";
 	    	var ingredients_p = document.createElement("p")
 	    	ingredients_p.className = "recipe-ingredients";
-	    	ingredients_p.innerHTML = recipe['ingredients'].replace(/\n/g, "<br/>");
+	    	ingredients_p.innerHTML = (recipe['ingredients'] || '').replace(/\n/g, "<br/>");
 
 	    	var directions_h2 = document.createElement("H3")
 	    	directions_h2.innerHTML = "Directions";
 	    	directions_h2.className = "recipe-heading";
 			var directions_p = document.createElement("p")
 			directions_p.className = "recipe-directions";
-			directions_p.innerHTML = recipe['directions'].replace(/\n\n/g, "<span class='recipe-step-gap'></span>") ;
+			directions_p.innerHTML = (recipe['directions'] || '').replace(/\n\n/g, "<span class='recipe-step-gap'></span>") ;
 
 
 	    	// Finally show current recipe
@@ -1315,7 +1324,7 @@
 				// img_div.appendChild(img); 	
 				recipe_div.appendChild(img);
 		    } 
-			if (recipe['description'].length >= 2) {
+			if ((recipe['description'] || '').length >= 2) {
 		    	var description_p = document.createElement("p")
 		    	description_p.className = "recipe-description";
 		    	description_p.innerHTML = recipe['description'];
@@ -1331,7 +1340,9 @@
 			back_p.className = "recipe-detail-footer";
 			var recipeShareUrl = "https://john.marsland.org/recipes/" + recipe['slug'];
 			var recipeTitle = recipe['name'].replace(/'/g, "\\'");
-			back_p.innerHTML = "⬅️ &nbsp;<a href='#recipes'>back to recipes</a> &nbsp;|&nbsp; <button class='share-btn' onclick=\"shareUrl(this, '" + recipeTitle + "', '" + recipeShareUrl + "')\">🔗 <u>copy link</u></button>";
+			// Return to the active search, if any, rather than the full list
+			var backHref = window.recipeSearchHash ? window.recipeSearchHash() : '#recipes';
+			back_p.innerHTML = "⬅️ &nbsp;<a href='" + backHref + "'>back to recipes</a> &nbsp;|&nbsp; <button class='share-btn' onclick=\"shareUrl(this, '" + recipeTitle + "', '" + recipeShareUrl + "')\">🔗 <u>copy link</u></button>";
 			recipe_div.appendChild(back_p);
 
 
@@ -1341,6 +1352,195 @@
 
 
 
+		}
+
+		// Builds a recipe grid card; matchLines (optional) are ingredient lines shown under the name in search results
+		function buildRecipeCard(recipe, matchLines) {
+			var cats = recipe['category_names'] || [];
+
+			var div = document.createElement('div');
+			div.className = "grid-item";
+
+			var a = document.createElement('a');
+			a.className = 'recipe text11';
+			a.id = recipe['uid'];
+			a.href = "#" + recipe['slug'] + "-recipe";
+			a.onclick = function() { loadRecipe(recipe['uid']); };
+
+			var img_div = document.createElement('div');
+			img_div.className = "thumb";
+			img_div.style.backgroundImage = "url('" + recipe['img_url'] + "')";
+			img_div.style.backgroundColor = "#F8F8F8";
+
+			// Favorites get a star badge over the image instead of in the title
+			if (cats.includes('favorites')) {
+				var badge = document.createElement('span');
+				badge.className = "recipe-badge";
+				badge.setAttribute('role', 'img');
+				badge.setAttribute('aria-label', 'Favorite');
+				badge.textContent = '🌟';
+				img_div.appendChild(badge);
+			}
+
+			var p = document.createElement('p');
+			p.className = "text11";
+			p.innerHTML = recipe['name'];
+
+			a.appendChild(img_div);
+			a.appendChild(p);
+
+			for (var m = 0; matchLines && m < matchLines.length; m++) {
+				var line = document.createElement('span');
+				line.className = "recipe-match";
+				line.textContent = matchLines[m];
+				a.appendChild(line);
+			}
+
+			div.appendChild(a);
+			return div;
+		}
+
+		// ~~~ Ingredient + name search over every recipe (JOH-30)
+		var RECIPE_SEARCH_GROUPS = [
+			['bakes', 'Bakes 🥖'],
+			['meals_bestof', 'Meals 🍽'],
+			['drinks_cocktails', 'Drinks 🍸']
+		];
+		var recipeSearchIndex = [];
+
+		// Lowercase and strip accents so "creme" matches "crème"
+		function normalizeSearchText(s) {
+			return (s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+		}
+
+		function buildRecipeSearchIndex(recipes) {
+			recipeSearchIndex = recipes.map(function(r) {
+				var lines = (r['ingredients'] || '').split('\n').map(function(l) { return l.trim(); }).filter(Boolean);
+				var normLines = lines.map(normalizeSearchText);
+				return {
+					recipe: r,
+					lines: lines,
+					normLines: normLines,
+					haystack: normalizeSearchText(r['name']) + '\n' + normLines.join('\n')
+				};
+			});
+		}
+
+		// Each term must start a word ("rum" matches "dark rum", not "drum")
+		function termPattern(term) {
+			return new RegExp('(^|[^a-z0-9])' + term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+		}
+
+		function currentRecipeQuery() {
+			var input = document.getElementById('recipe-search-input');
+			return input ? input.value.trim() : '';
+		}
+
+		// Hash for the current search, e.g. #recipes?q=campari (also used by the recipe detail "back" link)
+		window.recipeSearchHash = function() {
+			var q = currentRecipeQuery();
+			return q ? '#recipes?q=' + encodeURIComponent(q).replace(/'/g, '%27') : '#recipes';
+		};
+
+		function queryFromHash() {
+			var m = location.hash.match(/^#recipes\?q=([^&]*)/);
+			if (!m) return null;
+			try { return decodeURIComponent(m[1].replace(/\+/g, ' ')); } catch (err) { return m[1]; }
+		}
+
+		function searchRecipes() {
+			var q = currentRecipeQuery();
+			var results = document.getElementById('recipe-search-results');
+			var bands = document.getElementById('recipes-bestof');
+			var status = document.getElementById('recipe-search-status');
+			document.getElementById('recipe-search-clear').hidden = !q;
+
+			// Keep the search in the URL; replaceState doesn't fire hashchange, so the section router stays put
+			if (!/-recipe$/.test(location.hash)) history.replaceState(null, '', window.recipeSearchHash());
+
+			if (!q) {
+				results.hidden = true;
+				results.innerHTML = '';
+				bands.hidden = false;
+				status.textContent = '';
+				return;
+			}
+
+			var terms = normalizeSearchText(q).split(/[\s,]+/).filter(Boolean).map(termPattern);
+			var matches = [];
+			recipeSearchIndex.forEach(function(entry) {
+				if (!terms.every(function(t) { return t.test(entry.haystack); })) return;
+				var lines = [];
+				for (var j = 0; j < entry.normLines.length && lines.length < 2; j++) {
+					if (terms.some(function(t) { return t.test(entry.normLines[j]); })) lines.push(entry.lines[j]);
+				}
+				matches.push({ recipe: entry.recipe, lines: lines });
+			});
+
+			// Published (4+) recipes first, then favorites, then by rating
+			function rank(r) {
+				var cats = r['category_names'] || [];
+				return (r['category_site'] !== 'none' ? 4 : 0) + (cats.includes('favorites') ? 2 : 0) + (r['rating'] || 0) / 10;
+			}
+			matches.sort(function(a, b) { return rank(b.recipe) - rank(a.recipe); });
+
+			// Groups with the most matches first (e.g. "rum" leads with drinks, not bakes)
+			var groups = RECIPE_SEARCH_GROUPS.map(function(g) {
+				return { title: g[1], items: matches.filter(function(m) { return m.recipe['category_group'] === g[0]; }) };
+			}).sort(function(a, b) { return b.items.length - a.items.length; });
+
+			results.innerHTML = '';
+			groups.forEach(function(g) {
+				var group = g.items;
+				if (!group.length) return;
+				var band = document.createElement('div');
+				band.className = 'recipe-section-band';
+				var h3 = document.createElement('h3');
+				h3.className = 'recipe-band-title';
+				h3.textContent = g.title;
+				var count = document.createElement('span');
+				count.className = 'recipe-count';
+				count.textContent = ' (' + group.length + ')';
+				h3.appendChild(count);
+				band.appendChild(h3);
+				var grid = document.createElement('div');
+				grid.className = 'grid-container';
+				group.forEach(function(m) { grid.appendChild(buildRecipeCard(m.recipe, m.lines)); });
+				results.appendChild(band);
+				results.appendChild(grid);
+			});
+
+			bands.hidden = true;
+			results.hidden = false;
+			status.textContent = matches.length
+				? matches.length + (matches.length === 1 ? ' recipe' : ' recipes') + ' with “' + q + '”'
+				: 'No recipes with “' + q + '”';
+		}
+
+		function initRecipeSearch(recipes) {
+			buildRecipeSearchIndex(recipes);
+			var input = document.getElementById('recipe-search-input');
+			var clear = document.getElementById('recipe-search-clear');
+			if (!input.dataset.bound) {
+				var timer;
+				input.addEventListener('input', function() {
+					clearTimeout(timer);
+					timer = setTimeout(searchRecipes, 120);
+				});
+				input.addEventListener('keydown', function(e) {
+					if (e.key === 'Escape') { input.value = ''; searchRecipes(); }
+				});
+				clear.addEventListener('click', function() { input.value = ''; searchRecipes(); input.focus(); });
+				// Linked searches (#recipes?q=...) opened while the page is already loaded
+				window.addEventListener('hashchange', function() {
+					var q = queryFromHash();
+					if (q !== null && q !== input.value) { input.value = q; searchRecipes(); }
+				});
+				input.dataset.bound = '1';
+			}
+			var initial = queryFromHash();
+			if (initial) input.value = initial;
+			if (input.value.trim()) searchRecipes();
 		}
 
 		function loadRecipes(e) {
@@ -1385,23 +1585,25 @@
 
 		        	var cats = recipes[i]['category_names'] || [];
 
+		        	// Group by kind regardless of rating; search covers every recipe, the bands only the 4+ ones
+		        	if (cats.includes("booze") || cats.includes("coffee") || cats.includes("caffeine")) {
+		        		recipes[i]['category_group'] = 'drinks_cocktails';
+		        	} else if (cats.includes("sweets") || cats.includes("bakes")) {
+		        		recipes[i]['category_group'] = 'bakes';
+		        	} else {
+		        		recipes[i]['category_group'] = 'meals_bestof';
+		        	}
+
 		        	// Classify recipe — skip if rating < 4 or no visible category
 		        	if (!(recipes[i]['rating'] >= 4)) {
 		        		recipes[i]['category_site'] = 'none';
-		        	} else if (cats.includes("booze")) {
-		        		recipes[i]['category_site'] = 'drinks_cocktails';
 		        	} else if (cats.includes("coffee") || cats.includes("caffeine")) {
-		        		recipes[i]['category_site'] = 'none';
-		        	} else if (cats.includes("sweets") || cats.includes("bakes")) {
-		        		recipes[i]['category_site'] = 'bakes';
+		        		recipes[i]['category_site'] = cats.includes("booze") ? 'drinks_cocktails' : 'none';
 		        	} else {
-		        		recipes[i]['category_site'] = 'meals_bestof';
+		        		recipes[i]['category_site'] = recipes[i]['category_group'];
 		        	}
 
-		        	// Skip DOM building for hidden recipes
-		        	if (recipes[i]['category_site'] === 'none') continue;
-
-		        	// Resolve image url
+		        	// Resolve image url (for every recipe, since hidden ones can still open from search)
 		        	if (recipes[i]['uid'] != null) {
 		        		recipes[i]['img_url'] = server + 'api/v3/recipes/image/' + recipes[i]['uid'];
 		        	} else if (recipes[i]['image_url'] != null) {
@@ -1412,43 +1614,13 @@
 		        		recipes[i]['img_url'] = null;
 		        	}
 
-			    	var div = document.createElement('div');
-				    div.className = "grid-item";
+		        	// Skip DOM building for hidden recipes
+		        	if (recipes[i]['category_site'] === 'none') continue;
 
-				    var a = document.createElement('a');
-				    a.className = 'recipe text11';
-				    a.id = recipes[i]['uid'];
-				    a.href = "#" + recipes[i]['slug'] + "-recipe";
-
-			        a.onclick = (function(uid){
-				       return function(){ loadRecipe(uid); }
-				    })(recipes[i]['uid']);
-
-				    var img_div = document.createElement('div');
-				    img_div.className = "thumb";
-			    	img_div.style.backgroundImage = "url('"+recipes[i]['img_url']+"')";
-			    	img_div.style.backgroundColor = "#F8F8F8";
-
-				    // Favorites get a star badge over the image instead of in the title
-				    if (cats.includes('favorites')) {
-				    	var badge = document.createElement('span');
-				    	badge.className = "recipe-badge";
-				    	badge.setAttribute('role', 'img');
-				    	badge.setAttribute('aria-label', 'Favorite');
-				    	badge.textContent = '🌟';
-				    	img_div.appendChild(badge);
-				    }
-
-				    var p = document.createElement('p');
-				    p.className = "text11";
-				    p.innerHTML = recipes[i]['name'];
-
-					a.appendChild(img_div);
-					a.appendChild(p);
-					div.appendChild(a);
-					document.getElementById(recipes[i]['category_site']).appendChild(div);
+					document.getElementById(recipes[i]['category_site']).appendChild(buildRecipeCard(recipes[i]));
 				}
 				localStorage.setItem('recipes', JSON.stringify(recipes));
+				initRecipeSearch(recipes);
 
 				// Show recipe counts next to the intro links, e.g. "bakes (30)"
 				var countEls = document.querySelectorAll('#recipes-section [data-count-for]');

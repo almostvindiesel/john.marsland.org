@@ -926,6 +926,93 @@ body {
 	color: #6b6b6b;
 }
 
+/* Ingredient / name search (JOH-30) */
+#recipes-section .recipe-search {
+	position: relative;
+	max-width: 420px;
+	margin: 24px auto 0;
+}
+#recipes-section .recipe-search input {
+	box-sizing: border-box;
+	width: 100%;
+	min-height: 44px;
+	padding: 0 44px 0 44px;
+	font-family: 'Source Sans Pro';
+	font-size: 16px;
+	font-weight: 300;
+	color: #474747;
+	background: #FFFFFF;
+	border: solid 1px #CCCCCC;
+	border-radius: 1.625rem;
+	outline: none;
+	-webkit-appearance: none;
+	appearance: none;
+	transition: border-color 0.25s ease;
+}
+#recipes-section .recipe-search-icon {
+	position: absolute;
+	top: 50%;
+	left: 16px;
+	width: 18px;
+	height: 18px;
+	margin-top: -9px;
+	fill: none;
+	stroke: #6b6b6b;
+	stroke-width: 2;
+	stroke-linecap: round;
+	pointer-events: none;
+	transition: stroke 0.25s ease;
+}
+#recipes-section .recipe-search:focus-within .recipe-search-icon {
+	stroke: #309EDB;
+}
+#recipes-section .recipe-search input::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+#recipes-section .recipe-search input:focus {
+	border-color: #309EDB;
+}
+#recipes-section .recipe-search button {
+	position: absolute;
+	top: 0;
+	right: 4px;
+	width: 40px;
+	height: 44px;
+	padding: 0;
+	font-size: 22px;
+	line-height: 44px;
+	color: #6b6b6b;
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+#recipes-section .recipe-search button[hidden] {
+	display: none;
+}
+#recipes-section .recipe-search-status {
+	margin: 8px 0 0;
+	text-align: center;
+	color: #6b6b6b;
+	font-family: 'Source Sans Pro';
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: normal;
+	text-transform: none;
+}
+/* The ingredient line that matched, shown under the card name */
+#recipes-section a.recipe .recipe-match {
+	display: block;
+	margin-top: 2px;
+	font-family: 'Source Sans Pro';
+	font-size: 12px;
+	font-weight: 300;
+	line-height: 1.35;
+	color: #6b6b6b;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
 /* Section band headers (Bakes / Meals / Drinks) use the site's article h3 style */
 #recipes-section .recipe-section-band {
 	margin: 48px 0 16px;

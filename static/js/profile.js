@@ -124,7 +124,9 @@ on('load', function() {
 	if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 	// Recipe permalinks (e.g. #cheddar-apple-crumble-recipe) all resolve to the single recipe-detail section
 	// Recipe band anchors (e.g. #meals_bestof_header) resolve to the recipes section, then scroll to the anchor
+	// Recipe searches (e.g. #recipes?q=campari) resolve to the recipes section
 	sectionIdFor = function(hash) {
+		if (hash) hash = hash.split('?')[0];
 		if (hash && /-recipe$/.test(hash)) return 'recipe-detail';
 		if (hash && /_header$/.test(hash)) return 'recipes';
 		return hash ? hash : 'home';
