@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 12 63 43">
+  <!-- FastFood mark: the fast musubi (speed lines, rice, Spam, nori), cropped tight to the drawing. From fastfoodlog/public/icons/app-icon.svg. -->
+  <path d="M3 22 H12 M1 32 H11 M3 42 H12" fill="none" stroke="#3a1404" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="18" y="27" width="42" height="24" rx="6" fill="#fffaf0" stroke="#3a1404" stroke-width="3"/>
+  <rect x="18" y="16" width="42" height="13" rx="5" fill="#ffb38a"/>
+  <rect x="33" y="14" width="12" height="39" rx="2" fill="#3a1404"/>
+</svg>
